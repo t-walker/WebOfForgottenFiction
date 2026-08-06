@@ -76,6 +76,16 @@ export interface WorkRelation {
   relation: RelationKind;
 }
 
+/**
+ * A link between the two hosts. The label is free text because there is
+ * exactly one of these and the joke is the label.
+ */
+export interface HostRelation {
+  fromHostId: string;
+  toHostId: string;
+  label: string;
+}
+
 export interface Dataset {
   podcast: {
     title: string;
@@ -90,6 +100,7 @@ export interface Dataset {
   episodeWorks: EpisodeWork[];
   credits: Credit[];
   workRelations: WorkRelation[];
+  hostRelations?: HostRelation[];
 }
 
 export interface GraphNode {
@@ -119,7 +130,7 @@ export interface GraphNode {
 export interface GraphLink {
   source: string | GraphNode;
   target: string | GraphNode;
-  kind: 'picked' | 'featured' | 'mentioned' | 'created' | 'appeared' | RelationKind;
+  kind: 'picked' | 'featured' | 'mentioned' | 'created' | 'appeared' | 'kin' | RelationKind;
   label: string;
 }
 
@@ -249,6 +260,13 @@ export function buildGraph(data: Dataset): GraphData {
       kind: rel.relation,
       label: RELATION_LABELS[rel.relation],
     });
+  }
+
+  for (const rel of data.hostRelations ?? []) {
+    const from = nodes.get(nodeId('host', rel.fromHostId));
+    const to = nodes.get(nodeId('host', rel.toHostId));
+    if (!from || !to) continue;
+    links.push({ source: from.id, target: to.id, kind: 'kin', label: rel.label });
   }
 
   for (const link of links) {

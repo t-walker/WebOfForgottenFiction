@@ -12,7 +12,8 @@ import {
   type NodeType,
 } from './graph';
 import FilterPanel from './FilterPanel';
-import { applyFilters, defaultFilters, type Filters } from './filters';
+import { applyFilters, type Filters } from './filters';
+import { decodeState, encodeState } from './url';
 import {
   applyLayout,
   FORCE_SETTINGS,
@@ -25,7 +26,30 @@ import {
 } from './layout';
 import './App.css';
 
+/**
+ * The simulation is settled before the first paint instead of being animated
+ * into place. Swapping to a focus subgraph restarts d3-force at full alpha, and
+ * watching a few hundred ticks of nodes flying around on every click is more
+ * distracting than useful. `warmupTicks` runs those ticks up front; the
+ * hierarchy then holds still, while the web view keeps a short settle because
+ * nothing pins it and it needs to relax into shape.
+ */
+const MOTION: Record<Layout, { warmup: number; cooldown: number }> = {
+  hierarchy: { warmup: 260, cooldown: 0 },
+  web: { warmup: 180, cooldown: 40 },
+};
+
 const data = dataset as Dataset;
+
+/**
+ * Built once at module scope rather than in a memo so the initial state can be
+ * read straight out of the URL, which needs to resolve node ids to real nodes
+ * before the first render.
+ */
+const FULL = buildGraph(data);
+const NODES_BY_ID = new Map(FULL.nodes.map((n) => [n.id, n]));
+
+const initial = decodeState(window.location.search, data);
 
 const TYPE_LABELS: Record<NodeType, string> = {
   work: 'Works',
@@ -57,14 +81,16 @@ export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const wrapRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 800, height: 600 });
-  const [trail, setTrail] = useState<GraphNode[]>([]);
-  const [query, setQuery] = useState('');
-  const [filters, setFilters] = useState<Filters>(() => defaultFilters(data));
-  const [layout, setLayout] = useState<Layout>('hierarchy');
-  const [showLinkLabels, setShowLinkLabels] = useState(true);
-  const [focusSelection, setFocusSelection] = useState(true);
+  const [trail, setTrail] = useState<GraphNode[]>(() =>
+    initial.trail.map((id) => NODES_BY_ID.get(id)).filter((n): n is GraphNode => !!n),
+  );
+  const [query, setQuery] = useState(initial.query);
+  const [filters, setFilters] = useState<Filters>(initial.filters);
+  const [layout, setLayout] = useState<Layout>(initial.layout);
+  const [showLinkLabels, setShowLinkLabels] = useState(initial.showLinkLabels);
+  const [focusSelection, setFocusSelection] = useState(initial.focusSelection);
 
-  const full = useMemo(() => buildGraph(data), []);
+  const full = FULL;
 
   /** The trail is a drill-down path; its last entry is what's on screen now. */
   const selected = trail.length ? trail[trail.length - 1] : null;
@@ -82,6 +108,48 @@ export default function App() {
   };
 
   const clearTrail = () => setTrail([]);
+
+  /**
+   * Mirror the view into the query string.
+   *
+   * Moving through the graph pushes a history entry so Back walks the trail,
+   * but nudging a filter only replaces it -- toggling a dozen checkboxes should
+   * not bury the previous node under a dozen Back presses.
+   */
+  const trailKey = trail.map((n) => n.id).join(',');
+  const lastTrailKey = useRef(trailKey);
+  useEffect(() => {
+    const search = encodeState({
+      trail: trail.map((n) => n.id),
+      filters,
+      layout,
+      focusSelection,
+      showLinkLabels,
+      query,
+    });
+    const url = `${window.location.pathname}${search ? `?${search}` : ''}`;
+    if (url === window.location.pathname + window.location.search) return;
+
+    if (trailKey === lastTrailKey.current) window.history.replaceState(null, '', url);
+    else window.history.pushState(null, '', url);
+    lastTrailKey.current = trailKey;
+  }, [trail, trailKey, filters, layout, focusSelection, showLinkLabels, query]);
+
+  // Back/forward hand us a URL, which is the only source of truth for the view.
+  useEffect(() => {
+    const onPop = () => {
+      const next = decodeState(window.location.search, data);
+      lastTrailKey.current = next.trail.join(',');
+      setTrail(next.trail.map((id) => NODES_BY_ID.get(id)).filter((n): n is GraphNode => !!n));
+      setFilters(next.filters);
+      setLayout(next.layout);
+      setFocusSelection(next.focusSelection);
+      setShowLinkLabels(next.showLinkLabels);
+      setQuery(next.query);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   // Escape steps back up one level, matching the breadcrumb, so drilling in
   // deep doesn't mean reaching for the mouse to get back out.
@@ -118,14 +186,19 @@ export default function App() {
    * With focus on, selecting a node collapses the canvas to just that node and
    * what it touches. Dimming alone left 150 nodes on screen and the neighbours
    * spread far enough apart to be unreadable.
+   *
+   * `layout` is read here purely to change this object's identity: force-graph
+   * only runs its warmup ticks when graphData changes, so switching views has
+   * to hand it a fresh object to settle against the new columns.
    */
   const graph = useMemo(() => {
-    if (!selected || !focusSelection || !neighbors) return filtered;
+    void layout;
+    if (!selected || !focusSelection || !neighbors) return { ...filtered };
     return {
       nodes: filtered.nodes.filter((n) => neighbors.ids.has(n.id)),
       links: filtered.links.filter((l) => neighbors.linkIds.has(linkId(l))),
     };
-  }, [filtered, selected, focusSelection, neighbors]);
+  }, [filtered, selected, focusSelection, neighbors, layout]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -156,9 +229,8 @@ export default function App() {
   // Pinning happens on the shared node objects, so re-apply whenever they change.
   useEffect(() => {
     applyLayout(full.nodes, layout, columns);
-    fgRef.current?.d3ReheatSimulation();
-    // Switching layout moves everything; frame it once the simulation settles.
-    const t = setTimeout(() => fgRef.current?.zoomToFit(700, 60), 1200);
+    // Positions are settled by the warmup, so this only needs to outlast paint.
+    const t = setTimeout(() => fgRef.current?.zoomToFit(400, 60), 120);
     return () => clearTimeout(t);
   }, [full, layout, columns]);
 
@@ -180,10 +252,9 @@ export default function App() {
     const fg = fgRef.current;
     if (!fg) return;
     const ids = neighbors?.ids;
-    const settle = selected && focusSelection ? 550 : 250;
     const t = setTimeout(() => {
-      fg.zoomToFit(600, 70, (n: GraphNode) => !ids || ids.has(n.id));
-    }, settle);
+      fg.zoomToFit(400, 70, (n: GraphNode) => !ids || ids.has(n.id));
+    }, 120);
     return () => clearTimeout(t);
   }, [selected, focusSelection, neighbors]);
 
@@ -223,6 +294,17 @@ export default function App() {
     for (const n of full.nodes) c[n.type] = (c[n.type] ?? 0) + 1;
     return c;
   }, [full]);
+
+  const [copied, setCopied] = useState(false);
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1600);
+    } catch {
+      // Clipboard access can be denied; the URL bar already holds the link.
+    }
+  };
 
   return (
     <div className="app">
@@ -266,6 +348,10 @@ export default function App() {
             </span>
           ))}
         </div>
+
+        <button className="share" onClick={copyLink}>
+          {copied ? 'Link copied' : 'Copy link to this view'}
+        </button>
 
         {selected ? (
           <section className="detail">
@@ -360,7 +446,8 @@ export default function App() {
           width={size.width}
           height={size.height}
           backgroundColor="#0e0d14"
-          cooldownTicks={200}
+          warmupTicks={MOTION[layout].warmup}
+          cooldownTicks={MOTION[layout].cooldown}
           onRenderFramePre={(ctx, scale) => {
             if (layout !== 'hierarchy') return;
             const fg = fgRef.current;
@@ -506,3 +593,4 @@ export default function App() {
     </div>
   );
 }
+

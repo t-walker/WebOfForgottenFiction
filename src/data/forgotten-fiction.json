@@ -1892,5 +1892,12 @@
       "toWorkId": "prey",
       "relation": "adapted-from"
     }
+  ],
+  "hostRelations": [
+    {
+      "fromHostId": "h-paris-brown",
+      "toHostId": "h-tommy-brown",
+      "label": "some"
+    }
   ]
 }

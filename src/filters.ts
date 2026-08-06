@@ -99,8 +99,12 @@ export function applyFilters(full: GraphData, f: Filters): GraphData {
     (l) => kept.has(endId(l.source)) && kept.has(endId(l.target)),
   );
 
+  // Host-to-host links don't count as being connected to anything: a host whose
+  // every pick has been filtered away should still drop out, not hang on by the
+  // link to the other host.
   const connected = new Set<string>();
   for (const l of links) {
+    if (l.kind === 'kin') continue;
     connected.add(endId(l.source));
     connected.add(endId(l.target));
   }

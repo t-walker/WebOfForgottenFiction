@@ -563,3 +563,21 @@ footer a {
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
 }
+
+.share {
+  width: 100%;
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.share:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+  color: #fff;
+}

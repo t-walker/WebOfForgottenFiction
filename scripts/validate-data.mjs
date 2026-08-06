@@ -73,6 +73,16 @@ data.workRelations.forEach((row, i) => {
   }
 });
 
+(data.hostRelations ?? []).forEach((row, i) => {
+  const where = `hostRelations[${i}]`;
+  fk(row.fromHostId, hostIds, 'fromHostId', where);
+  fk(row.toHostId, hostIds, 'toHostId', where);
+  if (!row.label) errors.push(`${where}: label is required`);
+  if (row.fromHostId === row.toHostId) {
+    errors.push(`${where}: a host cannot relate to themselves`);
+  }
+});
+
 for (const work of data.works) {
   if (typeof work.featured !== 'boolean') {
     errors.push(`works: "${work.id}" is missing a boolean featured flag`);
