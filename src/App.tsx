@@ -6,6 +6,8 @@ import {
   isRelationLink,
   nodeColor,
   MENTIONED_COLOR,
+  MEDIUM_COLORS,
+  TYPE_COLORS,
   type Dataset,
   type GraphLink,
   type GraphNode,
@@ -14,7 +16,8 @@ import {
 import FilterPanel from './FilterPanel';
 import { applyFilters, type Filters } from './filters';
 import { decodeState, encodeState } from './url';
-import { FORCE_SETTINGS, LINK_CURVATURE, linkMidpoint } from './render';
+import { FORCE_SETTINGS, LINK_CURVATURE, frame, linkMidpoint } from './render';
+import { CANVAS } from './theme';
 import './App.css';
 
 /**
@@ -48,14 +51,14 @@ const TYPE_LABELS: Record<NodeType, string> = {
   episode: 'Episodes',
 };
 
+// Derived rather than written out: a hand-kept copy had already drifted from
+// the real node colours, so the legend was quietly lying about two of them.
 const LEGEND: { color: string; label: string }[] = [
-  { color: '#f2b134', label: 'Film' },
-  { color: '#5ddba2', label: 'Book' },
-  { color: '#f7845d', label: 'TV' },
+  ...Object.entries(MEDIUM_COLORS).map(([label, color]) => ({ color, label })),
   { color: MENTIONED_COLOR, label: 'Mentioned' },
-  { color: '#7bd3f7', label: 'Person' },
-  { color: '#ff6b6b', label: 'Host' },
-  { color: '#9d8df1', label: 'Episode' },
+  { color: TYPE_COLORS.person, label: 'Person' },
+  { color: TYPE_COLORS.host, label: 'Host' },
+  { color: TYPE_COLORS.episode, label: 'Episode' },
 ];
 
 const endId = (v: string | GraphNode) => (typeof v === 'object' ? v.id : v);
@@ -73,6 +76,19 @@ const NODE_RADIUS = 5;
 
 /** Fitting only a couple of nodes would blow them up to fill the canvas. */
 const MAX_ZOOM = 2.4;
+
+/**
+ * The landing view is the exception: it holds two nodes and one link, and at
+ * the ordinary cap they read as specks on a very large sheet. It gets to come
+ * much closer, since there is nothing else competing for the space.
+ */
+const INTRO_MAX_ZOOM = 7;
+
+/** Canvas margin left around a framed selection, in pixels. */
+const FRAME_PADDING = 90;
+
+/** Long enough to read as travel rather than a cut, short enough not to wait. */
+const FRAME_MS = 500;
 
 export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
@@ -246,23 +262,36 @@ export default function App() {
     });
   }, [filtered]);
 
+  // Read at framing time, not as effect dependencies: a filter tweak or a
+  // window resize should not yank a camera the reader has since moved.
+  const latest = useRef({ graph, size });
+  latest.current = { graph, size };
+
   /**
    * Frame the selection rather than zooming to a fixed level: a host with 18
    * picks needs a much wider view than an actor with one credit.
    *
-   * Fitting a handful of nodes would otherwise magnify them absurdly -- two
-   * hosts alone fill the canvas with two dots -- so the result is capped.
+   * The camera target is worked out before anything moves, so the view travels
+   * once. Fitting via the library and capping afterwards made it lunge in and
+   * then drop back out.
    */
   useEffect(() => {
     const fg = fgRef.current;
     if (!fg) return;
     const ids = neighbors?.ids;
+    // Positions come from the live simulation, so wait for it to settle after
+    // the graph data changed rather than framing a layout still in motion.
     const t = setTimeout(() => {
-      fg.zoomToFit(400, 70, (n: GraphNode) => !ids || ids.has(n.id));
-      setTimeout(() => {
-        if (fg.zoom() > MAX_ZOOM) fg.zoom(MAX_ZOOM, 300);
-      }, 420);
-    }, 120);
+      const { graph: g, size: s } = latest.current;
+      const cam = frame(
+        g.nodes.filter((n) => !ids || ids.has(n.id)),
+        s,
+        { padding: FRAME_PADDING, maxZoom: intro ? INTRO_MAX_ZOOM : MAX_ZOOM },
+      );
+      if (!cam) return;
+      fg.centerAt(cam.x, cam.y, FRAME_MS);
+      fg.zoom(cam.k, FRAME_MS);
+    }, 140);
     return () => clearTimeout(t);
   }, [selected, focusSelection, neighbors, intro]);
 
@@ -462,7 +491,7 @@ export default function App() {
           graphData={graph}
           width={size.width}
           height={size.height}
-          backgroundColor="#0e0d14"
+          backgroundColor={CANVAS.background}
           warmupTicks={MOTION.warmup}
           cooldownTicks={MOTION.cooldown}
           nodeRelSize={4}
@@ -470,11 +499,11 @@ export default function App() {
           linkColor={(l: GraphLink) =>
             neighbors
               ? neighbors.linkIds.has(linkId(l))
-                ? 'rgba(255,255,255,0.55)'
-                : 'rgba(255,255,255,0.05)'
+                ? CANVAS.linkStrong
+                : CANVAS.linkFaint
               : isRelationLink(l.kind)
-                ? 'rgba(242,177,52,0.32)'
-                : 'rgba(255,255,255,0.16)'
+                ? CANVAS.linkRelation
+                : CANVAS.link
           }
           linkLineDash={(l: GraphLink) => (isRelationLink(l.kind) ? [3, 2] : null)}
           linkWidth={(l: GraphLink) => (neighbors && neighbors.linkIds.has(linkId(l)) ? 1.8 : 0.6)}
@@ -505,12 +534,12 @@ export default function App() {
               (l as { __controlPoints?: number[] | null }).__controlPoints,
             );
 
-            ctx.fillStyle = 'rgba(14,13,20,0.78)';
+            ctx.fillStyle = CANVAS.labelBackdrop;
             ctx.fillRect(x - width / 2 - 1, y - fontSize * 0.65, width + 2, fontSize * 1.3);
 
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            ctx.fillStyle = highlighted ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.5)';
+            ctx.fillStyle = highlighted ? CANVAS.labelStrong : CANVAS.labelSoft;
             ctx.fillText(text, x, y);
           }}
           onNodeClick={(n: GraphNode) => focus(n)}
@@ -528,7 +557,7 @@ export default function App() {
 
             if (selected?.id === n.id) {
               ctx.lineWidth = 2 / scale;
-              ctx.strokeStyle = '#fff';
+              ctx.strokeStyle = CANVAS.selection;
               ctx.stroke();
             }
 
@@ -537,8 +566,7 @@ export default function App() {
             if (showLabel && !dimmed) {
               const fontSize = Math.max(10 / scale, 2.5);
               ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
-              ctx.fillStyle =
-                n.featured === false ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.85)';
+              ctx.fillStyle = n.featured === false ? CANVAS.nodeLabelSoft : CANVAS.nodeLabel;
 
               ctx.textAlign = 'center';
               ctx.textBaseline = 'top';

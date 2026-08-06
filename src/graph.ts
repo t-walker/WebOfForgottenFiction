@@ -1,3 +1,5 @@
+import { INK_COLORS } from './theme';
+
 export type NodeType = 'host' | 'episode' | 'work' | 'person';
 
 /* ------------------------------------------------------------------ *
@@ -278,20 +280,20 @@ export function buildGraph(data: Dataset): GraphData {
 }
 
 export const TYPE_COLORS: Record<NodeType, string> = {
-  work: '#f2b134',
-  person: '#7bd3f7',
-  host: '#ff6b6b',
-  episode: '#9d8df1',
+  work: INK_COLORS.film,
+  person: INK_COLORS.person,
+  host: INK_COLORS.host,
+  episode: INK_COLORS.episode,
 };
 
 export const MEDIUM_COLORS: Record<string, string> = {
-  Film: '#f2b134',
-  Book: '#5ddba2',
-  TV: '#f7845d',
+  Film: INK_COLORS.film,
+  Book: INK_COLORS.book,
+  TV: INK_COLORS.tv,
 };
 
 /** Works that were only mentioned share one muted color so picks stay dominant. */
-export const MENTIONED_COLOR = '#6b6580';
+export const MENTIONED_COLOR = INK_COLORS.mentioned;
 
 export function nodeColor(node: GraphNode): string {
   if (node.type === 'work') {

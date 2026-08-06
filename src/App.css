@@ -1,12 +1,18 @@
+/**
+ * Colours come from src/theme.ts, which sets these custom properties on :root
+ * before first paint. The values here are fallbacks only -- edit theme.ts.
+ */
 :root {
-  --bg: #0e0d14;
-  --panel: #16151f;
-  --border: #2a2836;
-  --text: #e8e6f0;
-  --muted: #9a96ad;
-  --accent: #f2b134;
+  --bg: #faf6ec;
+  --panel: #f2ebda;
+  --border: #ddd2bb;
+  --well: #e8e0cc;
+  --text: #2f2a23;
+  --muted: #6b6046;
+  --rule: #a9bccd;
+  --accent: #c4362a;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -60,7 +66,7 @@ body {
   padding: 9px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: #100f18;
+  background: var(--well);
   color: var(--text);
   font-size: 14px;
 }
@@ -96,7 +102,7 @@ body {
 
 .results button:hover,
 .conns button:hover {
-  background: #201e2c;
+  background: var(--well);
 }
 
 .results em,
@@ -150,7 +156,7 @@ body {
 }
 
 .stats div {
-  background: #100f18;
+  background: var(--well);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px;
@@ -169,7 +175,7 @@ body {
 
 .detail {
   position: relative;
-  background: #100f18;
+  background: var(--well);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px;
@@ -237,7 +243,7 @@ body {
 footer {
   margin-top: auto;
   padding-top: 12px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
   font-size: 13px;
 }
 
@@ -319,7 +325,7 @@ footer a {
 }
 
 .fgroup {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--rule);
   padding-top: 8px;
 }
 
@@ -402,7 +408,7 @@ footer a {
 }
 
 .fcheck:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--well);
 }
 
 .fcheck input {
@@ -528,22 +534,22 @@ footer a {
 }
 
 .trail button:hover {
-  color: #fff;
+  color: var(--accent);
   text-decoration: underline;
 }
 
 .trail strong {
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text);
 }
 
 .share {
   width: 100%;
   margin-top: 10px;
   padding: 7px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--border);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--well);
   color: var(--muted);
   font: inherit;
   font-size: 11px;
@@ -551,16 +557,16 @@ footer a {
 }
 
 .share:hover {
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #fff;
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .intro {
   margin-top: 14px;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--well);
 }
 
 .intro p {
@@ -571,7 +577,7 @@ footer a {
 }
 
 .intro strong {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -581,7 +587,7 @@ footer a {
   background: none;
   font: inherit;
   font-size: 11.5px;
-  color: var(--accent, #f2b134);
+  color: var(--accent);
   cursor: pointer;
 }
 
