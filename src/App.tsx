@@ -57,7 +57,7 @@ export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const wrapRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 800, height: 600 });
-  const [selected, setSelected] = useState<GraphNode | null>(null);
+  const [trail, setTrail] = useState<GraphNode[]>([]);
   const [query, setQuery] = useState('');
   const [filters, setFilters] = useState<Filters>(() => defaultFilters(data));
   const [layout, setLayout] = useState<Layout>('hierarchy');
@@ -65,6 +65,36 @@ export default function App() {
   const [focusSelection, setFocusSelection] = useState(true);
 
   const full = useMemo(() => buildGraph(data), []);
+
+  /** The trail is a drill-down path; its last entry is what's on screen now. */
+  const selected = trail.length ? trail[trail.length - 1] : null;
+
+  /**
+   * Walking into a neighbour pushes onto the trail. Revisiting somewhere you
+   * have already been rewinds to it instead of growing a loop, so stepping
+   * back out through a parent leaves the path you actually took.
+   */
+  const focus = (node: GraphNode) => {
+    setTrail((prev) => {
+      const at = prev.findIndex((n) => n.id === node.id);
+      return at === -1 ? [...prev, node] : prev.slice(0, at + 1);
+    });
+  };
+
+  const clearTrail = () => setTrail([]);
+
+  // Escape steps back up one level, matching the breadcrumb, so drilling in
+  // deep doesn't mean reaching for the mouse to get back out.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      const el = document.activeElement;
+      if (el instanceof HTMLInputElement) return;
+      setTrail((prev) => prev.slice(0, -1));
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
 
   const filtered = useMemo(() => applyFilters(full, filters), [full, filters]);
 
@@ -132,10 +162,15 @@ export default function App() {
     return () => clearTimeout(t);
   }, [full, layout, columns]);
 
-  // A filter can hide whatever is currently selected; don't strand the panel.
+  // A filter can hide something on the trail; drop those rather than stranding
+  // the panel on a node that is no longer drawn.
   useEffect(() => {
-    if (selected && !filtered.nodes.some((n) => n.id === selected.id)) setSelected(null);
-  }, [filtered, selected]);
+    setTrail((prev) => {
+      const visible = new Set(filtered.nodes.map((n) => n.id));
+      const next = prev.filter((n) => visible.has(n.id));
+      return next.length === prev.length ? prev : next;
+    });
+  }, [filtered]);
 
   /**
    * Frame the selection rather than zooming to a fixed level: a host with 18
@@ -189,10 +224,6 @@ export default function App() {
     return c;
   }, [full]);
 
-  const focus = (node: GraphNode) => {
-    setSelected(node);
-  };
-
   return (
     <div className="app">
       <aside className="sidebar">
@@ -238,9 +269,22 @@ export default function App() {
 
         {selected ? (
           <section className="detail">
-            <button className="close" onClick={() => setSelected(null)}>
+            <button className="close" onClick={clearTrail}>
               ×
             </button>
+            <nav className="trail" aria-label="Path">
+              <button onClick={clearTrail}>All</button>
+              {trail.map((n, i) => (
+                <span key={n.id}>
+                  <i className="sep">›</i>
+                  {i === trail.length - 1 ? (
+                    <strong>{n.label}</strong>
+                  ) : (
+                    <button onClick={() => focus(n)}>{n.label}</button>
+                  )}
+                </span>
+              ))}
+            </nav>
             <h2>{selected.label}</h2>
             <p className="kind">
               {selected.type === 'work'
@@ -396,7 +440,7 @@ export default function App() {
             ctx.fillText(text, x, y);
           }}
           onNodeClick={(n: GraphNode) => focus(n)}
-          onBackgroundClick={() => setSelected(null)}
+          onBackgroundClick={() => clearTrail()}
           nodeCanvasObject={(n: GraphNode, ctx, scale) => {
             const r = nodeRadius(n);
             const dimmed =

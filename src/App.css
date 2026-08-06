@@ -522,3 +522,44 @@ footer a {
 .eplist {
   max-height: 220px;
 }
+
+.trail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 6px;
+  padding-right: 20px;
+  font-size: 10.5px;
+  line-height: 1.5;
+}
+
+.trail span {
+  display: contents;
+}
+
+.trail .sep {
+  margin: 0 2px;
+  font-style: normal;
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+.trail button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.trail button:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.trail strong {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+}
