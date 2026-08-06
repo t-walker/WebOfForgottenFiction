@@ -1,0 +1,557 @@
+{
+  "podcast": {
+    "title": "Forgotten Fiction",
+    "publisher": "BrownTown Productions",
+    "hosts": ["Paris Brown", "Tommy Brown"],
+    "appleUrl": "https://podcasts.apple.com/us/podcast/forgotten-fiction/id1895738014",
+    "feedUrl": "https://anchor.fm/s/111b27bec/podcast/rss"
+  },
+  "episodes": [
+    {
+      "id": "ep1",
+      "number": 1,
+      "title": "Tales From The Crypt & Beavis and Butthead",
+      "date": "2026-04-28",
+      "works": [
+        {
+          "id": "tales-from-the-crypt",
+          "title": "Tales from the Crypt",
+          "medium": "TV",
+          "year": 1989,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "William M. Gaines", "role": "Source Creator" }],
+          "people": [{ "name": "Tim Curry", "role": "Actor" }],
+          "notes": "Deep dive on the forgotten Tim Curry episode."
+        },
+        {
+          "id": "beavis-and-butt-head",
+          "title": "Beavis and Butt-Head",
+          "medium": "TV",
+          "year": 1993,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Mike Judge", "role": "Creator" }],
+          "people": [],
+          "notes": "Rights issues mean you can't stream a complete season anywhere."
+        }
+      ]
+    },
+    {
+      "id": "ep2",
+      "number": 2,
+      "title": "Are You Afraid of the Dark & The Vampyre",
+      "date": "2026-04-28",
+      "works": [
+        {
+          "id": "are-you-afraid-of-the-dark",
+          "title": "Are You Afraid of the Dark?",
+          "medium": "TV",
+          "year": 1990,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "D. J. MacHale", "role": "Creator" }],
+          "people": [],
+          "notes": "The show that kept a generation of kids up at night."
+        },
+        {
+          "id": "the-vampyre",
+          "title": "The Vampyre",
+          "medium": "Book",
+          "year": 1819,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "John Polidori", "role": "Author" }],
+          "people": [{ "name": "Lord Byron", "role": "Mentioned" }],
+          "notes": "The 1819 novella that invented the modern aristocratic vampire."
+        }
+      ]
+    },
+    {
+      "id": "ep3",
+      "number": 3,
+      "title": "Murder Party",
+      "date": "2026-05-05",
+      "works": [
+        {
+          "id": "murder-party",
+          "title": "Murder Party",
+          "medium": "Film",
+          "year": 2007,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Jeremy Saulnier", "role": "Director" }],
+          "people": [],
+          "notes": "Micro-budget Brooklyn horror comedy made before Blue Ruin and Green Room."
+        }
+      ]
+    },
+    {
+      "id": "ep4",
+      "number": 4,
+      "title": "The Dark Half & The Cricket in Times Square",
+      "date": "2026-05-12",
+      "works": [
+        {
+          "id": "the-dark-half",
+          "title": "The Dark Half",
+          "medium": "Film",
+          "year": 1993,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "George A. Romero", "role": "Director" },
+            { "name": "Stephen King", "role": "Author (Source Novel)" }
+          ],
+          "people": [],
+          "notes": "Two horror legends, one forgotten film."
+        },
+        {
+          "id": "the-cricket-in-times-square",
+          "title": "The Cricket in Times Square",
+          "medium": "Book",
+          "year": 1960,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "George Selden", "role": "Author" }],
+          "people": [],
+          "notes": "Belongs beside Charlotte's Web and Stuart Little. Six sequels almost nobody knows about."
+        }
+      ]
+    },
+    {
+      "id": "ep5",
+      "number": 5,
+      "title": "Riverbend & The Phantom Tollbooth",
+      "date": "2026-05-19",
+      "works": [
+        {
+          "id": "riverbend",
+          "title": "Riverbend",
+          "medium": "Film",
+          "year": 1989,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Sam Firstenberg", "role": "Director" }],
+          "people": [],
+          "notes": "Red Dawn meets The Color Purple. Buried on VHS, rescued onto YouTube."
+        },
+        {
+          "id": "the-phantom-tollbooth",
+          "title": "The Phantom Tollbooth",
+          "medium": "Book",
+          "year": 1961,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Norton Juster", "role": "Author" },
+            { "name": "Jules Feiffer", "role": "Illustrator" }
+          ],
+          "people": [{ "name": "Rainn Wilson", "role": "Narrator" }],
+          "notes": "Juster violated his Ford Foundation grant to write it."
+        }
+      ]
+    },
+    {
+      "id": "ep6",
+      "number": 6,
+      "title": "Eerie, Indiana & Nightmare Seasons",
+      "date": "2026-05-26",
+      "works": [
+        {
+          "id": "eerie-indiana",
+          "title": "Eerie, Indiana",
+          "medium": "TV",
+          "year": 1991,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "José Rivera", "role": "Creator" },
+            { "name": "Karl Schaefer", "role": "Creator" }
+          ],
+          "people": [],
+          "notes": "YA Twin Peaks shot on film. 19 episodes and gone."
+        },
+        {
+          "id": "nightmare-seasons",
+          "title": "Nightmare Seasons",
+          "medium": "Book",
+          "year": 1982,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Charles L. Grant", "role": "Author" }],
+          "people": [{ "name": "Stephen King", "role": "Mentioned" }],
+          "notes": "Four novellas, four seasons. Went head to head with King at the 1983 World Fantasy Awards."
+        }
+      ]
+    },
+    {
+      "id": "ep7",
+      "number": 7,
+      "title": "Mimic & Mapping the Interior",
+      "date": "2026-06-02",
+      "works": [
+        {
+          "id": "mimic",
+          "title": "Mimic",
+          "medium": "Film",
+          "year": 1997,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Guillermo del Toro", "role": "Director" }],
+          "people": [{ "name": "Bob Weinstein", "role": "Producer" }],
+          "notes": "The movie that almost ended del Toro's career. Watch the Director's Cut."
+        },
+        {
+          "id": "mapping-the-interior",
+          "title": "Mapping the Interior",
+          "medium": "Book",
+          "year": 2017,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Stephen Graham Jones", "role": "Author" }],
+          "people": [],
+          "notes": "Bram Stoker Award winning novella most people skipped on the way to The Only Good Indians."
+        }
+      ]
+    },
+    {
+      "id": "ep8",
+      "number": 8,
+      "title": "Savageland & The Dark Descends",
+      "date": "2026-06-09",
+      "works": [
+        {
+          "id": "savageland",
+          "title": "Savageland",
+          "medium": "Film",
+          "year": 2015,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "Phil Guidry", "role": "Director" },
+            { "name": "Simon Herbert", "role": "Director" },
+            { "name": "David Whelan", "role": "Director" }
+          ],
+          "people": [],
+          "notes": "Found-photography horror. 57 people gone overnight and 37 photographs."
+        },
+        {
+          "id": "the-dark-descends",
+          "title": "The Dark Descends",
+          "medium": "Book",
+          "year": 1975,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Diana Ramsay", "role": "Author (pen name of Rhoda Rebee Brandes)" }
+          ],
+          "people": [],
+          "notes": "Six Goodreads ratings. Collins Crime Club, same imprint as Agatha Christie."
+        }
+      ]
+    },
+    {
+      "id": "ep9",
+      "number": 9,
+      "title": "Storm of the Century & Slumber Party",
+      "date": "2026-06-16",
+      "works": [
+        {
+          "id": "storm-of-the-century",
+          "title": "Storm of the Century",
+          "medium": "TV",
+          "year": 1999,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Stephen King", "role": "Writer (Original Screenplay)" }],
+          "people": [],
+          "notes": "Give me what I want and I'll go away. Premiered Valentine's Day 1999."
+        },
+        {
+          "id": "slumber-party",
+          "title": "Slumber Party",
+          "medium": "Book",
+          "year": 1985,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Christopher Pike", "role": "Author" }],
+          "people": [],
+          "notes": "The first book published under the Point imprint."
+        }
+      ]
+    },
+    {
+      "id": "ep10",
+      "number": 10,
+      "title": "Near Dark & Scary Stories to Tell in the Dark",
+      "date": "2026-06-23",
+      "works": [
+        {
+          "id": "near-dark",
+          "title": "Near Dark",
+          "medium": "Film",
+          "year": 1987,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Kathryn Bigelow", "role": "Director" }],
+          "people": [{ "name": "Bill Paxton", "role": "Actor" }],
+          "notes": "Vampire Western buried by The Lost Boys. Forty night shoots."
+        },
+        {
+          "id": "scary-stories-to-tell-in-the-dark",
+          "title": "Scary Stories to Tell in the Dark",
+          "medium": "Book",
+          "year": 1981,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Alvin Schwartz", "role": "Author" },
+            { "name": "Stephen Gammell", "role": "Illustrator" }
+          ],
+          "people": [],
+          "notes": "The most banned book of the 1990s."
+        }
+      ]
+    },
+    {
+      "id": "ep11",
+      "number": 11,
+      "title": "The Twilight Zone & Flowers in the Attic",
+      "date": "2026-06-30",
+      "works": [
+        {
+          "id": "the-twilight-zone",
+          "title": "The Twilight Zone",
+          "medium": "TV",
+          "year": 1959,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Rod Serling", "role": "Creator" }],
+          "people": [{ "name": "Richard Matheson", "role": "Writer" }],
+          "notes": "Serling came home from WWII with a Bronze Star, a Purple Heart, and something to say."
+        },
+        {
+          "id": "flowers-in-the-attic",
+          "title": "Flowers in the Attic",
+          "medium": "Book",
+          "year": 1979,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "V. C. Andrews", "role": "Author" }],
+          "people": [],
+          "notes": "14 weeks on the NYT bestseller list. Nearly 100 books now carry her name."
+        }
+      ]
+    },
+    {
+      "id": "ep12",
+      "number": 12,
+      "title": "I Am Legend & The Garbage Pail Kids",
+      "date": "2026-07-07",
+      "works": [
+        {
+          "id": "i-am-legend",
+          "title": "I Am Legend",
+          "medium": "Book",
+          "year": 1954,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Richard Matheson", "role": "Author" }],
+          "people": [
+            { "name": "George A. Romero", "role": "Mentioned" },
+            { "name": "Will Smith", "role": "Actor" }
+          ],
+          "notes": "Three adaptations across forty years. Every one of them missed the point."
+        },
+        {
+          "id": "the-garbage-pail-kids-movie",
+          "title": "The Garbage Pail Kids Movie",
+          "medium": "Film",
+          "year": 1987,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Art Spiegelman", "role": "Card Designer" },
+            { "name": "John Pound", "role": "Card Artist" }
+          ],
+          "people": [],
+          "notes": "Pulled from theaters after three weeks by organized protest."
+        }
+      ]
+    },
+    {
+      "id": "ep13",
+      "number": 13,
+      "title": "Heat Vision & Jack & Toy Cemetery",
+      "date": "2026-07-14",
+      "works": [
+        {
+          "id": "heat-vision-and-jack",
+          "title": "Heat Vision and Jack",
+          "medium": "TV",
+          "year": 1999,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "Ben Stiller", "role": "Director" },
+            { "name": "Dan Harmon", "role": "Writer" },
+            { "name": "Rob Schrab", "role": "Writer" }
+          ],
+          "people": [
+            { "name": "Jack Black", "role": "Actor" },
+            { "name": "Owen Wilson", "role": "Actor (Voice)" }
+          ],
+          "notes": "The most expensive unaired pilot in network history. Survived on bootleg VHS."
+        },
+        {
+          "id": "toy-cemetery",
+          "title": "Toy Cemetery",
+          "medium": "Book",
+          "year": 1987,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "William W. Johnstone", "role": "Author" }],
+          "people": [],
+          "notes": "Start of the killer toy quest. Great cover, abandons its own premise."
+        }
+      ]
+    },
+    {
+      "id": "ep14",
+      "number": 14,
+      "title": "Dark Shadows & House",
+      "date": "2026-07-21",
+      "works": [
+        {
+          "id": "dark-shadows",
+          "title": "Dark Shadows",
+          "medium": "TV",
+          "year": 1966,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Dan Curtis", "role": "Creator" }],
+          "people": [{ "name": "Jack Chick", "role": "Mentioned" }],
+          "notes": "Nearly 9 million daily viewers. Invented the sympathetic vampire."
+        },
+        {
+          "id": "house",
+          "title": "House",
+          "medium": "Film",
+          "year": 1985,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Fred Dekker", "role": "Writer" },
+            { "name": "Steve Miner", "role": "Director" }
+          ],
+          "people": [],
+          "notes": "Dekker's 15 page treatment. A horror novelist relives Vietnam inside his aunt's house."
+        }
+      ]
+    },
+    {
+      "id": "ep15",
+      "number": 15,
+      "title": "Absentia & The Monster Squad",
+      "date": "2026-07-28",
+      "works": [
+        {
+          "id": "absentia",
+          "title": "Absentia",
+          "medium": "Film",
+          "year": 2011,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Mike Flanagan", "role": "Director" }],
+          "people": [],
+          "notes": "$23,000 on Kickstarter. He called it his last independent feature. He was right."
+        },
+        {
+          "id": "the-monster-squad",
+          "title": "The Monster Squad",
+          "medium": "Film",
+          "year": 1987,
+          "pickedBy": "Tommy Brown",
+          "creators": [
+            { "name": "Fred Dekker", "role": "Director" },
+            { "name": "Shane Black", "role": "Writer" }
+          ],
+          "people": [],
+          "notes": "Made back less than a third of its budget. Wolfman's got nards."
+        }
+      ]
+    },
+    {
+      "id": "ep16",
+      "number": 16,
+      "title": "The Slumber Party Massacre & Keeper of the Children",
+      "date": "2026-08-04",
+      "works": [
+        {
+          "id": "the-slumber-party-massacre",
+          "title": "The Slumber Party Massacre",
+          "medium": "Film",
+          "year": 1982,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "Amy Holden Jones", "role": "Director" },
+            { "name": "Rita Mae Brown", "role": "Writer" }
+          ],
+          "people": [
+            { "name": "Roger Corman", "role": "Producer" },
+            { "name": "Martin Scorsese", "role": "Mentioned" }
+          ],
+          "notes": "The only American horror franchise where every entry is written and directed by women."
+        },
+        {
+          "id": "keeper-of-the-children",
+          "title": "Keeper of the Children",
+          "medium": "Book",
+          "year": 1978,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "William H. Hallahan", "role": "Author" }],
+          "people": [],
+          "notes": "An axe-wielding stuffed bear and a climactic puppet battle. The quest continues."
+        }
+      ]
+    },
+    {
+      "id": "ep17",
+      "number": 17,
+      "title": "The Faculty & MaMa",
+      "date": "2026-08-04",
+      "works": [
+        {
+          "id": "the-faculty",
+          "title": "The Faculty",
+          "medium": "Film",
+          "year": 1998,
+          "pickedBy": "Paris Brown",
+          "creators": [
+            { "name": "Robert Rodriguez", "role": "Director" },
+            { "name": "Kevin Williamson", "role": "Writer" }
+          ],
+          "people": [
+            { "name": "Jon Stewart", "role": "Actor" },
+            { "name": "Salma Hayek", "role": "Actor" },
+            { "name": "Elijah Wood", "role": "Actor" },
+            { "name": "Famke Janssen", "role": "Actor" },
+            { "name": "Josh Hartnett", "role": "Actor" }
+          ],
+          "notes": "The Kevin Williamson script nobody mentions."
+        },
+        {
+          "id": "mama",
+          "title": "MaMa",
+          "medium": "Book",
+          "year": 1983,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Ruby Jean Jensen", "role": "Author" }],
+          "people": [],
+          "notes": "Five print runs, out of print for decades, brought back by her daughter."
+        }
+      ]
+    },
+    {
+      "id": "ep18",
+      "number": 18,
+      "title": "The Ray Bradbury Theater & Prey",
+      "date": "2026-08-04",
+      "works": [
+        {
+          "id": "the-ray-bradbury-theater",
+          "title": "The Ray Bradbury Theater",
+          "medium": "TV",
+          "year": 1985,
+          "pickedBy": "Paris Brown",
+          "creators": [{ "name": "Ray Bradbury", "role": "Creator / Writer / Host" }],
+          "people": [],
+          "notes": "Every episode adapted a Bradbury short story. Every screenplay written by Bradbury."
+        },
+        {
+          "id": "prey",
+          "title": "Prey / Trilogy of Terror",
+          "medium": "Book",
+          "year": 1969,
+          "pickedBy": "Tommy Brown",
+          "creators": [{ "name": "Richard Matheson", "role": "Author / Screenwriter" }],
+          "people": [],
+          "notes": "The next stop on the killer toy quest."
+        }
+      ]
+    }
+  ]
+}
