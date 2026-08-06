@@ -10,7 +10,7 @@ const TYPE_LABELS: Record<NodeType, string> = {
   episode: 'Episodes',
 };
 
-const TYPE_ORDER: NodeType[] = ['work', 'person', 'host', 'episode'];
+const TYPE_ORDER: NodeType[] = ['host', 'episode', 'work', 'person'];
 
 interface Props {
   data: Dataset;
@@ -142,6 +142,44 @@ export default function FilterPanel({ data, filters, setFilters, visible, total 
       </Group>
 
       <Group
+        title="Hosts · whose pick"
+        onAll={() => setAll('hosts', true)}
+        onNone={() => setAll('hosts', false)}
+      >
+        {data.hosts.map((h) => (
+          <Check
+            key={h.id}
+            checked={filters.hosts[h.id]}
+            onChange={(v) => patch({ hosts: { ...filters.hosts, [h.id]: v } })}
+            color={TYPE_COLORS.host}
+            label={h.name}
+            hint={data.episodeWorks.filter((e) => e.pickedByHostId === h.id).length}
+          />
+        ))}
+      </Group>
+
+      <Group
+        title="Episodes"
+        count={`${countBy(visible, 'episode')}/${countBy(total, 'episode')}`}
+        defaultOpen={false}
+        onAll={() => setAll('episodes', true)}
+        onNone={() => setAll('episodes', false)}
+      >
+        <div className="eplist">
+          {data.episodes.map((e) => (
+            <Check
+              key={e.id}
+              checked={filters.episodes[e.id]}
+              onChange={(v) => patch({ episodes: { ...filters.episodes, [e.id]: v } })}
+              color={TYPE_COLORS.episode}
+              label={`${e.number}. ${e.title}`}
+              hint={worksPerEpisode.get(e.id) ?? 0}
+            />
+          ))}
+        </div>
+      </Group>
+
+      <Group
         title="Works · medium"
         count={`${countBy(visible, 'work')}/${countBy(total, 'work')}`}
         onAll={() => setAll('media', true)}
@@ -196,44 +234,6 @@ export default function FilterPanel({ data, filters, setFilters, visible, total 
             new Set(data.credits.filter((c) => c.kind === 'appeared').map((c) => c.personId)).size
           }
         />
-      </Group>
-
-      <Group
-        title="Hosts · whose pick"
-        onAll={() => setAll('hosts', true)}
-        onNone={() => setAll('hosts', false)}
-      >
-        {data.hosts.map((h) => (
-          <Check
-            key={h.id}
-            checked={filters.hosts[h.id]}
-            onChange={(v) => patch({ hosts: { ...filters.hosts, [h.id]: v } })}
-            color={TYPE_COLORS.host}
-            label={h.name}
-            hint={data.episodeWorks.filter((e) => e.pickedByHostId === h.id).length}
-          />
-        ))}
-      </Group>
-
-      <Group
-        title="Episodes"
-        count={`${countBy(visible, 'episode')}/${countBy(total, 'episode')}`}
-        defaultOpen={false}
-        onAll={() => setAll('episodes', true)}
-        onNone={() => setAll('episodes', false)}
-      >
-        <div className="eplist">
-          {data.episodes.map((e) => (
-            <Check
-              key={e.id}
-              checked={filters.episodes[e.id]}
-              onChange={(v) => patch({ episodes: { ...filters.episodes, [e.id]: v } })}
-              color={TYPE_COLORS.episode}
-              label={`${e.number}. ${e.title}`}
-              hint={worksPerEpisode.get(e.id) ?? 0}
-            />
-          ))}
-        </div>
       </Group>
     </aside>
   );
