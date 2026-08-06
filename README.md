@@ -1,66 +1,89 @@
-# Forgotten Fiction — Graph
+# Web of Forgotten Fiction
 
 An interactive graph of every work of fiction covered on the **Forgotten Fiction** podcast
 (hosted by Paris Brown & Tommy Brown, BrownTown Productions).
 
 Fully static: React + Vite, no backend, no database, no hosting costs.
 
-## The graph model
+## Data model
 
-Think of it as a tiny Neo4j schema stored in one JSON file:
+The dataset in [`src/data/forgotten-fiction.json`](src/data/forgotten-fiction.json) is
+normalized like a relational database. **Entity tables** each store a row exactly once,
+keyed by `id`; **association tables** connect them by referencing those ids.
 
-| Node type | Meaning                                       |
-| --------- | --------------------------------------------- |
-| `work`    | The forgotten piece of fiction (film/book/TV) |
-| `person`  | Creators and anyone mentioned as involved     |
-| `host`    | Paris or Tommy                                |
-| `episode` | An episode of the show                        |
+### Entity tables
 
-| Edge       | From → To      | Meaning                              |
-| ---------- | -------------- | ------------------------------------ |
-| `featured` | episode → work | The work was covered in that episode |
-| `picked`   | host → work    | Which host brought it                |
-| `created`  | person → work  | Author, director, writer, etc.       |
-| `appeared` | person → work  | Actors and other people mentioned    |
+| Table      | Key      | Columns                            |
+| ---------- | -------- | ---------------------------------- |
+| `hosts`    | `id`     | `name`                             |
+| `people`   | `id`     | `name`                             |
+| `works`    | `id`     | `title`, `medium`, `year`, `notes` |
+| `episodes` | `id`     | `number`, `title`, `date`          |
 
-Person nodes are de-duplicated by name, so recurring figures (Stephen King,
-Richard Matheson, Fred Dekker) automatically bridge multiple works — that's where the
-interesting structure shows up.
+### Association tables
+
+| Table          | Foreign keys                             | Meaning                                     |
+| -------------- | ---------------------------------------- | ------------------------------------------- |
+| `episodeWorks` | `episodeId`, `workId`, `pickedByHostId`  | This work was covered in this episode, brought by this host |
+| `credits`      | `personId`, `workId` (+ `role`, `kind`)  | This person was involved in this work       |
+
+`credits.kind` is `"created"` (author, director, writer…) or `"appeared"` (actors and
+others mentioned). `role` holds the human-readable label shown in the UI.
+
+Because a person is stored once, recurring figures — Stephen King, Richard Matheson,
+Fred Dekker — automatically bridge multiple works. That's where the interesting graph
+structure comes from.
+
+### How it becomes a graph
+
+[`src/graph.ts`](src/graph.ts) joins the tables into nodes and edges at runtime:
+
+| Edge       | From → To      | Source table   |
+| ---------- | -------------- | -------------- |
+| `featured` | episode → work | `episodeWorks` |
+| `picked`   | host → work    | `episodeWorks` |
+| `created`  | person → work  | `credits`      |
+| `appeared` | person → work  | `credits`      |
 
 ## Adding an episode
 
-Everything lives in [`src/data/forgotten-fiction.json`](src/data/forgotten-fiction.json).
-Append to `episodes`:
+1. Add a row to `episodes`.
+2. Add a row to `works` for each piece of fiction (pick a unique slug `id`).
+3. Add a row to `people` for anyone new.
+4. Link them in `episodeWorks` and `credits` using those ids.
 
 ```jsonc
-{
-  "id": "ep19",
-  "number": 19,
-  "title": "Some Movie & Some Book",
-  "date": "2026-08-11",
-  "works": [
-    {
-      "id": "some-movie",        // unique slug
-      "title": "Some Movie",
-      "medium": "Film",          // Film | Book | TV
-      "year": 1988,
-      "pickedBy": "Paris Brown", // must match a name in podcast.hosts
-      "creators": [{ "name": "Jane Director", "role": "Director" }],
-      "people": [{ "name": "An Actor", "role": "Actor" }],
-      "notes": "One-line hook shown in the sidebar."
-    }
-  ]
-}
+// episodes
+{ "id": "ep19", "number": 19, "title": "Some Movie & Some Book", "date": "2026-08-11" }
+
+// works
+{ "id": "some-movie", "title": "Some Movie", "medium": "Film", "year": 1988,
+  "notes": "One-line hook shown in the sidebar." }
+
+// people
+{ "id": "p-jane-director", "name": "Jane Director" }
+
+// episodeWorks
+{ "episodeId": "ep19", "workId": "some-movie", "pickedByHostId": "h-paris-brown" }
+
+// credits
+{ "personId": "p-jane-director", "workId": "some-movie",
+  "role": "Director", "kind": "created" }
 ```
 
-No other code changes needed — the graph rebuilds itself from the JSON.
+Then run `npm run validate` — it checks every foreign key, catches duplicate ids, and
+flags works that aren't linked to an episode. It also runs automatically before `build`,
+so a broken reference fails the deploy instead of silently vanishing from the graph.
+
+`medium` should be `Film`, `Book`, or `TV` to pick up a legend color.
 
 ## Develop
 
 ```bash
 npm install
-npm run dev     # http://localhost:5173
-npm run build   # static output in dist/
+npm run dev       # http://localhost:5173
+npm run validate  # data integrity check
+npm run build     # validate + typecheck + static output in dist/
 npm run preview
 ```
 

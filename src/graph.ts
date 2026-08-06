@@ -1,19 +1,30 @@
 export type NodeType = 'host' | 'episode' | 'work' | 'person';
 
-export interface PersonRef {
+/* ------------------------------------------------------------------ *
+ * Dataset — normalized, relational shape.
+ *
+ * Entity tables (hosts, people, works, episodes) each hold a row once,
+ * keyed by `id`. Association tables (episodeWorks, credits) carry the
+ * relationships by referencing those ids, so a person like Stephen King
+ * exists exactly once no matter how many works they touch.
+ * ------------------------------------------------------------------ */
+
+export interface Host {
+  id: string;
   name: string;
-  role: string;
+}
+
+export interface Person {
+  id: string;
+  name: string;
 }
 
 export interface Work {
   id: string;
   title: string;
   medium: string;
-  year?: number;
-  pickedBy: string;
-  creators: PersonRef[];
-  people: PersonRef[];
-  notes?: string;
+  year: number | null;
+  notes: string | null;
 }
 
 export interface Episode {
@@ -21,18 +32,36 @@ export interface Episode {
   number: number;
   title: string;
   date: string;
-  works: Work[];
+}
+
+/** Which work was covered in which episode, and which host brought it. */
+export interface EpisodeWork {
+  episodeId: string;
+  workId: string;
+  pickedByHostId: string;
+}
+
+/** A person's involvement in a work. */
+export interface Credit {
+  personId: string;
+  workId: string;
+  role: string;
+  kind: 'created' | 'appeared';
 }
 
 export interface Dataset {
   podcast: {
     title: string;
     publisher: string;
-    hosts: string[];
     appleUrl: string;
     feedUrl: string;
   };
+  hosts: Host[];
+  people: Person[];
+  works: Work[];
   episodes: Episode[];
+  episodeWorks: EpisodeWork[];
+  credits: Credit[];
 }
 
 export interface GraphNode {
@@ -40,8 +69,8 @@ export interface GraphNode {
   label: string;
   type: NodeType;
   medium?: string;
-  year?: number;
-  notes?: string;
+  year?: number | null;
+  notes?: string | null;
   episodeNumber?: number;
   date?: string;
   pickedBy?: string;
@@ -55,7 +84,7 @@ export interface GraphLink {
   source: string | GraphNode;
   target: string | GraphNode;
   kind: 'picked' | 'featured' | 'created' | 'appeared';
-  label?: string;
+  label: string;
 }
 
 export interface GraphData {
@@ -63,76 +92,76 @@ export interface GraphData {
   links: GraphLink[];
 }
 
-const slug = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+const nodeId = (type: NodeType, id: string) => `${type}:${id}`;
 
 export function buildGraph(data: Dataset): GraphData {
   const nodes = new Map<string, GraphNode>();
   const links: GraphLink[] = [];
 
-  const addNode = (node: Omit<GraphNode, 'degree'>) => {
-    const existing = nodes.get(node.id);
-    if (existing) return existing;
+  const put = (node: Omit<GraphNode, 'degree'>) => {
     const created: GraphNode = { ...node, degree: 0 };
     nodes.set(node.id, created);
     return created;
   };
 
-  const addPerson = (name: string, role: string) => {
-    const id = `person:${slug(name)}`;
-    const node = addNode({ id, label: name, type: 'person', roles: [] });
-    if (!node.roles!.includes(role)) node.roles!.push(role);
-    return node;
-  };
+  for (const host of data.hosts) {
+    put({ id: nodeId('host', host.id), label: host.name, type: 'host' });
+  }
 
-  for (const host of data.podcast.hosts) {
-    addNode({ id: `host:${slug(host)}`, label: host, type: 'host' });
+  for (const person of data.people) {
+    put({ id: nodeId('person', person.id), label: person.name, type: 'person', roles: [] });
+  }
+
+  for (const work of data.works) {
+    put({
+      id: nodeId('work', work.id),
+      label: work.title,
+      type: 'work',
+      medium: work.medium,
+      year: work.year,
+      notes: work.notes,
+    });
   }
 
   for (const ep of data.episodes) {
-    const epId = `episode:${ep.id}`;
-    addNode({
-      id: epId,
+    put({
+      id: nodeId('episode', ep.id),
       label: `Ep. ${ep.number}`,
       type: 'episode',
       notes: ep.title,
       episodeNumber: ep.number,
       date: ep.date,
     });
+  }
 
-    for (const work of ep.works) {
-      const workId = `work:${work.id}`;
-      addNode({
-        id: workId,
-        label: work.title,
-        type: 'work',
-        medium: work.medium,
-        year: work.year,
-        notes: work.notes,
-        pickedBy: work.pickedBy,
-        episodeNumber: ep.number,
-      });
+  const hostsById = new Map(data.hosts.map((h) => [h.id, h]));
+  const episodesById = new Map(data.episodes.map((e) => [e.id, e]));
 
-      links.push({ source: epId, target: workId, kind: 'featured', label: 'featured' });
+  for (const row of data.episodeWorks) {
+    const epNode = nodes.get(nodeId('episode', row.episodeId));
+    const workNode = nodes.get(nodeId('work', row.workId));
+    const hostNode = nodes.get(nodeId('host', row.pickedByHostId));
+    if (!epNode || !workNode || !hostNode) continue;
 
-      const hostId = `host:${slug(work.pickedBy)}`;
-      if (nodes.has(hostId)) {
-        links.push({ source: hostId, target: workId, kind: 'picked', label: 'picked' });
-      }
+    links.push({ source: epNode.id, target: workNode.id, kind: 'featured', label: 'featured in' });
+    links.push({ source: hostNode.id, target: workNode.id, kind: 'picked', label: 'picked' });
 
-      for (const creator of work.creators) {
-        const person = addPerson(creator.name, creator.role);
-        links.push({ source: person.id, target: workId, kind: 'created', label: creator.role });
-      }
+    workNode.pickedBy = hostsById.get(row.pickedByHostId)?.name;
+    workNode.episodeNumber = episodesById.get(row.episodeId)?.number;
+  }
 
-      for (const person of work.people) {
-        const p = addPerson(person.name, person.role);
-        links.push({ source: p.id, target: workId, kind: 'appeared', label: person.role });
-      }
-    }
+  for (const credit of data.credits) {
+    const personNode = nodes.get(nodeId('person', credit.personId));
+    const workNode = nodes.get(nodeId('work', credit.workId));
+    if (!personNode || !workNode) continue;
+
+    if (!personNode.roles!.includes(credit.role)) personNode.roles!.push(credit.role);
+    links.push({
+      source: personNode.id,
+      target: workNode.id,
+      kind: credit.kind,
+      label: credit.role,
+    });
   }
 
   for (const link of links) {

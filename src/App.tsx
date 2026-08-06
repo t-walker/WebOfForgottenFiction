@@ -102,7 +102,7 @@ export default function App() {
       const otherId = s === selected.id ? t : t === selected.id ? s : null;
       if (!otherId) continue;
       const node = byId.get(otherId);
-      if (node) out.push({ node, label: l.label ?? l.kind });
+      if (node) out.push({ node, label: l.label });
     }
     return out;
   }, [selected, graph]);
@@ -127,7 +127,9 @@ export default function App() {
       <aside className="sidebar">
         <header>
           <h1>{data.podcast.title}</h1>
-          <p className="sub">Every work covered by {data.podcast.hosts.join(' & ')}, as a graph.</p>
+          <p className="sub">
+            Every work covered by {data.hosts.map((h) => h.name).join(' & ')}, as a graph.
+          </p>
         </header>
 
         <input
