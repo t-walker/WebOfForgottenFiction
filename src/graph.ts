@@ -104,6 +104,10 @@ export interface GraphNode {
   date?: string;
   pickedBy?: string;
   roles?: string[];
+  /** Raw ids kept for filtering, so the UI never has to match on labels. */
+  hostIds?: string[];
+  episodeIds?: string[];
+  creditKinds?: ('created' | 'appeared')[];
   degree: number;
   x?: number;
   y?: number;
@@ -146,7 +150,13 @@ export function buildGraph(data: Dataset): GraphData {
   }
 
   for (const person of data.people) {
-    put({ id: nodeId('person', person.id), label: person.name, type: 'person', roles: [] });
+    put({
+      id: nodeId('person', person.id),
+      label: person.name,
+      type: 'person',
+      roles: [],
+      creditKinds: [],
+    });
   }
 
   for (const work of data.works) {
@@ -159,6 +169,8 @@ export function buildGraph(data: Dataset): GraphData {
       notes: work.notes,
       featured: work.featured,
       episodeNumbers: [],
+      episodeIds: [],
+      hostIds: [],
     });
   }
 
@@ -169,6 +181,7 @@ export function buildGraph(data: Dataset): GraphData {
       type: 'episode',
       notes: ep.title,
       episodeNumbers: [ep.number],
+      episodeIds: [ep.id],
       date: ep.date,
     });
   }
@@ -192,12 +205,18 @@ export function buildGraph(data: Dataset): GraphData {
     if (num != null && !workNode.episodeNumbers!.includes(num)) {
       workNode.episodeNumbers!.push(num);
     }
+    if (!workNode.episodeIds!.includes(row.episodeId)) {
+      workNode.episodeIds!.push(row.episodeId);
+    }
 
     if (row.pickedByHostId) {
       const hostNode = nodes.get(nodeId('host', row.pickedByHostId));
       if (hostNode) {
         links.push({ source: hostNode.id, target: workNode.id, kind: 'picked', label: 'picked' });
         workNode.pickedBy = hostsById.get(row.pickedByHostId)?.name;
+        if (!workNode.hostIds!.includes(row.pickedByHostId)) {
+          workNode.hostIds!.push(row.pickedByHostId);
+        }
       }
     }
   }
@@ -208,6 +227,7 @@ export function buildGraph(data: Dataset): GraphData {
     if (!personNode || !workNode) continue;
 
     if (!personNode.roles!.includes(credit.role)) personNode.roles!.push(credit.role);
+    if (!personNode.creditKinds!.includes(credit.kind)) personNode.creditKinds!.push(credit.kind);
     links.push({
       source: personNode.id,
       target: workNode.id,

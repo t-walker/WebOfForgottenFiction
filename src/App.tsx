@@ -11,6 +11,8 @@ import {
   type GraphNode,
   type NodeType,
 } from './graph';
+import FilterPanel from './FilterPanel';
+import { applyFilters, defaultFilters, type Filters } from './filters';
 import './App.css';
 
 const data = dataset as Dataset;
@@ -47,33 +49,11 @@ export default function App() {
   const [size, setSize] = useState({ width: 800, height: 600 });
   const [selected, setSelected] = useState<GraphNode | null>(null);
   const [query, setQuery] = useState('');
-  const [showEpisodes, setShowEpisodes] = useState(true);
-  const [showMentioned, setShowMentioned] = useState(true);
+  const [filters, setFilters] = useState<Filters>(() => defaultFilters(data));
 
   const full = useMemo(() => buildGraph(data), []);
 
-  const graph = useMemo(() => {
-    if (showEpisodes && showMentioned) return full;
-
-    let nodes = full.nodes;
-    if (!showEpisodes) nodes = nodes.filter((n) => n.type !== 'episode');
-    if (!showMentioned) nodes = nodes.filter((n) => n.featured !== false);
-
-    const keep = new Set(nodes.map((n) => n.id));
-    const links = full.links.filter((l) => keep.has(endId(l.source)) && keep.has(endId(l.target)));
-
-    // Drop people left with no remaining connections.
-    if (!showMentioned) {
-      const connected = new Set<string>();
-      for (const l of links) {
-        connected.add(endId(l.source));
-        connected.add(endId(l.target));
-      }
-      nodes = nodes.filter((n) => n.type !== 'person' || connected.has(n.id));
-    }
-
-    return { nodes, links };
-  }, [full, showEpisodes, showMentioned]);
+  const graph = useMemo(() => applyFilters(full, filters), [full, filters]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -92,6 +72,11 @@ export default function App() {
     (fg.d3Force('charge') as { strength: (n: number) => void } | undefined)?.strength(-140);
     (fg.d3Force('link') as { distance: (n: number) => void } | undefined)?.distance(55);
   }, [graph]);
+
+  // A filter can hide whatever is currently selected; don't strand the panel.
+  useEffect(() => {
+    if (selected && !graph.nodes.some((n) => n.id === selected.id)) setSelected(null);
+  }, [graph, selected]);
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -178,24 +163,6 @@ export default function App() {
               ))}
           </ul>
         )}
-
-        <label className="toggle">
-          <input
-            type="checkbox"
-            checked={showEpisodes}
-            onChange={(e) => setShowEpisodes(e.target.checked)}
-          />
-          Show episode nodes
-        </label>
-
-        <label className="toggle">
-          <input
-            type="checkbox"
-            checked={showMentioned}
-            onChange={(e) => setShowMentioned(e.target.checked)}
-          />
-          Show works only mentioned
-        </label>
 
         <div className="legend">
           {LEGEND.map((l) => (
@@ -334,6 +301,14 @@ export default function App() {
           }}
         />
       </div>
+
+      <FilterPanel
+        data={data}
+        filters={filters}
+        setFilters={setFilters}
+        visible={graph}
+        total={full}
+      />
     </div>
   );
 }
