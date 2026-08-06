@@ -39,6 +39,9 @@ const MOTION: Record<Layout, { warmup: number; cooldown: number }> = {
   web: { warmup: 180, cooldown: 40 },
 };
 
+/** The site's own name, distinct from the podcast it covers. */
+const SITE_TITLE = 'Web of Forgotten Fiction';
+
 const data = dataset as Dataset;
 
 /**
@@ -71,11 +74,15 @@ const LEGEND: { color: string; label: string }[] = [
 const endId = (v: string | GraphNode) => (typeof v === 'object' ? v.id : v);
 const linkId = (l: GraphLink) => `${endId(l.source)}->${endId(l.target)}`;
 
-/** Mentioned-only works render smaller so the hosts' picks stay dominant. */
-const nodeRadius = (n: GraphNode) => {
-  const base = 3 + Math.min(n.degree, 12) * 0.7;
-  return n.featured === false ? base * 0.6 : base;
-};
+/**
+ * Every node is the same size.
+ *
+ * Radius used to scale with degree, which read as importance but really only
+ * tracked how many credits the show notes happened to list -- a work looked
+ * significant because its cast was well documented, not because the hosts
+ * cared about it. Colour already separates picks from passing mentions.
+ */
+const NODE_RADIUS = 5;
 
 export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
@@ -310,7 +317,7 @@ export default function App() {
     <div className="app">
       <aside className="sidebar">
         <header>
-          <h1>{data.podcast.title}</h1>
+          <h1>{SITE_TITLE}</h1>
           <p className="sub">
             Every work covered by {data.hosts.map((h) => h.name).join(' & ')}, as a graph.
           </p>
@@ -529,7 +536,7 @@ export default function App() {
           onNodeClick={(n: GraphNode) => focus(n)}
           onBackgroundClick={() => clearTrail()}
           nodeCanvasObject={(n: GraphNode, ctx, scale) => {
-            const r = nodeRadius(n);
+            const r = NODE_RADIUS;
             const dimmed =
               (!!neighbors && !neighbors.ids.has(n.id)) || (!!matches && !matches.has(n.id));
 
@@ -568,7 +575,7 @@ export default function App() {
             ctx.globalAlpha = 1;
           }}
           nodePointerAreaPaint={(n: GraphNode, color, ctx) => {
-            const r = nodeRadius(n);
+            const r = NODE_RADIUS;
             ctx.fillStyle = color;
             ctx.beginPath();
             ctx.arc(n.x!, n.y!, r + 2, 0, 2 * Math.PI);
