@@ -178,10 +178,16 @@ export default function FilterPanel({
       <Group
         title="Episodes"
         count={`${countBy(visible, 'episode')}/${countBy(total, 'episode')}`}
-        defaultOpen={false}
         onAll={() => setAll('episodes', true)}
         onNone={() => setAll('episodes', false)}
       >
+        <Check
+          checked={filters.showEpisodes}
+          onChange={(v) => patch({ showEpisodes: v })}
+          color={TYPE_COLORS.episode}
+          label="Show episode nodes"
+        />
+        <p className="ghint">Unchecked, episodes still scope the graph below.</p>
         <div className="eplist">
           {data.episodes.map((e) => (
             <Check

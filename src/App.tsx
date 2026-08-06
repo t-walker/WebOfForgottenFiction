@@ -13,7 +13,16 @@ import {
 } from './graph';
 import FilterPanel from './FilterPanel';
 import { applyFilters, defaultFilters, type Filters } from './filters';
-import { applyLayout, FORCE_SETTINGS, TIER_LABELS, TIER_ORDER, TIER_X, type Layout } from './layout';
+import {
+  applyLayout,
+  FORCE_SETTINGS,
+  LINK_CURVATURE,
+  linkMidpoint,
+  TIER_LABELS,
+  TIER_ORDER,
+  tierColumns,
+  type Layout,
+} from './layout';
 import './App.css';
 
 const data = dataset as Dataset;
@@ -107,14 +116,21 @@ export default function App() {
     (fg.d3Force('link') as { distance: (n: number) => void } | undefined)?.distance(distance);
   }, [graph, layout]);
 
+  // Columns come from what survives filtering, not the selection, so clicking
+  // around doesn't shuffle the whole layout underneath you.
+  const columns = useMemo(
+    () => tierColumns(filtered.nodes.map((n) => n.type)),
+    [filtered],
+  );
+
   // Pinning happens on the shared node objects, so re-apply whenever they change.
   useEffect(() => {
-    applyLayout(full.nodes, layout);
+    applyLayout(full.nodes, layout, columns);
     fgRef.current?.d3ReheatSimulation();
     // Switching layout moves everything; frame it once the simulation settles.
     const t = setTimeout(() => fgRef.current?.zoomToFit(700, 60), 1200);
     return () => clearTimeout(t);
-  }, [full, layout]);
+  }, [full, layout, columns]);
 
   // A filter can hide whatever is currently selected; don't strand the panel.
   useEffect(() => {
@@ -318,7 +334,8 @@ export default function App() {
             ctx.lineWidth = 0.5 / scale;
 
             for (const tier of TIER_ORDER) {
-              const x = TIER_X[tier];
+              const x = columns[tier];
+              if (x == null) continue;
               if (x < topLeft.x - 120 || x > bottomRight.x + 120) continue;
 
               ctx.strokeStyle = 'rgba(255,255,255,0.05)';
@@ -344,6 +361,7 @@ export default function App() {
           }
           linkLineDash={(l: GraphLink) => (isRelationLink(l.kind) ? [3, 2] : null)}
           linkWidth={(l: GraphLink) => (neighbors && neighbors.linkIds.has(linkId(l)) ? 1.8 : 0.6)}
+          linkCurvature={LINK_CURVATURE[layout]}
           linkCanvasObjectMode={() => 'after'}
           linkCanvasObject={(l: GraphLink, ctx, scale) => {
             if (!showLinkLabels) return;
@@ -361,8 +379,13 @@ export default function App() {
             // A few credits carry long parentheticals; the detail panel has the full text.
             const text = l.label.length > 24 ? `${l.label.slice(0, 23)}…` : l.label;
             const width = ctx.measureText(text).width;
-            const x = (s.x + t.x) / 2;
-            const y = (s.y + t.y) / 2;
+            const { x, y } = linkMidpoint(
+              s.x,
+              s.y,
+              t.x,
+              t.y,
+              (l as { __controlPoints?: number[] | null }).__controlPoints,
+            );
 
             ctx.fillStyle = 'rgba(14,13,20,0.78)';
             ctx.fillRect(x - width / 2 - 1, y - fontSize * 0.65, width + 2, fontSize * 1.3);

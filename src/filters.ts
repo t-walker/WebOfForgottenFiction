@@ -5,8 +5,12 @@ import type { Dataset, GraphData, GraphLink, GraphNode } from './graph';
  * id -> visible so the panel can render checkboxes straight from it.
  *
  * There is deliberately no "show this entity type" switch: clearing a group
- * (no media, no roles, no episodes) already hides that entity, so a separate
- * master toggle would be a second control for the same state.
+ * (no media, no roles) already hides that entity, so a separate master toggle
+ * would be a second control for the same state.
+ *
+ * Episodes are the exception. Their checkboxes scope the graph to a subset of
+ * the show, which is useful whether or not you want the episode nodes on
+ * screen, so `showEpisodes` is tracked separately from `episodes`.
  */
 export interface Filters {
   media: Record<string, boolean>;
@@ -14,6 +18,7 @@ export interface Filters {
   hosts: Record<string, boolean>;
   personKinds: { created: boolean; appeared: boolean };
   episodes: Record<string, boolean>;
+  showEpisodes: boolean;
 }
 
 const all = <T extends string>(keys: T[], value = true) =>
@@ -30,6 +35,9 @@ export function defaultFilters(data: Dataset): Filters {
     hosts: all(data.hosts.map((h) => h.id)),
     personKinds: { created: true, appeared: true },
     episodes: all(data.episodes.map((e) => e.id)),
+    // Hosts link straight to what they picked, so the episode tier is an extra
+    // hop between the two things people actually come here to look at.
+    showEpisodes: false,
   };
 }
 
@@ -44,7 +52,8 @@ export function isDefaultFilters(f: Filters): boolean {
     every(f.hosts) &&
     f.personKinds.created &&
     f.personKinds.appeared &&
-    every(f.episodes)
+    every(f.episodes) &&
+    !f.showEpisodes
   );
 }
 
@@ -77,7 +86,7 @@ export function applyFilters(full: GraphData, f: Filters): GraphData {
       case 'host':
         return f.hosts[n.id.replace(/^host:/, '')] !== false;
       case 'episode':
-        return (n.episodeIds ?? []).some((id) => f.episodes[id]);
+        return f.showEpisodes && (n.episodeIds ?? []).some((id) => f.episodes[id]);
       default:
         return true;
     }
