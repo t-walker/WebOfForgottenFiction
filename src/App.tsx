@@ -3,7 +3,9 @@ import ForceGraph2D, { type ForceGraphMethods } from 'react-force-graph-2d';
 import dataset from './data/forgotten-fiction.json';
 import {
   buildGraph,
+  isRelationLink,
   nodeColor,
+  MENTIONED_COLOR,
   type Dataset,
   type GraphLink,
   type GraphNode,
@@ -24,6 +26,7 @@ const LEGEND: { color: string; label: string }[] = [
   { color: '#f2b134', label: 'Film' },
   { color: '#5ddba2', label: 'Book' },
   { color: '#f7845d', label: 'TV' },
+  { color: MENTIONED_COLOR, label: 'Mentioned' },
   { color: '#7bd3f7', label: 'Person' },
   { color: '#ff6b6b', label: 'Host' },
   { color: '#9d8df1', label: 'Episode' },
@@ -32,6 +35,12 @@ const LEGEND: { color: string; label: string }[] = [
 const endId = (v: string | GraphNode) => (typeof v === 'object' ? v.id : v);
 const linkId = (l: GraphLink) => `${endId(l.source)}->${endId(l.target)}`;
 
+/** Mentioned-only works render smaller so the hosts' picks stay dominant. */
+const nodeRadius = (n: GraphNode) => {
+  const base = 3 + Math.min(n.degree, 12) * 0.7;
+  return n.featured === false ? base * 0.6 : base;
+};
+
 export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -39,18 +48,32 @@ export default function App() {
   const [selected, setSelected] = useState<GraphNode | null>(null);
   const [query, setQuery] = useState('');
   const [showEpisodes, setShowEpisodes] = useState(true);
+  const [showMentioned, setShowMentioned] = useState(true);
 
   const full = useMemo(() => buildGraph(data), []);
 
   const graph = useMemo(() => {
-    if (showEpisodes) return full;
-    const nodes = full.nodes.filter((n) => n.type !== 'episode');
+    if (showEpisodes && showMentioned) return full;
+
+    let nodes = full.nodes;
+    if (!showEpisodes) nodes = nodes.filter((n) => n.type !== 'episode');
+    if (!showMentioned) nodes = nodes.filter((n) => n.featured !== false);
+
     const keep = new Set(nodes.map((n) => n.id));
-    const links = full.links.filter(
-      (l) => keep.has(endId(l.source)) && keep.has(endId(l.target)),
-    );
+    const links = full.links.filter((l) => keep.has(endId(l.source)) && keep.has(endId(l.target)));
+
+    // Drop people left with no remaining connections.
+    if (!showMentioned) {
+      const connected = new Set<string>();
+      for (const l of links) {
+        connected.add(endId(l.source));
+        connected.add(endId(l.target));
+      }
+      nodes = nodes.filter((n) => n.type !== 'person' || connected.has(n.id));
+    }
+
     return { nodes, links };
-  }, [full, showEpisodes]);
+  }, [full, showEpisodes, showMentioned]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -165,6 +188,15 @@ export default function App() {
           Show episode nodes
         </label>
 
+        <label className="toggle">
+          <input
+            type="checkbox"
+            checked={showMentioned}
+            onChange={(e) => setShowMentioned(e.target.checked)}
+          />
+          Show works only mentioned
+        </label>
+
         <div className="legend">
           {LEGEND.map((l) => (
             <span key={l.label}>
@@ -182,16 +214,32 @@ export default function App() {
             <h2>{selected.label}</h2>
             <p className="kind">
               {selected.type === 'work'
-                ? [selected.medium, selected.year].filter(Boolean).join(' · ')
+                ? [
+                    selected.medium,
+                    selected.year,
+                    selected.featured === false ? 'mentioned only' : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' · ')
                 : selected.type === 'episode'
                   ? selected.date
                   : selected.roles?.join(', ')}
             </p>
             {selected.notes && <p className="notes">{selected.notes}</p>}
-            {selected.pickedBy && (
+            {selected.pickedBy ? (
               <p className="picked">
                 Picked by <strong>{selected.pickedBy}</strong>
               </p>
+            ) : (
+              selected.type === 'work' &&
+              selected.episodeNumbers?.length ? (
+                <p className="picked">
+                  Discussed in{' '}
+                  <strong>
+                    {selected.episodeNumbers.map((n) => `Ep. ${n}`).join(', ')}
+                  </strong>
+                </p>
+              ) : null
             )}
             <h3>Connections ({connections.length})</h3>
             <ul className="conns">
@@ -239,13 +287,16 @@ export default function App() {
               ? neighbors.linkIds.has(linkId(l))
                 ? 'rgba(255,255,255,0.55)'
                 : 'rgba(255,255,255,0.05)'
-              : 'rgba(255,255,255,0.16)'
+              : isRelationLink(l.kind)
+                ? 'rgba(242,177,52,0.32)'
+                : 'rgba(255,255,255,0.16)'
           }
+          linkLineDash={(l: GraphLink) => (isRelationLink(l.kind) ? [3, 2] : null)}
           linkWidth={(l: GraphLink) => (neighbors && neighbors.linkIds.has(linkId(l)) ? 1.8 : 0.6)}
           onNodeClick={(n: GraphNode) => focus(n)}
           onBackgroundClick={() => setSelected(null)}
           nodeCanvasObject={(n: GraphNode, ctx, scale) => {
-            const r = 3 + Math.min(n.degree, 12) * 0.7;
+            const r = nodeRadius(n);
             const dimmed =
               (!!neighbors && !neighbors.ids.has(n.id)) || (!!matches && !matches.has(n.id));
 
@@ -261,19 +312,21 @@ export default function App() {
               ctx.stroke();
             }
 
-            const showLabel = scale > 1.4 || n.type === 'host' || n.degree > 4;
+            const showLabel =
+              scale > 1.4 || n.type === 'host' || (n.featured !== false && n.degree > 4);
             if (showLabel && !dimmed) {
               const fontSize = Math.max(10 / scale, 2.5);
               ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
               ctx.textAlign = 'center';
               ctx.textBaseline = 'top';
-              ctx.fillStyle = 'rgba(255,255,255,0.85)';
+              ctx.fillStyle =
+                n.featured === false ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.85)';
               ctx.fillText(n.label, n.x!, n.y! + r + 1);
             }
             ctx.globalAlpha = 1;
           }}
           nodePointerAreaPaint={(n: GraphNode, color, ctx) => {
-            const r = 3 + Math.min(n.degree, 12) * 0.7;
+            const r = nodeRadius(n);
             ctx.fillStyle = color;
             ctx.beginPath();
             ctx.arc(n.x!, n.y!, r + 2, 0, 2 * Math.PI);

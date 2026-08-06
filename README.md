@@ -13,67 +13,105 @@ keyed by `id`; **association tables** connect them by referencing those ids.
 
 ### Entity tables
 
-| Table      | Key      | Columns                            |
-| ---------- | -------- | ---------------------------------- |
-| `hosts`    | `id`     | `name`                             |
-| `people`   | `id`     | `name`                             |
-| `works`    | `id`     | `title`, `medium`, `year`, `notes` |
-| `episodes` | `id`     | `number`, `title`, `date`          |
+| Table      | Key  | Columns                                        |
+| ---------- | ---- | ---------------------------------------------- |
+| `hosts`    | `id` | `name`                                         |
+| `people`   | `id` | `name`                                         |
+| `works`    | `id` | `title`, `medium`, `year`, `notes`, `featured` |
+| `episodes` | `id` | `number`, `title`, `date`                      |
+
+`works.featured` is `true` for a host's pick and `false` for a work that was only
+mentioned in discussion — adaptations, inspirations, and comparisons the hosts brought up
+along the way.
 
 ### Association tables
 
-| Table          | Foreign keys                             | Meaning                                     |
-| -------------- | ---------------------------------------- | ------------------------------------------- |
-| `episodeWorks` | `episodeId`, `workId`, `pickedByHostId`  | This work was covered in this episode, brought by this host |
-| `credits`      | `personId`, `workId` (+ `role`, `kind`)  | This person was involved in this work       |
+| Table           | Foreign keys                            | Meaning                                       |
+| --------------- | --------------------------------------- | --------------------------------------------- |
+| `episodeWorks`  | `episodeId`, `workId`, `pickedByHostId` | This work came up in this episode             |
+| `credits`       | `personId`, `workId`                    | This person was involved in this work         |
+| `workRelations` | `fromWorkId`, `toWorkId`                | How one work connects to another              |
+
+`episodeWorks.role` is `"featured"` (a host's pick — `pickedByHostId` is set) or
+`"mentioned"` (`pickedByHostId` is `null`).
 
 `credits.kind` is `"created"` (author, director, writer…) or `"appeared"` (actors and
 others mentioned). `role` holds the human-readable label shown in the UI.
 
-Because a person is stored once, recurring figures — Stephen King, Richard Matheson,
-Fred Dekker — automatically bridge multiple works. That's where the interesting graph
-structure comes from.
+`workRelations.relation` is one of five kinds, read as _"from &lt;relation&gt; to"_:
+
+| Relation       | Example                                          |
+| -------------- | ------------------------------------------------ |
+| `adapted-from` | The Last Man on Earth **adapted from** I Am Legend |
+| `inspired-by`  | Night of the Living Dead **inspired by** I Am Legend |
+| `precursor`    | The Faculty's **precursor** is Scream            |
+| `successor`    | Murder Party's **successor** is Blue Ruin        |
+| `similar`      | Eerie, Indiana is **similar to** Twin Peaks      |
+
+Because a person is stored once, recurring figures bridge multiple works automatically —
+Richard Matheson connects five (The Twilight Zone, I Am Legend, Prey, The Last Man on
+Earth, Trilogy of Terror), and Bill Paxton, Lance Henriksen, and Jenette Goldstein each
+tie Near Dark to Aliens. That's where the interesting graph structure comes from.
 
 ### How it becomes a graph
 
 [`src/graph.ts`](src/graph.ts) joins the tables into nodes and edges at runtime:
 
-| Edge       | From → To      | Source table   |
-| ---------- | -------------- | -------------- |
-| `featured` | episode → work | `episodeWorks` |
-| `picked`   | host → work    | `episodeWorks` |
-| `created`  | person → work  | `credits`      |
-| `appeared` | person → work  | `credits`      |
+| Edge                | From → To      | Source table    |
+| ------------------- | -------------- | --------------- |
+| `featured`          | episode → work | `episodeWorks`  |
+| `mentioned`         | episode → work | `episodeWorks`  |
+| `picked`            | host → work    | `episodeWorks`  |
+| `created`           | person → work  | `credits`       |
+| `appeared`          | person → work  | `credits`       |
+| the five relations  | work → work    | `workRelations` |
+
+Mentioned works render smaller and in a muted color, and work-to-work relations are drawn
+as dashed edges, so the hosts' picks stay visually dominant. A sidebar toggle hides
+mentioned works entirely.
 
 ## Adding an episode
 
 1. Add a row to `episodes`.
-2. Add a row to `works` for each piece of fiction (pick a unique slug `id`).
+2. Add a row to `works` for each piece of fiction (pick a unique slug `id`), setting
+   `featured: true` for the hosts' picks and `false` for anything merely mentioned.
 3. Add a row to `people` for anyone new.
-4. Link them in `episodeWorks` and `credits` using those ids.
+4. Link them in `episodeWorks`, `credits`, and `workRelations` using those ids.
 
 ```jsonc
 // episodes
 { "id": "ep19", "number": 19, "title": "Some Movie & Some Book", "date": "2026-08-11" }
 
-// works
+// works — a host's pick
 { "id": "some-movie", "title": "Some Movie", "medium": "Film", "year": 1988,
-  "notes": "One-line hook shown in the sidebar." }
+  "notes": "One-line hook shown in the sidebar.", "featured": true }
+
+// works — only mentioned on the show
+{ "id": "some-sequel", "title": "Some Sequel", "medium": "Film", "year": 1991,
+  "notes": "Came up when they compared the two.", "featured": false }
 
 // people
 { "id": "p-jane-director", "name": "Jane Director" }
 
 // episodeWorks
-{ "episodeId": "ep19", "workId": "some-movie", "pickedByHostId": "h-paris-brown" }
+{ "episodeId": "ep19", "workId": "some-movie",
+  "pickedByHostId": "h-paris-brown", "role": "featured" }
+{ "episodeId": "ep19", "workId": "some-sequel",
+  "pickedByHostId": null, "role": "mentioned" }
 
 // credits
 { "personId": "p-jane-director", "workId": "some-movie",
   "role": "Director", "kind": "created" }
+
+// workRelations
+{ "fromWorkId": "some-movie", "toWorkId": "some-sequel", "relation": "successor" }
 ```
 
-Then run `npm run validate` — it checks every foreign key, catches duplicate ids, and
-flags works that aren't linked to an episode. It also runs automatically before `build`,
-so a broken reference fails the deploy instead of silently vanishing from the graph.
+Then run `npm run validate` — it checks every foreign key, catches duplicate ids, verifies
+that featured rows have a host (and mentioned rows don't), rejects unknown relation kinds,
+and flags works that aren't linked to an episode. It also runs automatically before
+`build`, so a broken reference fails the deploy instead of silently vanishing from the
+graph.
 
 `medium` should be `Film`, `Book`, or `TV` to pick up a legend color.
 

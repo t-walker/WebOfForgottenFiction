@@ -17,6 +17,10 @@
   ],
   "people": [
     {
+      "id": "p-alice-walker",
+      "name": "Alice Walker"
+    },
+    {
       "id": "p-alvin-schwartz",
       "name": "Alvin Schwartz"
     },
@@ -41,8 +45,16 @@
       "name": "Bob Weinstein"
     },
     {
+      "id": "p-boris-sagal",
+      "name": "Boris Sagal"
+    },
+    {
       "id": "p-charles-l-grant",
       "name": "Charles L. Grant"
+    },
+    {
+      "id": "p-charlton-heston",
+      "name": "Charlton Heston"
     },
     {
       "id": "p-christopher-pike",
@@ -61,6 +73,10 @@
       "name": "Dan Harmon"
     },
     {
+      "id": "p-david-lynch",
+      "name": "David Lynch"
+    },
+    {
       "id": "p-david-whelan",
       "name": "David Whelan"
     },
@@ -69,12 +85,20 @@
       "name": "Diana Ramsay"
     },
     {
+      "id": "p-e-b-white",
+      "name": "E. B. White"
+    },
+    {
       "id": "p-elijah-wood",
       "name": "Elijah Wood"
     },
     {
       "id": "p-famke-janssen",
       "name": "Famke Janssen"
+    },
+    {
+      "id": "p-francis-lawrence",
+      "name": "Francis Lawrence"
     },
     {
       "id": "p-fred-dekker",
@@ -101,8 +125,24 @@
       "name": "Jack Chick"
     },
     {
+      "id": "p-james-cameron",
+      "name": "James Cameron"
+    },
+    {
+      "id": "p-jenette-goldstein",
+      "name": "Jenette Goldstein"
+    },
+    {
       "id": "p-jeremy-saulnier",
       "name": "Jeremy Saulnier"
+    },
+    {
+      "id": "p-joel-schumacher",
+      "name": "Joel Schumacher"
+    },
+    {
+      "id": "p-john-milius",
+      "name": "John Milius"
     },
     {
       "id": "p-john-polidori",
@@ -129,6 +169,10 @@
       "name": "Jules Feiffer"
     },
     {
+      "id": "p-karen-black",
+      "name": "Karen Black"
+    },
+    {
       "id": "p-karl-schaefer",
       "name": "Karl Schaefer"
     },
@@ -141,8 +185,16 @@
       "name": "Kevin Williamson"
     },
     {
+      "id": "p-lance-henriksen",
+      "name": "Lance Henriksen"
+    },
+    {
       "id": "p-lord-byron",
       "name": "Lord Byron"
+    },
+    {
+      "id": "p-mark-frost",
+      "name": "Mark Frost"
     },
     {
       "id": "p-martin-scorsese",
@@ -237,12 +289,28 @@
       "name": "Steve Miner"
     },
     {
+      "id": "p-steven-spielberg",
+      "name": "Steven Spielberg"
+    },
+    {
       "id": "p-tim-curry",
       "name": "Tim Curry"
     },
     {
+      "id": "p-ubaldo-ragona",
+      "name": "Ubaldo Ragona"
+    },
+    {
       "id": "p-v-c-andrews",
       "name": "V. C. Andrews"
+    },
+    {
+      "id": "p-vincent-price",
+      "name": "Vincent Price"
+    },
+    {
+      "id": "p-wes-craven",
+      "name": "Wes Craven"
     },
     {
       "id": "p-will-smith",
@@ -267,245 +335,432 @@
       "title": "Tales from the Crypt",
       "medium": "TV",
       "year": 1989,
-      "notes": "Deep dive on the forgotten Tim Curry episode."
+      "notes": "Deep dive on the forgotten Tim Curry episode.",
+      "featured": true
     },
     {
       "id": "beavis-and-butt-head",
       "title": "Beavis and Butt-Head",
       "medium": "TV",
       "year": 1993,
-      "notes": "Rights issues mean you can't stream a complete season anywhere."
+      "notes": "Rights issues mean you can't stream a complete season anywhere.",
+      "featured": true
     },
     {
       "id": "are-you-afraid-of-the-dark",
       "title": "Are You Afraid of the Dark?",
       "medium": "TV",
       "year": 1990,
-      "notes": "The show that kept a generation of kids up at night."
+      "notes": "The show that kept a generation of kids up at night.",
+      "featured": true
     },
     {
       "id": "the-vampyre",
       "title": "The Vampyre",
       "medium": "Book",
       "year": 1819,
-      "notes": "The 1819 novella that invented the modern aristocratic vampire."
+      "notes": "The 1819 novella that invented the modern aristocratic vampire.",
+      "featured": true
     },
     {
       "id": "murder-party",
       "title": "Murder Party",
       "medium": "Film",
       "year": 2007,
-      "notes": "Micro-budget Brooklyn horror comedy made before Blue Ruin and Green Room."
+      "notes": "Micro-budget Brooklyn horror comedy made before Blue Ruin and Green Room.",
+      "featured": true
     },
     {
       "id": "the-dark-half",
       "title": "The Dark Half",
       "medium": "Film",
       "year": 1993,
-      "notes": "Two horror legends, one forgotten film."
+      "notes": "Two horror legends, one forgotten film.",
+      "featured": true
     },
     {
       "id": "the-cricket-in-times-square",
       "title": "The Cricket in Times Square",
       "medium": "Book",
       "year": 1960,
-      "notes": "Belongs beside Charlotte's Web and Stuart Little. Six sequels almost nobody knows about."
+      "notes": "Belongs beside Charlotte's Web and Stuart Little. Six sequels almost nobody knows about.",
+      "featured": true
     },
     {
       "id": "riverbend",
       "title": "Riverbend",
       "medium": "Film",
       "year": 1989,
-      "notes": "Red Dawn meets The Color Purple. Buried on VHS, rescued onto YouTube."
+      "notes": "Red Dawn meets The Color Purple. Buried on VHS, rescued onto YouTube.",
+      "featured": true
     },
     {
       "id": "the-phantom-tollbooth",
       "title": "The Phantom Tollbooth",
       "medium": "Book",
       "year": 1961,
-      "notes": "Juster violated his Ford Foundation grant to write it."
+      "notes": "Juster violated his Ford Foundation grant to write it.",
+      "featured": true
     },
     {
       "id": "eerie-indiana",
       "title": "Eerie, Indiana",
       "medium": "TV",
       "year": 1991,
-      "notes": "YA Twin Peaks shot on film. 19 episodes and gone."
+      "notes": "YA Twin Peaks shot on film. 19 episodes and gone.",
+      "featured": true
     },
     {
       "id": "nightmare-seasons",
       "title": "Nightmare Seasons",
       "medium": "Book",
       "year": 1982,
-      "notes": "Four novellas, four seasons. Went head to head with King at the 1983 World Fantasy Awards."
+      "notes": "Four novellas, four seasons. Went head to head with King at the 1983 World Fantasy Awards.",
+      "featured": true
     },
     {
       "id": "mimic",
       "title": "Mimic",
       "medium": "Film",
       "year": 1997,
-      "notes": "The movie that almost ended del Toro's career. Watch the Director's Cut."
+      "notes": "The movie that almost ended del Toro's career. Watch the Director's Cut.",
+      "featured": true
     },
     {
       "id": "mapping-the-interior",
       "title": "Mapping the Interior",
       "medium": "Book",
       "year": 2017,
-      "notes": "Bram Stoker Award winning novella most people skipped on the way to The Only Good Indians."
+      "notes": "Bram Stoker Award winning novella most people skipped on the way to The Only Good Indians.",
+      "featured": true
     },
     {
       "id": "savageland",
       "title": "Savageland",
       "medium": "Film",
       "year": 2015,
-      "notes": "Found-photography horror. 57 people gone overnight and 37 photographs."
+      "notes": "Found-photography horror. 57 people gone overnight and 37 photographs.",
+      "featured": true
     },
     {
       "id": "the-dark-descends",
       "title": "The Dark Descends",
       "medium": "Book",
       "year": 1975,
-      "notes": "Six Goodreads ratings. Collins Crime Club, same imprint as Agatha Christie."
+      "notes": "Six Goodreads ratings. Collins Crime Club, same imprint as Agatha Christie.",
+      "featured": true
     },
     {
       "id": "storm-of-the-century",
       "title": "Storm of the Century",
       "medium": "TV",
       "year": 1999,
-      "notes": "Give me what I want and I'll go away. Premiered Valentine's Day 1999."
+      "notes": "Give me what I want and I'll go away. Premiered Valentine's Day 1999.",
+      "featured": true
     },
     {
       "id": "slumber-party",
       "title": "Slumber Party",
       "medium": "Book",
       "year": 1985,
-      "notes": "The first book published under the Point imprint."
+      "notes": "The first book published under the Point imprint.",
+      "featured": true
     },
     {
       "id": "near-dark",
       "title": "Near Dark",
       "medium": "Film",
       "year": 1987,
-      "notes": "Vampire Western buried by The Lost Boys. Forty night shoots."
+      "notes": "Vampire Western buried by The Lost Boys. Forty night shoots, and three leads lifted from Aliens.",
+      "featured": true
     },
     {
       "id": "scary-stories-to-tell-in-the-dark",
       "title": "Scary Stories to Tell in the Dark",
       "medium": "Book",
       "year": 1981,
-      "notes": "The most banned book of the 1990s."
+      "notes": "The most banned book of the 1990s.",
+      "featured": true
     },
     {
       "id": "the-twilight-zone",
       "title": "The Twilight Zone",
       "medium": "TV",
       "year": 1959,
-      "notes": "Serling came home from WWII with a Bronze Star, a Purple Heart, and something to say."
+      "notes": "Serling came home from WWII with a Bronze Star, a Purple Heart, and something to say.",
+      "featured": true
     },
     {
       "id": "flowers-in-the-attic",
       "title": "Flowers in the Attic",
       "medium": "Book",
       "year": 1979,
-      "notes": "14 weeks on the NYT bestseller list. Nearly 100 books now carry her name."
+      "notes": "14 weeks on the NYT bestseller list. Nearly 100 books now carry her name.",
+      "featured": true
     },
     {
       "id": "i-am-legend",
       "title": "I Am Legend",
       "medium": "Book",
       "year": 1954,
-      "notes": "Three adaptations across forty years. Every one of them missed the point."
+      "notes": "Three adaptations across forty years. Every one of them missed the point.",
+      "featured": true
     },
     {
       "id": "the-garbage-pail-kids-movie",
       "title": "The Garbage Pail Kids Movie",
       "medium": "Film",
       "year": 1987,
-      "notes": "Pulled from theaters after three weeks by organized protest."
+      "notes": "Pulled from theaters after three weeks by organized protest.",
+      "featured": true
     },
     {
       "id": "heat-vision-and-jack",
       "title": "Heat Vision and Jack",
       "medium": "TV",
       "year": 1999,
-      "notes": "The most expensive unaired pilot in network history. Survived on bootleg VHS."
+      "notes": "The most expensive unaired pilot in network history. Survived on bootleg VHS.",
+      "featured": true
     },
     {
       "id": "toy-cemetery",
       "title": "Toy Cemetery",
       "medium": "Book",
       "year": 1987,
-      "notes": "Start of the killer toy quest. Great cover, abandons its own premise."
+      "notes": "Start of the killer toy quest. Great cover, abandons its own premise.",
+      "featured": true
     },
     {
       "id": "dark-shadows",
       "title": "Dark Shadows",
       "medium": "TV",
       "year": 1966,
-      "notes": "Nearly 9 million daily viewers. Invented the sympathetic vampire."
+      "notes": "Nearly 9 million daily viewers. Invented the sympathetic vampire.",
+      "featured": true
     },
     {
       "id": "house",
       "title": "House",
       "medium": "Film",
       "year": 1985,
-      "notes": "Dekker's 15 page treatment. A horror novelist relives Vietnam inside his aunt's house."
+      "notes": "Dekker's 15 page treatment. A horror novelist relives Vietnam inside his aunt's house.",
+      "featured": true
     },
     {
       "id": "absentia",
       "title": "Absentia",
       "medium": "Film",
       "year": 2011,
-      "notes": "$23,000 on Kickstarter. He called it his last independent feature. He was right."
+      "notes": "$23,000 on Kickstarter. He called it his last independent feature. He was right.",
+      "featured": true
     },
     {
       "id": "the-monster-squad",
       "title": "The Monster Squad",
       "medium": "Film",
       "year": 1987,
-      "notes": "Made back less than a third of its budget. Wolfman's got nards."
+      "notes": "Made back less than a third of its budget. Wolfman's got nards.",
+      "featured": true
     },
     {
       "id": "the-slumber-party-massacre",
       "title": "The Slumber Party Massacre",
       "medium": "Film",
       "year": 1982,
-      "notes": "The only American horror franchise where every entry is written and directed by women."
+      "notes": "The only American horror franchise where every entry is written and directed by women.",
+      "featured": true
     },
     {
       "id": "keeper-of-the-children",
       "title": "Keeper of the Children",
       "medium": "Book",
       "year": 1978,
-      "notes": "An axe-wielding stuffed bear and a climactic puppet battle. The quest continues."
+      "notes": "An axe-wielding stuffed bear and a climactic puppet battle. The quest continues.",
+      "featured": true
     },
     {
       "id": "the-faculty",
       "title": "The Faculty",
       "medium": "Film",
       "year": 1998,
-      "notes": "The Kevin Williamson script nobody mentions."
+      "notes": "The Kevin Williamson script nobody mentions.",
+      "featured": true
     },
     {
       "id": "mama",
       "title": "MaMa",
       "medium": "Book",
       "year": 1983,
-      "notes": "Five print runs, out of print for decades, brought back by her daughter."
+      "notes": "Five print runs, out of print for decades, brought back by her daughter.",
+      "featured": true
     },
     {
       "id": "the-ray-bradbury-theater",
       "title": "The Ray Bradbury Theater",
       "medium": "TV",
       "year": 1985,
-      "notes": "Every episode adapted a Bradbury short story. Every screenplay written by Bradbury."
+      "notes": "Every episode adapted a Bradbury short story. Every screenplay written by Bradbury.",
+      "featured": true
     },
     {
       "id": "prey",
-      "title": "Prey / Trilogy of Terror",
+      "title": "Prey",
       "medium": "Book",
       "year": 1969,
-      "notes": "The next stop on the killer toy quest."
+      "notes": "The next stop on the killer toy quest. A Matheson short story about a Zuni fetish doll.",
+      "featured": true
+    },
+    {
+      "id": "blue-ruin",
+      "title": "Blue Ruin",
+      "medium": "Film",
+      "year": 2013,
+      "notes": "The revenge thriller that put Saulnier on the map.",
+      "featured": false
+    },
+    {
+      "id": "green-room",
+      "title": "Green Room",
+      "medium": "Film",
+      "year": 2015,
+      "notes": "Saulnier’s punk-band siege film.",
+      "featured": false
+    },
+    {
+      "id": "charlottes-web",
+      "title": "Charlotte's Web",
+      "medium": "Book",
+      "year": 1952,
+      "notes": "The children’s classic Cricket deserves to sit beside.",
+      "featured": false
+    },
+    {
+      "id": "stuart-little",
+      "title": "Stuart Little",
+      "medium": "Book",
+      "year": 1945,
+      "notes": "The other E. B. White animal classic everyone still remembers.",
+      "featured": false
+    },
+    {
+      "id": "red-dawn",
+      "title": "Red Dawn",
+      "medium": "Film",
+      "year": 1984,
+      "notes": "Half of the \"Red Dawn meets The Color Purple\" pitch for Riverbend.",
+      "featured": false
+    },
+    {
+      "id": "the-color-purple",
+      "title": "The Color Purple",
+      "medium": "Film",
+      "year": 1985,
+      "notes": "The other half of the Riverbend comparison.",
+      "featured": false
+    },
+    {
+      "id": "twin-peaks",
+      "title": "Twin Peaks",
+      "medium": "TV",
+      "year": 1990,
+      "notes": "Eerie, Indiana was described as YA Twin Peaks.",
+      "featured": false
+    },
+    {
+      "id": "different-seasons",
+      "title": "Different Seasons",
+      "medium": "Book",
+      "year": 1982,
+      "notes": "King’s four-novella collection that beat Nightmare Seasons at the 1983 World Fantasy Awards.",
+      "featured": false
+    },
+    {
+      "id": "the-only-good-indians",
+      "title": "The Only Good Indians",
+      "medium": "Book",
+      "year": 2020,
+      "notes": "The breakout novel readers skipped Mapping the Interior to get to.",
+      "featured": false
+    },
+    {
+      "id": "the-lost-boys",
+      "title": "The Lost Boys",
+      "medium": "Film",
+      "year": 1987,
+      "notes": "Landed two months before Near Dark and buried it.",
+      "featured": false
+    },
+    {
+      "id": "aliens",
+      "title": "Aliens",
+      "medium": "Film",
+      "year": 1986,
+      "notes": "Near Dark pulled three of its leads straight from this cast.",
+      "featured": false
+    },
+    {
+      "id": "night-of-the-living-dead",
+      "title": "Night of the Living Dead",
+      "medium": "Film",
+      "year": 1968,
+      "notes": "Romero named I Am Legend as his primary inspiration.",
+      "featured": false
+    },
+    {
+      "id": "the-last-man-on-earth",
+      "title": "The Last Man on Earth",
+      "medium": "Film",
+      "year": 1964,
+      "notes": "The first I Am Legend adaptation.",
+      "featured": false
+    },
+    {
+      "id": "the-omega-man",
+      "title": "The Omega Man",
+      "medium": "Film",
+      "year": 1971,
+      "notes": "The second I Am Legend adaptation.",
+      "featured": false
+    },
+    {
+      "id": "i-am-legend-2007",
+      "title": "I Am Legend (2007)",
+      "medium": "Film",
+      "year": 2007,
+      "notes": "The third adaptation, and the one that missed the ending hardest.",
+      "featured": false
+    },
+    {
+      "id": "maus",
+      "title": "Maus",
+      "medium": "Book",
+      "year": 1991,
+      "notes": "The Pulitzer winner by the man who designed the Garbage Pail Kids cards.",
+      "featured": false
+    },
+    {
+      "id": "taxi-driver",
+      "title": "Taxi Driver",
+      "medium": "Film",
+      "year": 1976,
+      "notes": "Scorsese gave Amy Holden Jones a PA gig here, which led to Corman.",
+      "featured": false
+    },
+    {
+      "id": "scream",
+      "title": "Scream",
+      "medium": "Film",
+      "year": 1996,
+      "notes": "The Williamson script everyone mentions instead of The Faculty.",
+      "featured": false
+    },
+    {
+      "id": "trilogy-of-terror",
+      "title": "Trilogy of Terror",
+      "medium": "TV",
+      "year": 1975,
+      "notes": "The made-for-TV anthology whose final segment adapts Prey.",
+      "featured": false
     }
   ],
   "episodes": [
@@ -622,177 +877,326 @@
     {
       "episodeId": "ep1",
       "workId": "tales-from-the-crypt",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep1",
       "workId": "beavis-and-butt-head",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep2",
       "workId": "are-you-afraid-of-the-dark",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep2",
       "workId": "the-vampyre",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep3",
       "workId": "murder-party",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep4",
       "workId": "the-dark-half",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep4",
       "workId": "the-cricket-in-times-square",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep5",
       "workId": "riverbend",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep5",
       "workId": "the-phantom-tollbooth",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep6",
       "workId": "eerie-indiana",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep6",
       "workId": "nightmare-seasons",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep7",
       "workId": "mimic",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep7",
       "workId": "mapping-the-interior",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep8",
       "workId": "savageland",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep8",
       "workId": "the-dark-descends",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep9",
       "workId": "storm-of-the-century",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep9",
       "workId": "slumber-party",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep10",
       "workId": "near-dark",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep10",
       "workId": "scary-stories-to-tell-in-the-dark",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep11",
       "workId": "the-twilight-zone",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep11",
       "workId": "flowers-in-the-attic",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep12",
       "workId": "i-am-legend",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep12",
       "workId": "the-garbage-pail-kids-movie",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep13",
       "workId": "heat-vision-and-jack",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep13",
       "workId": "toy-cemetery",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep14",
       "workId": "dark-shadows",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep14",
       "workId": "house",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep15",
       "workId": "absentia",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep15",
       "workId": "the-monster-squad",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep16",
       "workId": "the-slumber-party-massacre",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep16",
       "workId": "keeper-of-the-children",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep17",
       "workId": "the-faculty",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep17",
       "workId": "mama",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep18",
       "workId": "the-ray-bradbury-theater",
-      "pickedByHostId": "h-paris-brown"
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured"
     },
     {
       "episodeId": "ep18",
       "workId": "prey",
-      "pickedByHostId": "h-tommy-brown"
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured"
+    },
+    {
+      "episodeId": "ep3",
+      "workId": "blue-ruin",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep3",
+      "workId": "green-room",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep4",
+      "workId": "charlottes-web",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep4",
+      "workId": "stuart-little",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep5",
+      "workId": "red-dawn",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep5",
+      "workId": "the-color-purple",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep6",
+      "workId": "twin-peaks",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep6",
+      "workId": "different-seasons",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep7",
+      "workId": "the-only-good-indians",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep10",
+      "workId": "the-lost-boys",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep10",
+      "workId": "aliens",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep12",
+      "workId": "night-of-the-living-dead",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep12",
+      "workId": "the-last-man-on-earth",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep12",
+      "workId": "the-omega-man",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep12",
+      "workId": "i-am-legend-2007",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep12",
+      "workId": "maus",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep16",
+      "workId": "taxi-driver",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep17",
+      "workId": "scream",
+      "pickedByHostId": null,
+      "role": "mentioned"
+    },
+    {
+      "episodeId": "ep18",
+      "workId": "trilogy-of-terror",
+      "pickedByHostId": null,
+      "role": "mentioned"
     }
   ],
   "credits": [
@@ -1197,6 +1601,296 @@
       "workId": "prey",
       "role": "Author / Screenwriter",
       "kind": "created"
+    },
+    {
+      "personId": "p-jeremy-saulnier",
+      "workId": "blue-ruin",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-jeremy-saulnier",
+      "workId": "green-room",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-e-b-white",
+      "workId": "charlottes-web",
+      "role": "Author",
+      "kind": "created"
+    },
+    {
+      "personId": "p-e-b-white",
+      "workId": "stuart-little",
+      "role": "Author",
+      "kind": "created"
+    },
+    {
+      "personId": "p-john-milius",
+      "workId": "red-dawn",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-steven-spielberg",
+      "workId": "the-color-purple",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-alice-walker",
+      "workId": "the-color-purple",
+      "role": "Author (Source Novel)",
+      "kind": "created"
+    },
+    {
+      "personId": "p-david-lynch",
+      "workId": "twin-peaks",
+      "role": "Creator",
+      "kind": "created"
+    },
+    {
+      "personId": "p-mark-frost",
+      "workId": "twin-peaks",
+      "role": "Creator",
+      "kind": "created"
+    },
+    {
+      "personId": "p-stephen-king",
+      "workId": "different-seasons",
+      "role": "Author",
+      "kind": "created"
+    },
+    {
+      "personId": "p-stephen-graham-jones",
+      "workId": "the-only-good-indians",
+      "role": "Author",
+      "kind": "created"
+    },
+    {
+      "personId": "p-joel-schumacher",
+      "workId": "the-lost-boys",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-james-cameron",
+      "workId": "aliens",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-bill-paxton",
+      "workId": "aliens",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-lance-henriksen",
+      "workId": "aliens",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-jenette-goldstein",
+      "workId": "aliens",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-george-a-romero",
+      "workId": "night-of-the-living-dead",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-ubaldo-ragona",
+      "workId": "the-last-man-on-earth",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-richard-matheson",
+      "workId": "the-last-man-on-earth",
+      "role": "Screenwriter",
+      "kind": "created"
+    },
+    {
+      "personId": "p-vincent-price",
+      "workId": "the-last-man-on-earth",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-boris-sagal",
+      "workId": "the-omega-man",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-charlton-heston",
+      "workId": "the-omega-man",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-francis-lawrence",
+      "workId": "i-am-legend-2007",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-will-smith",
+      "workId": "i-am-legend-2007",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-art-spiegelman",
+      "workId": "maus",
+      "role": "Author",
+      "kind": "created"
+    },
+    {
+      "personId": "p-martin-scorsese",
+      "workId": "taxi-driver",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-wes-craven",
+      "workId": "scream",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-kevin-williamson",
+      "workId": "scream",
+      "role": "Writer",
+      "kind": "created"
+    },
+    {
+      "personId": "p-dan-curtis",
+      "workId": "trilogy-of-terror",
+      "role": "Director",
+      "kind": "created"
+    },
+    {
+      "personId": "p-richard-matheson",
+      "workId": "trilogy-of-terror",
+      "role": "Screenwriter",
+      "kind": "created"
+    },
+    {
+      "personId": "p-karen-black",
+      "workId": "trilogy-of-terror",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-lance-henriksen",
+      "workId": "near-dark",
+      "role": "Actor",
+      "kind": "appeared"
+    },
+    {
+      "personId": "p-jenette-goldstein",
+      "workId": "near-dark",
+      "role": "Actor",
+      "kind": "appeared"
+    }
+  ],
+  "workRelations": [
+    {
+      "fromWorkId": "murder-party",
+      "toWorkId": "blue-ruin",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "murder-party",
+      "toWorkId": "green-room",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "the-cricket-in-times-square",
+      "toWorkId": "charlottes-web",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-cricket-in-times-square",
+      "toWorkId": "stuart-little",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "riverbend",
+      "toWorkId": "red-dawn",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "riverbend",
+      "toWorkId": "the-color-purple",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "eerie-indiana",
+      "toWorkId": "twin-peaks",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "nightmare-seasons",
+      "toWorkId": "different-seasons",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "mapping-the-interior",
+      "toWorkId": "the-only-good-indians",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "near-dark",
+      "toWorkId": "the-lost-boys",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "near-dark",
+      "toWorkId": "aliens",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "night-of-the-living-dead",
+      "toWorkId": "i-am-legend",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "the-last-man-on-earth",
+      "toWorkId": "i-am-legend",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "the-omega-man",
+      "toWorkId": "i-am-legend",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "i-am-legend-2007",
+      "toWorkId": "i-am-legend",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "the-slumber-party-massacre",
+      "toWorkId": "taxi-driver",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "the-faculty",
+      "toWorkId": "scream",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "trilogy-of-terror",
+      "toWorkId": "prey",
+      "relation": "adapted-from"
     }
   ]
 }

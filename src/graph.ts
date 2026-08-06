@@ -25,6 +25,8 @@ export interface Work {
   medium: string;
   year: number | null;
   notes: string | null;
+  /** true = a host's pick for an episode; false = only mentioned in discussion. */
+  featured: boolean;
 }
 
 export interface Episode {
@@ -34,11 +36,15 @@ export interface Episode {
   date: string;
 }
 
-/** Which work was covered in which episode, and which host brought it. */
+/**
+ * Which work came up in which episode. `role` separates the hosts' picks
+ * from works that were only mentioned; `pickedByHostId` is null for the latter.
+ */
 export interface EpisodeWork {
   episodeId: string;
   workId: string;
-  pickedByHostId: string;
+  pickedByHostId: string | null;
+  role: 'featured' | 'mentioned';
 }
 
 /** A person's involvement in a work. */
@@ -47,6 +53,23 @@ export interface Credit {
   workId: string;
   role: string;
   kind: 'created' | 'appeared';
+}
+
+export const RELATION_KINDS = [
+  'adapted-from',
+  'inspired-by',
+  'precursor',
+  'successor',
+  'similar',
+] as const;
+
+export type RelationKind = (typeof RELATION_KINDS)[number];
+
+/** How one work connects to another, read as "<from> <relation> <to>". */
+export interface WorkRelation {
+  fromWorkId: string;
+  toWorkId: string;
+  relation: RelationKind;
 }
 
 export interface Dataset {
@@ -62,6 +85,7 @@ export interface Dataset {
   episodes: Episode[];
   episodeWorks: EpisodeWork[];
   credits: Credit[];
+  workRelations: WorkRelation[];
 }
 
 export interface GraphNode {
@@ -71,7 +95,8 @@ export interface GraphNode {
   medium?: string;
   year?: number | null;
   notes?: string | null;
-  episodeNumber?: number;
+  featured?: boolean;
+  episodeNumbers?: number[];
   date?: string;
   pickedBy?: string;
   roles?: string[];
@@ -83,7 +108,7 @@ export interface GraphNode {
 export interface GraphLink {
   source: string | GraphNode;
   target: string | GraphNode;
-  kind: 'picked' | 'featured' | 'created' | 'appeared';
+  kind: 'picked' | 'featured' | 'mentioned' | 'created' | 'appeared' | RelationKind;
   label: string;
 }
 
@@ -93,6 +118,14 @@ export interface GraphData {
 }
 
 const nodeId = (type: NodeType, id: string) => `${type}:${id}`;
+
+export const RELATION_LABELS: Record<RelationKind, string> = {
+  'adapted-from': 'adapted from',
+  'inspired-by': 'inspired by',
+  precursor: 'precursor',
+  successor: 'successor',
+  similar: 'similar to',
+};
 
 export function buildGraph(data: Dataset): GraphData {
   const nodes = new Map<string, GraphNode>();
@@ -120,6 +153,8 @@ export function buildGraph(data: Dataset): GraphData {
       medium: work.medium,
       year: work.year,
       notes: work.notes,
+      featured: work.featured,
+      episodeNumbers: [],
     });
   }
 
@@ -129,7 +164,7 @@ export function buildGraph(data: Dataset): GraphData {
       label: `Ep. ${ep.number}`,
       type: 'episode',
       notes: ep.title,
-      episodeNumber: ep.number,
+      episodeNumbers: [ep.number],
       date: ep.date,
     });
   }
@@ -140,14 +175,27 @@ export function buildGraph(data: Dataset): GraphData {
   for (const row of data.episodeWorks) {
     const epNode = nodes.get(nodeId('episode', row.episodeId));
     const workNode = nodes.get(nodeId('work', row.workId));
-    const hostNode = nodes.get(nodeId('host', row.pickedByHostId));
-    if (!epNode || !workNode || !hostNode) continue;
+    if (!epNode || !workNode) continue;
 
-    links.push({ source: epNode.id, target: workNode.id, kind: 'featured', label: 'featured in' });
-    links.push({ source: hostNode.id, target: workNode.id, kind: 'picked', label: 'picked' });
+    links.push({
+      source: epNode.id,
+      target: workNode.id,
+      kind: row.role,
+      label: row.role === 'featured' ? 'featured in' : 'mentioned in',
+    });
 
-    workNode.pickedBy = hostsById.get(row.pickedByHostId)?.name;
-    workNode.episodeNumber = episodesById.get(row.episodeId)?.number;
+    const num = episodesById.get(row.episodeId)?.number;
+    if (num != null && !workNode.episodeNumbers!.includes(num)) {
+      workNode.episodeNumbers!.push(num);
+    }
+
+    if (row.pickedByHostId) {
+      const hostNode = nodes.get(nodeId('host', row.pickedByHostId));
+      if (hostNode) {
+        links.push({ source: hostNode.id, target: workNode.id, kind: 'picked', label: 'picked' });
+        workNode.pickedBy = hostsById.get(row.pickedByHostId)?.name;
+      }
+    }
   }
 
   for (const credit of data.credits) {
@@ -161,6 +209,18 @@ export function buildGraph(data: Dataset): GraphData {
       target: workNode.id,
       kind: credit.kind,
       label: credit.role,
+    });
+  }
+
+  for (const rel of data.workRelations) {
+    const from = nodes.get(nodeId('work', rel.fromWorkId));
+    const to = nodes.get(nodeId('work', rel.toWorkId));
+    if (!from || !to) continue;
+    links.push({
+      source: from.id,
+      target: to.id,
+      kind: rel.relation,
+      label: RELATION_LABELS[rel.relation],
     });
   }
 
@@ -187,9 +247,17 @@ export const MEDIUM_COLORS: Record<string, string> = {
   TV: '#f7845d',
 };
 
+/** Works that were only mentioned share one muted color so picks stay dominant. */
+export const MENTIONED_COLOR = '#6b6580';
+
 export function nodeColor(node: GraphNode): string {
-  if (node.type === 'work' && node.medium && MEDIUM_COLORS[node.medium]) {
-    return MEDIUM_COLORS[node.medium];
+  if (node.type === 'work') {
+    if (node.featured === false) return MENTIONED_COLOR;
+    if (node.medium && MEDIUM_COLORS[node.medium]) return MEDIUM_COLORS[node.medium];
   }
   return TYPE_COLORS[node.type];
 }
+
+const RELATION_SET = new Set<string>(RELATION_KINDS);
+
+export const isRelationLink = (kind: GraphLink['kind']) => RELATION_SET.has(kind);
