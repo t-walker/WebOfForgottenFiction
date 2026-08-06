@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Podcast audio and transcripts (hosts' content) - kept local only
+audio/
+transcripts/*.md
+!transcripts/README.md
+

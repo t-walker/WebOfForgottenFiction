@@ -72,6 +72,9 @@ mentioned works entirely.
 
 ## Adding an episode
 
+The easiest way is to let the ingest agent do it — see
+[Ingesting new episodes](#ingesting-new-episodes) below. To do it by hand:
+
 1. Add a row to `episodes`.
 2. Add a row to `works` for each piece of fiction (pick a unique slug `id`), setting
    `featured: true` for the hosts' picks and `false` for anything merely mentioned.
@@ -115,6 +118,52 @@ graph.
 
 `medium` should be `Film`, `Book`, or `TV` to pick up a legend color.
 
+## Ingesting new episodes
+
+There's a Copilot CLI agent in `.github/agents/ingest-episodes.agent.md` that
+handles the whole loop: find episodes in the RSS feed that aren't in the graph,
+download and transcribe their audio, read the transcript, and add the works,
+people, and cross-references.
+
+```bash
+copilot
+/agent ingest-episodes
+```
+
+Then just ask it to bring the graph up to date.
+
+Its rule is that **everything it adds must be traceable to something a host
+actually said**, with a timestamp. The dataset was originally built from RSS show
+notes, which let in entries that were true about the work but never discussed on
+the episode; grounding entries in transcripts is how that gets fixed.
+
+The agent drives these scripts, all of which you can run yourself:
+
+```bash
+npm run episodes:check        # what's in the feed but not in the graph
+npm run episodes:check -- --json
+npm run audio:fetch           # download episode MP3s (skips existing)
+npm run transcribe            # faster-whisper -> transcripts/epNN.md
+npm run transcribe -- --only 19
+npm run episode:add proposal.json --dry-run   # merge a drafted episode
+npm run scan:mentions         # audit: is each existing entry actually spoken?
+```
+
+`episode:add` owns slug generation, de-duplication against existing people and
+works, and appending association rows, so nobody has to hand-edit the big JSON
+file. It's idempotent — re-running a proposal changes nothing.
+
+Transcription runs on CPU at roughly 6x realtime and needs Python with
+[`faster-whisper`](https://github.com/SYSTRAN/faster-whisper) plus `ffmpeg`:
+
+```bash
+pip install faster-whisper
+winget install Gyan.FFmpeg     # or: brew install ffmpeg
+```
+
+Audio and transcripts are git-ignored — they're the hosts' content and stay
+local. See [`transcripts/README.md`](transcripts/README.md).
+
 ## Develop
 
 ```bash
@@ -137,5 +186,10 @@ directory `dist`. Leave `BASE_PATH` unset.
 ## Data source
 
 Episode titles, dates, and descriptions come from the podcast's public RSS feed
-(`https://anchor.fm/s/111b27bec/podcast/rss`). Creator and cast attributions were
-transcribed from the episode show notes.
+(`https://anchor.fm/s/111b27bec/podcast/rss`).
+
+Creator and cast attributions were originally taken from the episode show notes.
+Show notes summarise, so some of those entries are true about the work without
+having been discussed on the episode. New episodes are ingested from transcripts
+instead, with a timestamp recorded in an `evidence` field, and
+`npm run scan:mentions` audits the older entries against the audio.

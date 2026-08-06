@@ -45,6 +45,8 @@ export interface EpisodeWork {
   workId: string;
   pickedByHostId: string | null;
   role: 'featured' | 'mentioned';
+  /** Transcript timestamp where the work is named, when known. */
+  evidence?: string;
 }
 
 /** A person's involvement in a work. */
@@ -53,6 +55,8 @@ export interface Credit {
   workId: string;
   role: string;
   kind: 'created' | 'appeared';
+  /** Transcript timestamp where the person is named, when known. */
+  evidence?: string;
 }
 
 export const RELATION_KINDS = [

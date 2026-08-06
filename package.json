@@ -8,7 +8,12 @@
     "validate": "node scripts/validate-data.mjs",
     "build": "npm run validate && tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "audio:fetch": "node scripts/fetch-audio.mjs",
+    "transcribe": "python scripts/transcribe.py",
+    "scan:mentions": "node scripts/scan-mentions.mjs",
+    "episodes:check": "node scripts/check-episodes.mjs",
+    "episode:add": "node scripts/add-episode.mjs"
   },
   "dependencies": {
     "d3-force": "^3.0.0",
