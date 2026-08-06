@@ -2,7 +2,6 @@ import { useState } from 'react';
 import type { Dataset, GraphData, NodeType } from './graph';
 import { MEDIUM_COLORS, MENTIONED_COLOR, TYPE_COLORS } from './graph';
 import { defaultFilters, isDefaultFilters, mediaKinds, type Filters } from './filters';
-import type { Layout } from './layout';
 
 interface Props {
   data: Dataset;
@@ -10,8 +9,6 @@ interface Props {
   setFilters: (next: Filters) => void;
   visible: GraphData;
   total: GraphData;
-  layout: Layout;
-  setLayout: (next: Layout) => void;
   showLinkLabels: boolean;
   setShowLinkLabels: (next: boolean) => void;
   focusSelection: boolean;
@@ -88,8 +85,6 @@ export default function FilterPanel({
   setFilters,
   visible,
   total,
-  layout,
-  setLayout,
   showLinkLabels,
   setShowLinkLabels,
   focusSelection,
@@ -135,17 +130,6 @@ export default function FilterPanel({
       </p>
 
       <Group title="View">
-        <div className="segmented">
-          <button
-            className={layout === 'hierarchy' ? 'on' : ''}
-            onClick={() => setLayout('hierarchy')}
-          >
-            Hierarchy
-          </button>
-          <button className={layout === 'web' ? 'on' : ''} onClick={() => setLayout('web')}>
-            Web
-          </button>
-        </div>
         <Check
           checked={focusSelection}
           onChange={setFocusSelection}

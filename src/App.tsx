@@ -14,30 +14,17 @@ import {
 import FilterPanel from './FilterPanel';
 import { applyFilters, type Filters } from './filters';
 import { decodeState, encodeState } from './url';
-import {
-  applyLayout,
-  FORCE_SETTINGS,
-  LINK_CURVATURE,
-  linkMidpoint,
-  TIER_LABELS,
-  TIER_ORDER,
-  tierColumns,
-  type Layout,
-} from './layout';
+import { FORCE_SETTINGS, LINK_CURVATURE, linkMidpoint } from './render';
 import './App.css';
 
 /**
  * The simulation is settled before the first paint instead of being animated
  * into place. Swapping to a focus subgraph restarts d3-force at full alpha, and
  * watching a few hundred ticks of nodes flying around on every click is more
- * distracting than useful. `warmupTicks` runs those ticks up front; the
- * hierarchy then holds still, while the web view keeps a short settle because
- * nothing pins it and it needs to relax into shape.
+ * distracting than useful. `warmupTicks` runs those ticks up front, leaving a
+ * short cooldown for the graph to relax into shape.
  */
-const MOTION: Record<Layout, { warmup: number; cooldown: number }> = {
-  hierarchy: { warmup: 260, cooldown: 0 },
-  web: { warmup: 180, cooldown: 40 },
-};
+const MOTION = { warmup: 180, cooldown: 40 };
 
 /** The site's own name, distinct from the podcast it covers. */
 const SITE_TITLE = 'Web of Forgotten Fiction';
@@ -84,6 +71,9 @@ const linkId = (l: GraphLink) => `${endId(l.source)}->${endId(l.target)}`;
  */
 const NODE_RADIUS = 5;
 
+/** Fitting only a couple of nodes would blow them up to fill the canvas. */
+const MAX_ZOOM = 2.4;
+
 export default function App() {
   const fgRef = useRef<ForceGraphMethods<GraphNode, GraphLink> | undefined>(undefined);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -93,9 +83,18 @@ export default function App() {
   );
   const [query, setQuery] = useState(initial.query);
   const [filters, setFilters] = useState<Filters>(initial.filters);
-  const [layout, setLayout] = useState<Layout>(initial.layout);
   const [showLinkLabels, setShowLinkLabels] = useState(initial.showLinkLabels);
   const [focusSelection, setFocusSelection] = useState(initial.focusSelection);
+
+  /**
+   * Landing on 152 nodes at once shows a hairball and tells you nothing. A
+   * fresh visit opens on just the two hosts and the link between them, which
+   * says what the site is about and gives you somewhere obvious to click.
+   *
+   * Only a bare URL gets this. Following a link means somebody chose a view,
+   * so that view is what loads.
+   */
+  const [intro, setIntro] = useState(() => !window.location.search);
 
   const full = FULL;
 
@@ -108,6 +107,7 @@ export default function App() {
    * back out through a parent leaves the path you actually took.
    */
   const focus = (node: GraphNode) => {
+    setIntro(false);
     setTrail((prev) => {
       const at = prev.findIndex((n) => n.id === node.id);
       return at === -1 ? [...prev, node] : prev.slice(0, at + 1);
@@ -115,6 +115,12 @@ export default function App() {
   };
 
   const clearTrail = () => setTrail([]);
+
+  /** Leaves the landing view for the whole graph without selecting anything. */
+  const showEverything = () => {
+    setIntro(false);
+    setTrail([]);
+  };
 
   /**
    * Mirror the view into the query string.
@@ -129,7 +135,6 @@ export default function App() {
     const search = encodeState({
       trail: trail.map((n) => n.id),
       filters,
-      layout,
       focusSelection,
       showLinkLabels,
       query,
@@ -140,16 +145,16 @@ export default function App() {
     if (trailKey === lastTrailKey.current) window.history.replaceState(null, '', url);
     else window.history.pushState(null, '', url);
     lastTrailKey.current = trailKey;
-  }, [trail, trailKey, filters, layout, focusSelection, showLinkLabels, query]);
+  }, [trail, trailKey, filters, focusSelection, showLinkLabels, query]);
 
   // Back/forward hand us a URL, which is the only source of truth for the view.
   useEffect(() => {
     const onPop = () => {
       const next = decodeState(window.location.search, data);
       lastTrailKey.current = next.trail.join(',');
+      setIntro(!window.location.search);
       setTrail(next.trail.map((id) => NODES_BY_ID.get(id)).filter((n): n is GraphNode => !!n));
       setFilters(next.filters);
-      setLayout(next.layout);
       setFocusSelection(next.focusSelection);
       setShowLinkLabels(next.showLinkLabels);
       setQuery(next.query);
@@ -193,19 +198,24 @@ export default function App() {
    * With focus on, selecting a node collapses the canvas to just that node and
    * what it touches. Dimming alone left 150 nodes on screen and the neighbours
    * spread far enough apart to be unreadable.
-   *
-   * `layout` is read here purely to change this object's identity: force-graph
-   * only runs its warmup ticks when graphData changes, so switching views has
-   * to hand it a fresh object to settle against the new columns.
    */
   const graph = useMemo(() => {
-    void layout;
+    if (intro && !selected) {
+      const hosts = filtered.nodes.filter((n) => n.type === 'host');
+      const ids = new Set(hosts.map((n) => n.id));
+      return {
+        nodes: hosts,
+        links: filtered.links.filter(
+          (l) => l.kind === 'kin' && ids.has(endId(l.source)) && ids.has(endId(l.target)),
+        ),
+      };
+    }
     if (!selected || !focusSelection || !neighbors) return { ...filtered };
     return {
       nodes: filtered.nodes.filter((n) => neighbors.ids.has(n.id)),
       links: filtered.links.filter((l) => neighbors.linkIds.has(linkId(l))),
     };
-  }, [filtered, selected, focusSelection, neighbors, layout]);
+  }, [filtered, selected, focusSelection, neighbors, intro]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -221,25 +231,10 @@ export default function App() {
   useEffect(() => {
     const fg = fgRef.current;
     if (!fg) return;
-    const { charge, distance } = FORCE_SETTINGS[layout];
+    const { charge, distance } = FORCE_SETTINGS;
     (fg.d3Force('charge') as { strength: (n: number) => void } | undefined)?.strength(charge);
     (fg.d3Force('link') as { distance: (n: number) => void } | undefined)?.distance(distance);
-  }, [graph, layout]);
-
-  // Columns come from what survives filtering, not the selection, so clicking
-  // around doesn't shuffle the whole layout underneath you.
-  const columns = useMemo(
-    () => tierColumns(filtered.nodes.map((n) => n.type)),
-    [filtered],
-  );
-
-  // Pinning happens on the shared node objects, so re-apply whenever they change.
-  useEffect(() => {
-    applyLayout(full.nodes, layout, columns);
-    // Positions are settled by the warmup, so this only needs to outlast paint.
-    const t = setTimeout(() => fgRef.current?.zoomToFit(400, 60), 120);
-    return () => clearTimeout(t);
-  }, [full, layout, columns]);
+  }, [graph]);
 
   // A filter can hide something on the trail; drop those rather than stranding
   // the panel on a node that is no longer drawn.
@@ -254,6 +249,9 @@ export default function App() {
   /**
    * Frame the selection rather than zooming to a fixed level: a host with 18
    * picks needs a much wider view than an actor with one credit.
+   *
+   * Fitting a handful of nodes would otherwise magnify them absurdly -- two
+   * hosts alone fill the canvas with two dots -- so the result is capped.
    */
   useEffect(() => {
     const fg = fgRef.current;
@@ -261,9 +259,12 @@ export default function App() {
     const ids = neighbors?.ids;
     const t = setTimeout(() => {
       fg.zoomToFit(400, 70, (n: GraphNode) => !ids || ids.has(n.id));
+      setTimeout(() => {
+        if (fg.zoom() > MAX_ZOOM) fg.zoom(MAX_ZOOM, 300);
+      }, 420);
     }, 120);
     return () => clearTimeout(t);
-  }, [selected, focusSelection, neighbors]);
+  }, [selected, focusSelection, neighbors, intro]);
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -428,6 +429,15 @@ export default function App() {
               </div>
             ))}
           </section>
+        ) : intro ? (
+          <section className="intro">
+            <p>
+              Two hosts, {counts.work ?? 0} works of forgotten fiction. Click{' '}
+              <strong>{data.hosts.map((h) => h.name.split(' ')[0]).join(' or ')}</strong> to see
+              what they've picked, then keep clicking to follow the thread.
+            </p>
+            <button onClick={showEverything}>Show the whole graph →</button>
+          </section>
         ) : (
           <section className="stats">
             {(Object.keys(TYPE_LABELS) as NodeType[]).map((t) => (
@@ -453,39 +463,8 @@ export default function App() {
           width={size.width}
           height={size.height}
           backgroundColor="#0e0d14"
-          warmupTicks={MOTION[layout].warmup}
-          cooldownTicks={MOTION[layout].cooldown}
-          onRenderFramePre={(ctx, scale) => {
-            if (layout !== 'hierarchy') return;
-            const fg = fgRef.current;
-            if (!fg) return;
-
-            // Anchor the column headings to the top of the viewport so they
-            // stay visible while scrolling down a long column.
-            const topLeft = fg.screen2GraphCoords(0, 0);
-            const bottomRight = fg.screen2GraphCoords(size.width, size.height);
-            const fontSize = Math.max(11 / scale, 2);
-
-            ctx.font = `600 ${fontSize}px Inter, system-ui, sans-serif`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'top';
-            ctx.lineWidth = 0.5 / scale;
-
-            for (const tier of TIER_ORDER) {
-              const x = columns[tier];
-              if (x == null) continue;
-              if (x < topLeft.x - 120 || x > bottomRight.x + 120) continue;
-
-              ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-              ctx.beginPath();
-              ctx.moveTo(x, topLeft.y);
-              ctx.lineTo(x, bottomRight.y);
-              ctx.stroke();
-
-              ctx.fillStyle = 'rgba(255,255,255,0.22)';
-              ctx.fillText(TIER_LABELS[tier].toUpperCase(), x, topLeft.y + 10 / scale);
-            }
-          }}
+          warmupTicks={MOTION.warmup}
+          cooldownTicks={MOTION.cooldown}
           nodeRelSize={4}
           nodeLabel={(n: GraphNode) => n.label}
           linkColor={(l: GraphLink) =>
@@ -499,14 +478,15 @@ export default function App() {
           }
           linkLineDash={(l: GraphLink) => (isRelationLink(l.kind) ? [3, 2] : null)}
           linkWidth={(l: GraphLink) => (neighbors && neighbors.linkIds.has(linkId(l)) ? 1.8 : 0.6)}
-          linkCurvature={LINK_CURVATURE[layout]}
+          linkCurvature={LINK_CURVATURE}
           linkCanvasObjectMode={() => 'after'}
           linkCanvasObject={(l: GraphLink, ctx, scale) => {
             if (!showLinkLabels) return;
             const highlighted = !!neighbors && neighbors.linkIds.has(linkId(l));
             // Every label at once is unreadable, so show them on demand:
-            // always for the selected node, otherwise only when zoomed in.
-            if (!highlighted && (scale < 2.2 || !!neighbors)) return;
+            // always for the selected node, otherwise only when zoomed in. The
+            // landing view is the exception -- its one link is the whole point.
+            if (!intro && !highlighted && (scale < 2.2 || !!neighbors)) return;
 
             const s = l.source as GraphNode;
             const t = l.target as GraphNode;
@@ -560,17 +540,9 @@ export default function App() {
               ctx.fillStyle =
                 n.featured === false ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.85)';
 
-              if (layout === 'hierarchy') {
-                // Columns stack vertically, so a label underneath would land on
-                // the next node down; put it beside instead.
-                ctx.textAlign = 'left';
-                ctx.textBaseline = 'middle';
-                ctx.fillText(n.label, n.x! + r + 2 / scale, n.y!);
-              } else {
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(n.label, n.x!, n.y! + r + 1);
-              }
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'top';
+              ctx.fillText(n.label, n.x!, n.y! + r + 1);
             }
             ctx.globalAlpha = 1;
           }}
@@ -590,8 +562,6 @@ export default function App() {
         setFilters={setFilters}
         visible={graph}
         total={full}
-        layout={layout}
-        setLayout={setLayout}
         showLinkLabels={showLinkLabels}
         setShowLinkLabels={setShowLinkLabels}
         focusSelection={focusSelection}

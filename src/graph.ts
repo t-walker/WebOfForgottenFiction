@@ -119,12 +119,10 @@ export interface GraphNode {
   hostIds?: string[];
   episodeIds?: string[];
   creditKinds?: ('created' | 'appeared')[];
-  /** Simulation state; fx/fy pin a node in place for the pyramid layout. */
   degree: number;
+  /** Simulation state, owned by d3-force. */
   x?: number;
   y?: number;
-  fx?: number;
-  fy?: number;
 }
 
 export interface GraphLink {

@@ -1,6 +1,5 @@
 import type { Dataset } from './graph';
 import { defaultFilters, mediaKinds, type Filters } from './filters';
-import type { Layout } from './layout';
 
 /**
  * The whole view lives in the query string so any state worth looking at can be
@@ -14,7 +13,6 @@ import type { Layout } from './layout';
 export interface AppState {
   trail: string[];
   filters: Filters;
-  layout: Layout;
   focusSelection: boolean;
   showLinkLabels: boolean;
   query: string;
@@ -24,7 +22,6 @@ export function defaultState(data: Dataset): AppState {
   return {
     trail: [],
     filters: defaultFilters(data),
-    layout: 'hierarchy',
     focusSelection: true,
     showLinkLabels: true,
     query: '',
@@ -46,7 +43,6 @@ export function encodeState(state: AppState): string {
   const { filters: f } = state;
 
   if (state.trail.length) params.set('at', list(state.trail));
-  if (state.layout !== 'hierarchy') params.set('view', state.layout);
   if (!state.focusSelection) params.set('focus', '0');
   if (!state.showLinkLabels) params.set('labels', '0');
   if (state.query.trim()) params.set('q', state.query.trim());
@@ -85,7 +81,6 @@ export function decodeState(search: string, data: Dataset): AppState {
   const has = (k: string) => params.get(k) === '1';
 
   state.trail = parseList(params.get('at'));
-  if (params.get('view') === 'web') state.layout = 'web';
   if (params.get('focus') === '0') state.focusSelection = false;
   if (params.get('labels') === '0') state.showLinkLabels = false;
   state.query = params.get('q') ?? '';

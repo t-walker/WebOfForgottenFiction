@@ -459,33 +459,6 @@ footer a {
   }
 }
 
-.segmented {
-  display: flex;
-  gap: 4px;
-  margin: 2px 0 6px;
-}
-
-.segmented button {
-  flex: 1;
-  padding: 5px 0;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: #100f18;
-  color: var(--muted);
-  font-size: 11.5px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.segmented button:hover {
-  color: var(--text);
-}
-
-.segmented button.on {
-  background: rgba(242, 177, 52, 0.14);
-  border-color: var(--accent);
-  color: var(--accent);
-}
 
 .cgroup {
   margin-top: 10px;
@@ -580,4 +553,38 @@ footer a {
 .share:hover {
   border-color: rgba(255, 255, 255, 0.24);
   color: #fff;
+}
+
+.intro {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.intro p {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.intro strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+}
+
+.intro button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 11.5px;
+  color: var(--accent, #f2b134);
+  cursor: pointer;
+}
+
+.intro button:hover {
+  text-decoration: underline;
 }
