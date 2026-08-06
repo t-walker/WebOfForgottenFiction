@@ -1,11 +1,14 @@
-import type { Dataset, GraphData, GraphLink, GraphNode, NodeType } from './graph';
+import type { Dataset, GraphData, GraphLink, GraphNode } from './graph';
 
 /**
  * Filter state, grouped by entity type. Each group is a plain lookup of
  * id -> visible so the panel can render checkboxes straight from it.
+ *
+ * There is deliberately no "show this entity type" switch: clearing a group
+ * (no media, no roles, no episodes) already hides that entity, so a separate
+ * master toggle would be a second control for the same state.
  */
 export interface Filters {
-  types: Record<NodeType, boolean>;
   media: Record<string, boolean>;
   status: { featured: boolean; mentioned: boolean };
   hosts: Record<string, boolean>;
@@ -22,7 +25,6 @@ export function mediaKinds(data: Dataset): string[] {
 
 export function defaultFilters(data: Dataset): Filters {
   return {
-    types: { work: true, person: true, host: true, episode: true },
     media: all(mediaKinds(data)),
     status: { featured: true, mentioned: true },
     hosts: all(data.hosts.map((h) => h.id)),
@@ -36,7 +38,6 @@ const every = (record: Record<string, boolean>) => Object.values(record).every(B
 /** True when nothing is being filtered out, used to show/hide the reset button. */
 export function isDefaultFilters(f: Filters): boolean {
   return (
-    every(f.types) &&
     every(f.media) &&
     f.status.featured &&
     f.status.mentioned &&
@@ -61,8 +62,6 @@ export function applyFilters(full: GraphData, f: Filters): GraphData {
   const someHost = !every(f.hosts);
 
   const visible = (n: GraphNode): boolean => {
-    if (!f.types[n.type]) return false;
-
     switch (n.type) {
       case 'work': {
         // Unknown media stay visible rather than silently disappearing.

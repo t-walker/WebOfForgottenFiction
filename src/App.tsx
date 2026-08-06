@@ -13,6 +13,7 @@ import {
 } from './graph';
 import FilterPanel from './FilterPanel';
 import { applyFilters, defaultFilters, type Filters } from './filters';
+import { applyLayout, FORCE_SETTINGS, TIER_LABELS, TIER_ORDER, TIER_X, type Layout } from './layout';
 import './App.css';
 
 const data = dataset as Dataset;
@@ -50,10 +51,42 @@ export default function App() {
   const [selected, setSelected] = useState<GraphNode | null>(null);
   const [query, setQuery] = useState('');
   const [filters, setFilters] = useState<Filters>(() => defaultFilters(data));
+  const [layout, setLayout] = useState<Layout>('hierarchy');
+  const [showLinkLabels, setShowLinkLabels] = useState(true);
+  const [focusSelection, setFocusSelection] = useState(true);
 
   const full = useMemo(() => buildGraph(data), []);
 
-  const graph = useMemo(() => applyFilters(full, filters), [full, filters]);
+  const filtered = useMemo(() => applyFilters(full, filters), [full, filters]);
+
+  const neighbors = useMemo(() => {
+    if (!selected) return null;
+    const ids = new Set<string>([selected.id]);
+    const linkIds = new Set<string>();
+    for (const l of filtered.links) {
+      const s = endId(l.source);
+      const t = endId(l.target);
+      if (s === selected.id || t === selected.id) {
+        ids.add(s);
+        ids.add(t);
+        linkIds.add(linkId(l));
+      }
+    }
+    return { ids, linkIds };
+  }, [selected, filtered]);
+
+  /**
+   * With focus on, selecting a node collapses the canvas to just that node and
+   * what it touches. Dimming alone left 150 nodes on screen and the neighbours
+   * spread far enough apart to be unreadable.
+   */
+  const graph = useMemo(() => {
+    if (!selected || !focusSelection || !neighbors) return filtered;
+    return {
+      nodes: filtered.nodes.filter((n) => neighbors.ids.has(n.id)),
+      links: filtered.links.filter((l) => neighbors.linkIds.has(linkId(l))),
+    };
+  }, [filtered, selected, focusSelection, neighbors]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -69,14 +102,39 @@ export default function App() {
   useEffect(() => {
     const fg = fgRef.current;
     if (!fg) return;
-    (fg.d3Force('charge') as { strength: (n: number) => void } | undefined)?.strength(-140);
-    (fg.d3Force('link') as { distance: (n: number) => void } | undefined)?.distance(55);
-  }, [graph]);
+    const { charge, distance } = FORCE_SETTINGS[layout];
+    (fg.d3Force('charge') as { strength: (n: number) => void } | undefined)?.strength(charge);
+    (fg.d3Force('link') as { distance: (n: number) => void } | undefined)?.distance(distance);
+  }, [graph, layout]);
+
+  // Pinning happens on the shared node objects, so re-apply whenever they change.
+  useEffect(() => {
+    applyLayout(full.nodes, layout);
+    fgRef.current?.d3ReheatSimulation();
+    // Switching layout moves everything; frame it once the simulation settles.
+    const t = setTimeout(() => fgRef.current?.zoomToFit(700, 60), 1200);
+    return () => clearTimeout(t);
+  }, [full, layout]);
 
   // A filter can hide whatever is currently selected; don't strand the panel.
   useEffect(() => {
-    if (selected && !graph.nodes.some((n) => n.id === selected.id)) setSelected(null);
-  }, [graph, selected]);
+    if (selected && !filtered.nodes.some((n) => n.id === selected.id)) setSelected(null);
+  }, [filtered, selected]);
+
+  /**
+   * Frame the selection rather than zooming to a fixed level: a host with 18
+   * picks needs a much wider view than an actor with one credit.
+   */
+  useEffect(() => {
+    const fg = fgRef.current;
+    if (!fg) return;
+    const ids = neighbors?.ids;
+    const settle = selected && focusSelection ? 550 : 250;
+    const t = setTimeout(() => {
+      fg.zoomToFit(600, 70, (n: GraphNode) => !ids || ids.has(n.id));
+    }, settle);
+    return () => clearTimeout(t);
+  }, [selected, focusSelection, neighbors]);
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -84,27 +142,11 @@ export default function App() {
     return new Set(graph.nodes.filter((n) => n.label.toLowerCase().includes(q)).map((n) => n.id));
   }, [query, graph]);
 
-  const neighbors = useMemo(() => {
-    if (!selected) return null;
-    const ids = new Set<string>([selected.id]);
-    const linkIds = new Set<string>();
-    for (const l of graph.links) {
-      const s = endId(l.source);
-      const t = endId(l.target);
-      if (s === selected.id || t === selected.id) {
-        ids.add(s);
-        ids.add(t);
-        linkIds.add(linkId(l));
-      }
-    }
-    return { ids, linkIds };
-  }, [selected, graph]);
-
   const connections = useMemo(() => {
     if (!selected) return [];
-    const byId = new Map(graph.nodes.map((n) => [n.id, n]));
+    const byId = new Map(filtered.nodes.map((n) => [n.id, n]));
     const out: { node: GraphNode; label: string }[] = [];
-    for (const l of graph.links) {
+    for (const l of filtered.links) {
       const s = endId(l.source);
       const t = endId(l.target);
       const otherId = s === selected.id ? t : t === selected.id ? s : null;
@@ -113,7 +155,17 @@ export default function App() {
       if (node) out.push({ node, label: l.label });
     }
     return out;
-  }, [selected, graph]);
+  }, [selected, filtered]);
+
+  const groupedConnections = useMemo(() => {
+    const groups = new Map<string, GraphNode[]>();
+    for (const { node, label } of connections) {
+      const bucket = groups.get(label);
+      if (bucket) bucket.push(node);
+      else groups.set(label, [node]);
+    }
+    return [...groups.entries()].sort((a, b) => b[1].length - a[1].length);
+  }, [connections]);
 
   const counts = useMemo(() => {
     const c: Record<string, number> = {};
@@ -123,11 +175,6 @@ export default function App() {
 
   const focus = (node: GraphNode) => {
     setSelected(node);
-    const fg = fgRef.current;
-    if (fg && node.x != null && node.y != null) {
-      fg.centerAt(node.x, node.y, 600);
-      fg.zoom(3, 600);
-    }
   };
 
   return (
@@ -209,17 +256,24 @@ export default function App() {
               ) : null
             )}
             <h3>Connections ({connections.length})</h3>
-            <ul className="conns">
-              {connections.map(({ node, label }) => (
-                <li key={node.id + label}>
-                  <button onClick={() => focus(node)}>
-                    <span className="dot" style={{ background: nodeColor(node) }} />
-                    {node.label}
-                  </button>
-                  <em>{label}</em>
-                </li>
-              ))}
-            </ul>
+            {groupedConnections.map(([label, nodes]) => (
+              <div className="cgroup" key={label}>
+                <h4>
+                  {label}
+                  <em>{nodes.length}</em>
+                </h4>
+                <ul className="conns">
+                  {nodes.map((node) => (
+                    <li key={node.id}>
+                      <button onClick={() => focus(node)}>
+                        <span className="dot" style={{ background: nodeColor(node) }} />
+                        {node.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </section>
         ) : (
           <section className="stats">
@@ -247,6 +301,36 @@ export default function App() {
           height={size.height}
           backgroundColor="#0e0d14"
           cooldownTicks={200}
+          onRenderFramePre={(ctx, scale) => {
+            if (layout !== 'hierarchy') return;
+            const fg = fgRef.current;
+            if (!fg) return;
+
+            // Anchor the column headings to the top of the viewport so they
+            // stay visible while scrolling down a long column.
+            const topLeft = fg.screen2GraphCoords(0, 0);
+            const bottomRight = fg.screen2GraphCoords(size.width, size.height);
+            const fontSize = Math.max(11 / scale, 2);
+
+            ctx.font = `600 ${fontSize}px Inter, system-ui, sans-serif`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'top';
+            ctx.lineWidth = 0.5 / scale;
+
+            for (const tier of TIER_ORDER) {
+              const x = TIER_X[tier];
+              if (x < topLeft.x - 120 || x > bottomRight.x + 120) continue;
+
+              ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+              ctx.beginPath();
+              ctx.moveTo(x, topLeft.y);
+              ctx.lineTo(x, bottomRight.y);
+              ctx.stroke();
+
+              ctx.fillStyle = 'rgba(255,255,255,0.22)';
+              ctx.fillText(TIER_LABELS[tier].toUpperCase(), x, topLeft.y + 10 / scale);
+            }
+          }}
           nodeRelSize={4}
           nodeLabel={(n: GraphNode) => n.label}
           linkColor={(l: GraphLink) =>
@@ -260,6 +344,34 @@ export default function App() {
           }
           linkLineDash={(l: GraphLink) => (isRelationLink(l.kind) ? [3, 2] : null)}
           linkWidth={(l: GraphLink) => (neighbors && neighbors.linkIds.has(linkId(l)) ? 1.8 : 0.6)}
+          linkCanvasObjectMode={() => 'after'}
+          linkCanvasObject={(l: GraphLink, ctx, scale) => {
+            if (!showLinkLabels) return;
+            const highlighted = !!neighbors && neighbors.linkIds.has(linkId(l));
+            // Every label at once is unreadable, so show them on demand:
+            // always for the selected node, otherwise only when zoomed in.
+            if (!highlighted && (scale < 2.2 || !!neighbors)) return;
+
+            const s = l.source as GraphNode;
+            const t = l.target as GraphNode;
+            if (s.x == null || t.x == null || s.y == null || t.y == null) return;
+
+            const fontSize = Math.max(9 / scale, 1.5);
+            ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
+            // A few credits carry long parentheticals; the detail panel has the full text.
+            const text = l.label.length > 24 ? `${l.label.slice(0, 23)}…` : l.label;
+            const width = ctx.measureText(text).width;
+            const x = (s.x + t.x) / 2;
+            const y = (s.y + t.y) / 2;
+
+            ctx.fillStyle = 'rgba(14,13,20,0.78)';
+            ctx.fillRect(x - width / 2 - 1, y - fontSize * 0.65, width + 2, fontSize * 1.3);
+
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = highlighted ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.5)';
+            ctx.fillText(text, x, y);
+          }}
           onNodeClick={(n: GraphNode) => focus(n)}
           onBackgroundClick={() => setSelected(null)}
           nodeCanvasObject={(n: GraphNode, ctx, scale) => {
@@ -284,11 +396,20 @@ export default function App() {
             if (showLabel && !dimmed) {
               const fontSize = Math.max(10 / scale, 2.5);
               ctx.font = `${fontSize}px Inter, system-ui, sans-serif`;
-              ctx.textAlign = 'center';
-              ctx.textBaseline = 'top';
               ctx.fillStyle =
                 n.featured === false ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.85)';
-              ctx.fillText(n.label, n.x!, n.y! + r + 1);
+
+              if (layout === 'hierarchy') {
+                // Columns stack vertically, so a label underneath would land on
+                // the next node down; put it beside instead.
+                ctx.textAlign = 'left';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(n.label, n.x! + r + 2 / scale, n.y!);
+              } else {
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                ctx.fillText(n.label, n.x!, n.y! + r + 1);
+              }
             }
             ctx.globalAlpha = 1;
           }}
@@ -308,6 +429,12 @@ export default function App() {
         setFilters={setFilters}
         visible={graph}
         total={full}
+        layout={layout}
+        setLayout={setLayout}
+        showLinkLabels={showLinkLabels}
+        setShowLinkLabels={setShowLinkLabels}
+        focusSelection={focusSelection}
+        setFocusSelection={setFocusSelection}
       />
     </div>
   );

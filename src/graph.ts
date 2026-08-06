@@ -108,9 +108,12 @@ export interface GraphNode {
   hostIds?: string[];
   episodeIds?: string[];
   creditKinds?: ('created' | 'appeared')[];
+  /** Simulation state; fx/fy pin a node in place for the pyramid layout. */
   degree: number;
   x?: number;
   y?: number;
+  fx?: number;
+  fy?: number;
 }
 
 export interface GraphLink {

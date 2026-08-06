@@ -2,15 +2,7 @@ import { useState } from 'react';
 import type { Dataset, GraphData, NodeType } from './graph';
 import { MEDIUM_COLORS, MENTIONED_COLOR, TYPE_COLORS } from './graph';
 import { defaultFilters, isDefaultFilters, mediaKinds, type Filters } from './filters';
-
-const TYPE_LABELS: Record<NodeType, string> = {
-  work: 'Works',
-  person: 'People',
-  host: 'Hosts',
-  episode: 'Episodes',
-};
-
-const TYPE_ORDER: NodeType[] = ['host', 'episode', 'work', 'person'];
+import type { Layout } from './layout';
 
 interface Props {
   data: Dataset;
@@ -18,6 +10,12 @@ interface Props {
   setFilters: (next: Filters) => void;
   visible: GraphData;
   total: GraphData;
+  layout: Layout;
+  setLayout: (next: Layout) => void;
+  showLinkLabels: boolean;
+  setShowLinkLabels: (next: boolean) => void;
+  focusSelection: boolean;
+  setFocusSelection: (next: boolean) => void;
 }
 
 function Group({
@@ -84,7 +82,19 @@ function Check({
   );
 }
 
-export default function FilterPanel({ data, filters, setFilters, visible, total }: Props) {
+export default function FilterPanel({
+  data,
+  filters,
+  setFilters,
+  visible,
+  total,
+  layout,
+  setLayout,
+  showLinkLabels,
+  setShowLinkLabels,
+  focusSelection,
+  setFocusSelection,
+}: Props) {
   const patch = (next: Partial<Filters>) => setFilters({ ...filters, ...next });
 
   const countBy = (graph: GraphData, type: NodeType) =>
@@ -124,21 +134,28 @@ export default function FilterPanel({ data, filters, setFilters, visible, total 
         <strong>{visible.links.length}</strong> of {total.links.length} links
       </p>
 
-      <Group
-        title="Entities"
-        onAll={() => setAll('types', true)}
-        onNone={() => setAll('types', false)}
-      >
-        {TYPE_ORDER.map((t) => (
-          <Check
-            key={t}
-            checked={filters.types[t]}
-            onChange={(v) => patch({ types: { ...filters.types, [t]: v } })}
-            color={TYPE_COLORS[t]}
-            label={TYPE_LABELS[t]}
-            hint={`${countBy(visible, t)}/${countBy(total, t)}`}
-          />
-        ))}
+      <Group title="View">
+        <div className="segmented">
+          <button
+            className={layout === 'hierarchy' ? 'on' : ''}
+            onClick={() => setLayout('hierarchy')}
+          >
+            Hierarchy
+          </button>
+          <button className={layout === 'web' ? 'on' : ''} onClick={() => setLayout('web')}>
+            Web
+          </button>
+        </div>
+        <Check
+          checked={focusSelection}
+          onChange={setFocusSelection}
+          label="Focus on selection"
+        />
+        <Check
+          checked={showLinkLabels}
+          onChange={setShowLinkLabels}
+          label="Connection labels"
+        />
       </Group>
 
       <Group
