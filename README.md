@@ -174,14 +174,11 @@ npm run build     # validate + typecheck + static output in dist/
 npm run preview
 ```
 
-## Deploy (free)
+## Deploy
 
 **GitHub Pages** — push to `main`; `.github/workflows/deploy.yml` builds and deploys.
 Enable it once under _Settings → Pages → Source: GitHub Actions_. The workflow sets
 `BASE_PATH` to `/<repo-name>/` automatically.
-
-**Netlify / Vercel / Cloudflare Pages** — build command `npm run build`, publish
-directory `dist`. Leave `BASE_PATH` unset.
 
 ## Data source
 
