@@ -60,7 +60,7 @@ export interface Camera {
 export function frame(
   nodes: { x?: number; y?: number }[],
   size: { width: number; height: number },
-  opts: { padding: number; maxZoom: number; minZoom?: number },
+  opts: { padding: number; maxZoom: number; minZoom?: number; nodeRadius?: number },
 ): Camera | null {
   const placed = nodes.filter(
     (n): n is { x: number; y: number } => Number.isFinite(n.x) && Number.isFinite(n.y),
@@ -78,7 +78,15 @@ export function frame(
     if (n.y > maxY) maxY = n.y;
   }
 
-  // Leave room for the node itself and its label, not just its centre point.
+  // Fitting the centre points alone clips the outermost nodes by their own
+  // radius. Grow the box in graph units, which scale with the zoom exactly as
+  // the circles do; the pixel padding is then free to cover the labels.
+  const r = opts.nodeRadius ?? 0;
+  minX -= r;
+  maxX += r;
+  minY -= r;
+  maxY += r;
+
   const available = {
     width: Math.max(size.width - opts.padding * 2, 1),
     height: Math.max(size.height - opts.padding * 2, 1),

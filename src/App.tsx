@@ -286,7 +286,7 @@ export default function App() {
       const cam = frame(
         g.nodes.filter((n) => !ids || ids.has(n.id)),
         s,
-        { padding: FRAME_PADDING, maxZoom: MAX_ZOOM },
+        { padding: FRAME_PADDING, maxZoom: MAX_ZOOM, nodeRadius: NODE_RADIUS },
       );
       if (!cam) return;
       fg.centerAt(cam.x, cam.y, FRAME_MS);
