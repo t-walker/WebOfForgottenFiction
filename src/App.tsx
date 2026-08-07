@@ -74,15 +74,15 @@ const linkId = (l: GraphLink) => `${endId(l.source)}->${endId(l.target)}`;
  */
 const NODE_RADIUS = 5;
 
-/** Fitting only a couple of nodes would blow them up to fill the canvas. */
-const MAX_ZOOM = 2.4;
-
 /**
- * The landing view is the exception: it holds two nodes and one link, and at
- * the ordinary cap they read as specks on a very large sheet. It gets to come
- * much closer, since there is nothing else competing for the space.
+ * Zoom is capped so a small selection does not fill the canvas with a couple
+ * of enormous circles. Expressed as how large a node may appear rather than as
+ * a raw zoom level: a flat cap of 2.4 was tuned for two nodes and then held a
+ * host's twenty picks to a third of the canvas, which is the same complaint in
+ * the opposite direction.
  */
-const INTRO_MAX_ZOOM = 7;
+const MAX_NODE_PX = 64;
+const MAX_ZOOM = MAX_NODE_PX / (NODE_RADIUS * 2);
 
 /** Canvas margin left around a framed selection, in pixels. */
 const FRAME_PADDING = 90;
@@ -286,7 +286,7 @@ export default function App() {
       const cam = frame(
         g.nodes.filter((n) => !ids || ids.has(n.id)),
         s,
-        { padding: FRAME_PADDING, maxZoom: intro ? INTRO_MAX_ZOOM : MAX_ZOOM },
+        { padding: FRAME_PADDING, maxZoom: MAX_ZOOM },
       );
       if (!cam) return;
       fg.centerAt(cam.x, cam.y, FRAME_MS);
