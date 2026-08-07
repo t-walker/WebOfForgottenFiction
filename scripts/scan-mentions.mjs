@@ -14,6 +14,7 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { findHits, nameTerms, normalize, searchTerms } from './lib/match.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const transcriptDir = join(root, 'transcripts');
@@ -28,36 +29,6 @@ const missingOnly = args.includes('--missing');
 const works = new Map(data.works.map((w) => [w.id, w]));
 const people = new Map(data.people.map((p) => [p.id, p]));
 
-/** Loose match: case/punctuation insensitive, tolerates "the" and subtitles. */
-function normalize(text) {
-  return text
-    .toLowerCase()
-    .replace(/[\u2018\u2019]/g, "'")
-    .replace(/[^a-z0-9' ]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function searchTerms(title) {
-  const terms = new Set([title]);
-  terms.add(title.replace(/^(the|a|an)\s+/i, ''));
-  const colon = title.split(/[:(]/)[0].trim();
-  if (colon.length > 4) terms.add(colon);
-  return [...terms].map(normalize).filter((t) => t.length > 3);
-}
-
-/** "Butt-Head" vs "Butthead": compare with all spacing removed too. */
-const compact = (text) => text.replace(/[^a-z0-9]/g, '');
-
-/** Surnames are how people are usually referenced out loud. */
-function nameTerms(name) {
-  const parts = name.split(/\s+/);
-  const last = parts[parts.length - 1];
-  const terms = [normalize(name)];
-  if (last.length > 4) terms.push(normalize(last));
-  return terms;
-}
-
 function loadTranscript(number) {
   const file = join(transcriptDir, `ep${String(number).padStart(2, '0')}.md`);
   if (!existsSync(file)) return null;
@@ -67,29 +38,6 @@ function loadTranscript(number) {
     .filter(Boolean)
     .map((m) => ({ time: m[1], text: m[2], norm: normalize(m[2]) }));
 }
-
-/** Match across a sliding 3-line window so phrases split by segments still hit. */
-function findHits(segments, terms) {
-  const hits = [];
-  for (let i = 0; i < segments.length; i += 1) {
-    const window = segments.slice(i, i + 3);
-    const joined = window.map((s) => s.norm).join(' ');
-    const squashed = compact(joined);
-    const term = terms.find((t) => joined.includes(t) || squashed.includes(compact(t)));
-    if (!term) continue;
-    // Quote the line that actually carries the term when it fits on one.
-    const exact =
-      window.find((s) => s.norm.includes(term) || compact(s.norm).includes(compact(term))) ??
-      window[0];
-    if (hits.some((h) => h.time === exact.time)) continue;
-    hits.push({ time: exact.time, text: exact.text, term });
-  }
-  // Collapse repeats: one hit per minute is plenty of evidence.
-  return hits.filter(
-    (hit, idx) => idx === 0 || hit.time.slice(0, 5) !== hits[idx - 1].time.slice(0, 5),
-  );
-}
-
 const available = existsSync(transcriptDir)
   ? readdirSync(transcriptDir).filter((f) => /^ep\d+\.md$/.test(f)).length
   : 0;
@@ -104,6 +52,7 @@ console.log(`Scanning ${available} transcript(s)\n`);
 let verified = 0;
 let unverified = 0;
 const gaps = [];
+const phonetic = [];
 
 for (const episode of data.episodes) {
   if (onlyEp && episode.number !== onlyEp) continue;
@@ -132,11 +81,16 @@ for (const episode of data.episodes) {
   if (shown.length) {
     console.log(`Ep. ${episode.number} - ${episode.title}`);
     for (const row of shown) {
-      const mark = row.hits.length ? `heard @ ${row.hits[0].time}` : 'NOT SPOKEN';
+      const hit = row.hits[0];
+      const mark = !hit
+        ? 'NOT SPOKEN'
+        : hit.heard
+          ? `heard @ ${hit.time} as "${hit.heard}"`
+          : `heard @ ${hit.time}`;
       console.log(`  [${row.kind}] ${row.label.padEnd(52)} ${mark}`);
       if (onlyEp && row.hits.length) {
-        for (const hit of row.hits.slice(0, 3)) {
-          console.log(`         ${hit.time}  "${hit.text.slice(0, 90)}"`);
+        for (const h of row.hits.slice(0, 3)) {
+          console.log(`         ${h.time}  "${h.text.slice(0, 90)}"`);
         }
       }
     }
@@ -144,8 +98,14 @@ for (const episode of data.episodes) {
   }
 
   for (const row of rows) {
-    if (row.hits.length) verified += 1;
-    else {
+    if (row.hits.length) {
+      verified += 1;
+      if (row.hits[0].heard) {
+        phonetic.push(
+          `Ep.${episode.number} ${row.label} -> "${row.hits[0].heard}" @ ${row.hits[0].time}`,
+        );
+      }
+    } else {
       unverified += 1;
       gaps.push(`Ep.${episode.number} ${row.label}`);
     }
@@ -154,7 +114,12 @@ for (const episode of data.episodes) {
 
 console.log('-'.repeat(64));
 console.log(`verified in audio : ${verified}`);
+console.log(`  of those, heard only phonetically : ${phonetic.length}`);
 console.log(`not spoken        : ${unverified}`);
+if (phonetic.length) {
+  console.log('\nMatched by sound, not spelling -- check these read correctly:');
+  for (const line of phonetic) console.log(`  ${line}`);
+}
 if (unverified && !missingOnly) {
   console.log('\nRe-run with --missing to list only the unverified rows.');
 }
