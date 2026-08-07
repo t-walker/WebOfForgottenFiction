@@ -188,8 +188,13 @@ npm run scan:mentions -- --missing   # only rows with no spoken evidence
 
 Rows flagged `NOT SPOKEN` came from show notes or from general knowledge, not
 from the episode. Those are candidates for removal — but confirm with the user
-before deleting anything, since the scanner matches on text and can miss a name
-that Whisper transcribed badly.
+before deleting anything.
+
+The scanner matches by sound as well as spelling, because Whisper renders
+unfamiliar proper nouns phonetically — it writes Fred Dekker as "Decker" and
+*Maus* as "Mouse". Those are reported in a separate section with the spelling
+as heard, so check that each one reads as the right person or title before
+trusting it.
 
 ## Boundaries
 
