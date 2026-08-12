@@ -327,6 +327,18 @@
     {
       "id": "p-william-w-johnstone",
       "name": "William W. Johnstone"
+    },
+    {
+      "id": "p-jim-fisher",
+      "name": "Jim Fisher"
+    },
+    {
+      "id": "p-jim-stahl",
+      "name": "Jim Stahl"
+    },
+    {
+      "id": "p-ellen-datlow",
+      "name": "Ellen Datlow"
     }
   ],
   "works": [
@@ -761,6 +773,126 @@
       "year": 1975,
       "notes": "The made-for-TV anthology whose final segment adapts Prey.",
       "featured": false
+    },
+    {
+      "id": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "title": "Tattooed Teenage Alien Fighters from Beverly Hills",
+      "medium": "TV",
+      "year": null,
+      "notes": "A 40-episode Power Rangers knockoff on the USA network that almost nobody remembers - rediscovered through a Dragon Ball Z Abridged joke. Cheap costumes, five sets, and writing far sharper than the kids' show it pretended to be.",
+      "featured": true
+    },
+    {
+      "id": "night-of-the-mannequins",
+      "title": "Night of the Mannequins",
+      "medium": "Book",
+      "year": 2020,
+      "notes": "The next stop on the killer toy quest. A novella written in four days about a mannequin named Manny pulled out of a creek bed - and a slasher told entirely from the killer's point of view.",
+      "featured": true
+    },
+    {
+      "id": "mighty-morphin-power-rangers",
+      "title": "Mighty Morphin Power Rangers",
+      "medium": "TV",
+      "year": 1993,
+      "notes": "Saban's original, built by splicing licensed Japanese Super Sentai action footage with cheap American teen footage - the formula everyone else chased.",
+      "featured": false
+    },
+    {
+      "id": "vr-troopers",
+      "title": "VR Troopers",
+      "medium": "TV",
+      "year": null,
+      "notes": "Saban's follow-up the next year, using a different Super Sentai series with the same formula.",
+      "featured": false
+    },
+    {
+      "id": "superhuman-samurai-cyber-squad",
+      "title": "Superhuman Samurai Cyber Squad",
+      "medium": "TV",
+      "year": null,
+      "notes": "DIC's first attempt at the formula, and the show that ran them out of licensable Japanese footage - which is why they shot Tattooed Teenage Alien Fighters entirely in America.",
+      "featured": false
+    },
+    {
+      "id": "big-bad-beetleborgs",
+      "title": "Big Bad Beetleborgs",
+      "medium": "TV",
+      "year": null,
+      "notes": "The recap Paris originally set out to do before this episode became a boondoggle.",
+      "featured": false
+    },
+    {
+      "id": "dragon-ball-z-abridged",
+      "title": "Dragon Ball Z Abridged",
+      "medium": "TV",
+      "year": null,
+      "notes": "The fan redub whose gag list of martial arts shows made a generation discover Tattooed Teenage Alien Fighters was real.",
+      "featured": false
+    },
+    {
+      "id": "voltron",
+      "title": "Voltron",
+      "medium": "TV",
+      "year": null,
+      "notes": "Tommy raises it as the animated predecessor that spliced Japanese shows for an American audience; Paris calls it a contemporary of Power Rangers.",
+      "featured": false
+    },
+    {
+      "id": "saved-by-the-bell",
+      "title": "Saved by the Bell",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "american-gladiators",
+      "title": "American Gladiators",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "friends",
+      "title": "Friends",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "beverly-hills-90210",
+      "title": "Beverly Hills 90210",
+      "medium": "TV",
+      "year": null,
+      "notes": "Paris keeps coming back to it: the show's real drama is teen interpersonal soap, with monster fights as window dressing.",
+      "featured": false
+    },
+    {
+      "id": "the-room",
+      "title": "The Room",
+      "medium": "Film",
+      "year": null,
+      "notes": "Fans of the Ameritoku genre call Tattooed Teenage Alien Fighters 'the Room of Ameritoku shows.'",
+      "featured": false
+    },
+    {
+      "id": "on-writing",
+      "title": "On Writing",
+      "medium": "Book",
+      "year": null,
+      "notes": "Tommy invokes King's fossil metaphor - stories already exist and the writer excavates them - to describe how the novella found its own shape.",
+      "featured": false
+    },
+    {
+      "id": "there-will-be-blood",
+      "title": "There Will Be Blood",
+      "medium": "Film",
+      "year": null,
+      "notes": "Paris's story about a moviegoer who felt cheated by the title - his analogy for the novella's negative reviews.",
+      "featured": false
     }
   ],
   "episodes": [
@@ -871,6 +1003,12 @@
       "number": 18,
       "title": "The Ray Bradbury Theater & Prey",
       "date": "2026-08-04"
+    },
+    {
+      "id": "ep19",
+      "number": 19,
+      "title": "Tattooed Teenage Alien Fighters From Beverly Hills & Night of the Mannequins",
+      "date": "2026-08-11"
     }
   ],
   "episodeWorks": [
@@ -1197,6 +1335,139 @@
       "workId": "trilogy-of-terror",
       "pickedByHostId": null,
       "role": "mentioned"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:06:06"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "night-of-the-mannequins",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:43:15"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "mighty-morphin-power-rangers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:16:40"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "vr-troopers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:03"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "superhuman-samurai-cyber-squad",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:23:04"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "big-bad-beetleborgs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:54"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "dragon-ball-z-abridged",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:27"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "voltron",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:54"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "saved-by-the-bell",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:04"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "american-gladiators",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:04"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "friends",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:04"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "beverly-hills-90210",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:04"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "the-room",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:24:57"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "the-ray-bradbury-theater",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:43"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "mapping-the-interior",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:42"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "night-of-the-living-dead",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:52"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "on-writing",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:23"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "mama",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:11:58"
+    },
+    {
+      "episodeId": "ep19",
+      "workId": "there-will-be-blood",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:04:16"
     }
   ],
   "credits": [
@@ -1799,6 +2070,41 @@
       "workId": "near-dark",
       "role": "Actor",
       "kind": "appeared"
+    },
+    {
+      "personId": "p-jim-fisher",
+      "workId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:14:21"
+    },
+    {
+      "personId": "p-jim-stahl",
+      "workId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:14:21"
+    },
+    {
+      "personId": "p-stephen-graham-jones",
+      "workId": "night-of-the-mannequins",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:15"
+    },
+    {
+      "personId": "p-ellen-datlow",
+      "workId": "night-of-the-mannequins",
+      "role": "Editor",
+      "kind": "created",
+      "evidence": "00:42:48"
+    },
+    {
+      "personId": "p-stephen-king",
+      "workId": "on-writing",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:44:23"
     }
   ],
   "workRelations": [
@@ -1891,6 +2197,56 @@
       "fromWorkId": "trilogy-of-terror",
       "toWorkId": "prey",
       "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "mighty-morphin-power-rangers",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "vr-troopers",
+      "toWorkId": "mighty-morphin-power-rangers",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "superhuman-samurai-cyber-squad",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "saved-by-the-bell",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "american-gladiators",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "friends",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "beverly-hills-90210",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-room",
+      "toWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "mapping-the-interior",
+      "toWorkId": "night-of-the-mannequins",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "night-of-the-living-dead",
+      "toWorkId": "night-of-the-mannequins",
+      "relation": "precursor"
     }
   ],
   "hostRelations": [
