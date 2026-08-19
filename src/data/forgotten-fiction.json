@@ -339,6 +339,54 @@
     {
       "id": "p-ellen-datlow",
       "name": "Ellen Datlow"
+    },
+    {
+      "id": "p-michael-crichton",
+      "name": "Michael Crichton"
+    },
+    {
+      "id": "p-barry-levinson",
+      "name": "Barry Levinson"
+    },
+    {
+      "id": "p-dustin-hoffman",
+      "name": "Dustin Hoffman"
+    },
+    {
+      "id": "p-sharon-stone",
+      "name": "Sharon Stone"
+    },
+    {
+      "id": "p-samuel-l-jackson",
+      "name": "Samuel L. Jackson"
+    },
+    {
+      "id": "p-queen-latifah",
+      "name": "Queen Latifah"
+    },
+    {
+      "id": "p-huey-lewis",
+      "name": "Huey Lewis"
+    },
+    {
+      "id": "p-liev-schreiber",
+      "name": "Liev Schreiber"
+    },
+    {
+      "id": "p-andrew-neiderman",
+      "name": "Andrew Neiderman"
+    },
+    {
+      "id": "p-sandor-stern",
+      "name": "Sandor Stern"
+    },
+    {
+      "id": "p-al-pacino",
+      "name": "Al Pacino"
+    },
+    {
+      "id": "p-keanu-reeves",
+      "name": "Keanu Reeves"
     }
   ],
   "works": [
@@ -893,6 +941,158 @@
       "year": null,
       "notes": "Paris's story about a moviegoer who felt cheated by the title - his analogy for the novella's negative reviews.",
       "featured": false
+    },
+    {
+      "id": "sphere",
+      "title": "Sphere",
+      "medium": "Film",
+      "year": 1998,
+      "notes": "Paris's long-standing favourite and top-of-the-list pick from the day they conceived the podcast: a 12% critical / 38% audience score sci-fi mystery he argues was unfairly buried.",
+      "featured": true
+    },
+    {
+      "id": "pin",
+      "title": "Pin",
+      "medium": "Book",
+      "year": 1981,
+      "notes": "Neo-gothic domestic horror by the ghostwriter who became V.C. Andrews; the next stop on the killer-toy quest, paired deliberately with Night of the Mannequins.",
+      "featured": true
+    },
+    {
+      "id": "the-abyss",
+      "title": "The Abyss",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "event-horizon",
+      "title": "Event Horizon",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "2001-a-space-odyssey",
+      "title": "2001: A Space Odyssey",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "alien",
+      "title": "Alien",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "jurassic-park",
+      "title": "Jurassic Park",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-andromeda-strain",
+      "title": "The Andromeda Strain",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "congo",
+      "title": "Congo",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-13th-warrior",
+      "title": "The 13th Warrior",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-lost-world",
+      "title": "The Lost World",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "titanic",
+      "title": "Titanic",
+      "medium": "Film",
+      "year": 1997,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "rain-man",
+      "title": "Rain Man",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "frankenhooker",
+      "title": "Frankenhooker",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "pin-a-plastic-nightmare",
+      "title": "Pin: A Plastic Nightmare",
+      "medium": "Film",
+      "year": 1988,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-devils-advocate",
+      "title": "The Devil's Advocate",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-adventures-of-pinocchio",
+      "title": "The Adventures of Pinocchio",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-amityville-horror",
+      "title": "The Amityville Horror",
+      "medium": "Film",
+      "year": 1979,
+      "notes": "",
+      "featured": false
     }
   ],
   "episodes": [
@@ -1009,6 +1209,12 @@
       "number": 19,
       "title": "Tattooed Teenage Alien Fighters From Beverly Hills & Night of the Mannequins",
       "date": "2026-08-11"
+    },
+    {
+      "id": "ep20",
+      "number": 20,
+      "title": "Ep. 20 - Sphere & Pin",
+      "date": "2026-08-18"
     }
   ],
   "episodeWorks": [
@@ -1468,6 +1674,153 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "01:04:16"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "sphere",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:06:28"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "pin",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:42:29"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-abyss",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:14"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "event-horizon",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:14"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "2001-a-space-odyssey",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:06:03"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "alien",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:34:15"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "jurassic-park",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:19"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-andromeda-strain",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:19"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "congo",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:25"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "timeline",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:30:56"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-13th-warrior",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:30:52"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-lost-world",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:08"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "titanic",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:29:54"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "rain-man",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:34"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "frankenhooker",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:01:06"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "pin-a-plastic-nightmare",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:07:03"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "flowers-in-the-attic",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:39:47"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "night-of-the-mannequins",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:00:13"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-devils-advocate",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:40:00"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-adventures-of-pinocchio",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:59:39"
+    },
+    {
+      "episodeId": "ep20",
+      "workId": "the-amityville-horror",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:06:28"
     }
   ],
   "credits": [
@@ -2105,6 +2458,160 @@
       "role": "Author",
       "kind": "created",
       "evidence": "00:44:23"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "sphere",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:08:14"
+    },
+    {
+      "personId": "p-barry-levinson",
+      "workId": "sphere",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:08:34"
+    },
+    {
+      "personId": "p-dustin-hoffman",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:08:50"
+    },
+    {
+      "personId": "p-sharon-stone",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:08:50"
+    },
+    {
+      "personId": "p-samuel-l-jackson",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:08:56"
+    },
+    {
+      "personId": "p-queen-latifah",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:09:07"
+    },
+    {
+      "personId": "p-huey-lewis",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:09:07"
+    },
+    {
+      "personId": "p-liev-schreiber",
+      "workId": "sphere",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:32"
+    },
+    {
+      "personId": "p-andrew-neiderman",
+      "workId": "pin",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:37:26"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "jurassic-park",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:08:19"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "the-andromeda-strain",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:08:19"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "congo",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:08:25"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "timeline",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:30:56"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "the-13th-warrior",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:30:52"
+    },
+    {
+      "personId": "p-michael-crichton",
+      "workId": "the-lost-world",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:31:08"
+    },
+    {
+      "personId": "p-barry-levinson",
+      "workId": "rain-man",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:08:34"
+    },
+    {
+      "personId": "p-sandor-stern",
+      "workId": "pin-a-plastic-nightmare",
+      "role": "Screenwriter",
+      "kind": "created",
+      "evidence": "01:06:14"
+    },
+    {
+      "personId": "p-sandor-stern",
+      "workId": "pin-a-plastic-nightmare",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "01:06:22"
+    },
+    {
+      "personId": "p-andrew-neiderman",
+      "workId": "the-devils-advocate",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:40:00"
+    },
+    {
+      "personId": "p-al-pacino",
+      "workId": "the-devils-advocate",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:40:03"
+    },
+    {
+      "personId": "p-keanu-reeves",
+      "workId": "the-devils-advocate",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:40:03"
+    },
+    {
+      "personId": "p-sandor-stern",
+      "workId": "the-amityville-horror",
+      "role": "Screenwriter",
+      "kind": "created",
+      "evidence": "01:06:28"
     }
   ],
   "workRelations": [
@@ -2247,6 +2754,41 @@
       "fromWorkId": "night-of-the-living-dead",
       "toWorkId": "night-of-the-mannequins",
       "relation": "precursor"
+    },
+    {
+      "fromWorkId": "the-abyss",
+      "toWorkId": "sphere",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "event-horizon",
+      "toWorkId": "sphere",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "2001-a-space-odyssey",
+      "toWorkId": "sphere",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "alien",
+      "toWorkId": "sphere",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "pin-a-plastic-nightmare",
+      "toWorkId": "pin",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "flowers-in-the-attic",
+      "toWorkId": "pin",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "night-of-the-mannequins",
+      "toWorkId": "pin",
+      "relation": "similar"
     }
   ],
   "hostRelations": [
