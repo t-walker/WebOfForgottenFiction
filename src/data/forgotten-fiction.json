@@ -387,6 +387,66 @@
     {
       "id": "p-keanu-reeves",
       "name": "Keanu Reeves"
+    },
+    {
+      "id": "p-shannon-chandler",
+      "name": "Shannon Chandler"
+    },
+    {
+      "id": "p-john-flynn",
+      "name": "John Flynn"
+    },
+    {
+      "id": "p-andrew-kevin-walker",
+      "name": "Andrew Kevin Walker"
+    },
+    {
+      "id": "p-brian-owens",
+      "name": "Brian Owens"
+    },
+    {
+      "id": "p-edward-furlong",
+      "name": "Edward Furlong"
+    },
+    {
+      "id": "p-frank-langella",
+      "name": "Frank Langella"
+    },
+    {
+      "id": "p-t-ryder-smith",
+      "name": "T. Ryder Smith"
+    },
+    {
+      "id": "p-michael-roy",
+      "name": "Michael Roy"
+    },
+    {
+      "id": "p-george-s-clinton",
+      "name": "George S. Clinton"
+    },
+    {
+      "id": "p-austin-st-john",
+      "name": "Austin St. John"
+    },
+    {
+      "id": "p-robin-williams",
+      "name": "Robin Williams"
+    },
+    {
+      "id": "p-dean-koontz",
+      "name": "Dean Koontz"
+    },
+    {
+      "id": "p-jeff-goldblum",
+      "name": "Jeff Goldblum"
+    },
+    {
+      "id": "p-alicia-silverstone",
+      "name": "Alicia Silverstone"
+    },
+    {
+      "id": "p-david-fincher",
+      "name": "David Fincher"
     }
   ],
   "works": [
@@ -868,7 +928,7 @@
       "medium": "TV",
       "year": null,
       "notes": "The recap Paris originally set out to do before this episode became a boondoggle.",
-      "featured": false
+      "featured": true
     },
     {
       "id": "dragon-ball-z-abridged",
@@ -994,8 +1054,16 @@
       "id": "jurassic-park",
       "title": "Jurassic Park",
       "medium": "Book",
-      "year": null,
-      "notes": "",
+      "year": 1990,
+      "notes": "Michael Crichton novel, cited when introducing him as the author behind Sphere.",
+      "featured": false
+    },
+    {
+      "id": "jurassic-park-film",
+      "title": "Jurassic Park",
+      "medium": "Film",
+      "year": 1993,
+      "notes": "Named in the rundown of what Brainscan opened against in theaters.",
       "featured": false
     },
     {
@@ -1091,6 +1159,278 @@
       "title": "The Amityville Horror",
       "medium": "Film",
       "year": 1979,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "brainscan",
+      "title": "Brainscan",
+      "medium": "Film",
+      "year": 1994,
+      "notes": "Tommy's favourite VHS-cover rental at age 10: a 1994 cult flop about a CD-ROM game that makes you a killer.",
+      "featured": true
+    },
+    {
+      "id": "juko-bee-fighter",
+      "title": "Juko Bee Fighter",
+      "medium": "TV",
+      "year": 1995,
+      "notes": "The Japanese tokusatsu series, glossed on air as 'Heavy Shelled Beetle Fighter', whose footage Beetleborgs was built from.",
+      "featured": false
+    },
+    {
+      "id": "beetleborgs-metallix",
+      "title": "Beetleborgs Metallix",
+      "medium": "TV",
+      "year": null,
+      "notes": "The second series, made so the toys could change.",
+      "featured": false
+    },
+    {
+      "id": "goosebumps",
+      "title": "Goosebumps",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "ace-ventura",
+      "title": "Ace Ventura",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "flubber",
+      "title": "Flubber",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "casper",
+      "title": "Casper",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "casper-a-spirited-beginning",
+      "title": "Casper: A Spirited Beginning",
+      "medium": "Film",
+      "year": null,
+      "notes": "The union film that cost Shannon Chandler her Beetleborgs role.",
+      "featured": false
+    },
+    {
+      "id": "the-secret-world-of-alex-mack",
+      "title": "The Secret World of Alex Mack",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "scanners",
+      "title": "Scanners",
+      "medium": "Film",
+      "year": null,
+      "notes": "Paris first mistook Brainscan for this.",
+      "featured": false
+    },
+    {
+      "id": "beetlejuice",
+      "title": "Beetlejuice",
+      "medium": "Film",
+      "year": null,
+      "notes": "Gene Siskel called Trickster 'a low rent Beetlejuice'.",
+      "featured": false
+    },
+    {
+      "id": "drop-dead-fred",
+      "title": "Drop Dead Fred",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "a-nightmare-on-elm-street",
+      "title": "A Nightmare on Elm Street",
+      "medium": "Film",
+      "year": null,
+      "notes": "Tommy prefers Brainscan's ending to the original's.",
+      "featured": false
+    },
+    {
+      "id": "terminator-2",
+      "title": "Terminator 2",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "american-history-x",
+      "title": "American History X",
+      "medium": "Film",
+      "year": 1998,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "seven",
+      "title": "Seven",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "hideaway",
+      "title": "Hideaway",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-game",
+      "title": "The Game",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "8mm",
+      "title": "8MM",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "sleepy-hollow",
+      "title": "Sleepy Hollow",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "fight-club",
+      "title": "Fight Club",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "mortal-kombat",
+      "title": "Mortal Kombat",
+      "medium": "Film",
+      "year": 1995,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "austin-powers-international-man-of-mystery",
+      "title": "Austin Powers: International Man of Mystery",
+      "medium": "Film",
+      "year": 1997,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "wild-things",
+      "title": "Wild Things",
+      "medium": "Film",
+      "year": 1998,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-santa-clause-2",
+      "title": "The Santa Clause 2",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-santa-clause-3",
+      "title": "The Santa Clause 3",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "harold-and-kumar-escape-from-guantanamo-bay",
+      "title": "Harold and Kumar Escape from Guantanamo Bay",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "schindlers-list",
+      "title": "Schindler's List",
+      "medium": "Film",
+      "year": null,
+      "notes": "Named in the rundown of what Brainscan opened against.",
+      "featured": false
+    },
+    {
+      "id": "reality-bites",
+      "title": "Reality Bites",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "d2-the-mighty-ducks",
+      "title": "D2: The Mighty Ducks",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "major-league-2",
+      "title": "Major League 2",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "four-weddings-and-a-funeral",
+      "title": "Four Weddings and a Funeral",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "philadelphia",
+      "title": "Philadelphia",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "bad-girls",
+      "title": "Bad Girls",
+      "medium": "Film",
+      "year": null,
       "notes": "",
       "featured": false
     }
@@ -1213,8 +1553,14 @@
     {
       "id": "ep20",
       "number": 20,
-      "title": "Ep. 20 - Sphere & Pin",
+      "title": "Sphere & Pin",
       "date": "2026-08-18"
+    },
+    {
+      "id": "ep21",
+      "number": 21,
+      "title": "Big Bad Beetleborgs & Brainscan",
+      "date": "2026-08-25"
     }
   ],
   "episodeWorks": [
@@ -1821,6 +2167,300 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "01:06:28"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "big-bad-beetleborgs",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:02:42"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "brainscan",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:33:27"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "juko-bee-fighter",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:55"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "beetleborgs-metallix",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:27:32"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "mighty-morphin-power-rangers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:07"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:31"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "goosebumps",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:10:30"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "ace-ventura",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:10:33"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "flubber",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:15:54"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "casper",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:22:12"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "casper-a-spirited-beginning",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:22:07"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "the-secret-world-of-alex-mack",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:23:16"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "scanners",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:33:37"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "night-of-the-mannequins",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:04:54"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "pin",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:04:54"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "beetlejuice",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:52:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "drop-dead-fred",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:52:32"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "a-nightmare-on-elm-street",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:07:30"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "terminator-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:05:23"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "american-history-x",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:05:32"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "tales-from-the-crypt",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:36:37"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "seven",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:36:53"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "hideaway",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:01"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "the-game",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:17"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "8mm",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:17"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "sleepy-hollow",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:17"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "event-horizon",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "fight-club",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "mortal-kombat",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:47"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "austin-powers-international-man-of-mystery",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:53"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "wild-things",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:53"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "the-santa-clause-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:54:01"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "the-santa-clause-3",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:54:01"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "harold-and-kumar-escape-from-guantanamo-bay",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:54:01"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "schindlers-list",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "reality-bites",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "d2-the-mighty-ducks",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "major-league-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:26"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "four-weddings-and-a-funeral",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:35"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "philadelphia",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:35"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "bad-girls",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:42"
+    },
+    {
+      "episodeId": "ep21",
+      "workId": "jurassic-park-film",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:26"
     }
   ],
   "credits": [
@@ -2612,6 +3252,223 @@
       "role": "Screenwriter",
       "kind": "created",
       "evidence": "01:06:28"
+    },
+    {
+      "personId": "p-shannon-chandler",
+      "workId": "big-bad-beetleborgs",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:21:56"
+    },
+    {
+      "personId": "p-john-flynn",
+      "workId": "brainscan",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:34:11"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "brainscan",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:34:11"
+    },
+    {
+      "personId": "p-brian-owens",
+      "workId": "brainscan",
+      "role": "Story",
+      "kind": "created",
+      "evidence": "00:34:18"
+    },
+    {
+      "personId": "p-edward-furlong",
+      "workId": "brainscan",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:34:39"
+    },
+    {
+      "personId": "p-frank-langella",
+      "workId": "brainscan",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:34:39"
+    },
+    {
+      "personId": "p-t-ryder-smith",
+      "workId": "brainscan",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:34:39"
+    },
+    {
+      "personId": "p-michael-roy",
+      "workId": "brainscan",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:38:23"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "brainscan",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:53:41"
+    },
+    {
+      "personId": "p-austin-st-john",
+      "workId": "mighty-morphin-power-rangers",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:21:27"
+    },
+    {
+      "personId": "p-robin-williams",
+      "workId": "flubber",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:15:54"
+    },
+    {
+      "personId": "p-edward-furlong",
+      "workId": "terminator-2",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "01:05:23"
+    },
+    {
+      "personId": "p-edward-furlong",
+      "workId": "american-history-x",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "01:05:32"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "tales-from-the-crypt",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:36:37"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "seven",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:36:53"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "hideaway",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:01"
+    },
+    {
+      "personId": "p-dean-koontz",
+      "workId": "hideaway",
+      "role": "Source Novel",
+      "kind": "created",
+      "evidence": "00:37:01"
+    },
+    {
+      "personId": "p-jeff-goldblum",
+      "workId": "hideaway",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:37:07"
+    },
+    {
+      "personId": "p-alicia-silverstone",
+      "workId": "hideaway",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:37:07"
+    },
+    {
+      "personId": "p-david-fincher",
+      "workId": "the-game",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:37:17"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "the-game",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:17"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "8mm",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:17"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "sleepy-hollow",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:17"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "event-horizon",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:26"
+    },
+    {
+      "personId": "p-andrew-kevin-walker",
+      "workId": "fight-club",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:26"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "mortal-kombat",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:53:47"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "austin-powers-international-man-of-mystery",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:53:53"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "wild-things",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:53:53"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "the-santa-clause-2",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:54:01"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "the-santa-clause-3",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:54:01"
+    },
+    {
+      "personId": "p-george-s-clinton",
+      "workId": "harold-and-kumar-escape-from-guantanamo-bay",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:54:01"
     }
   ],
   "workRelations": [
@@ -2788,6 +3645,56 @@
     {
       "fromWorkId": "night-of-the-mannequins",
       "toWorkId": "pin",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "juko-bee-fighter",
+      "toWorkId": "big-bad-beetleborgs",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "beetleborgs-metallix",
+      "toWorkId": "big-bad-beetleborgs",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "mighty-morphin-power-rangers",
+      "toWorkId": "big-bad-beetleborgs",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "tattooed-teenage-alien-fighters-from-beverly-hills",
+      "toWorkId": "big-bad-beetleborgs",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "casper-a-spirited-beginning",
+      "toWorkId": "casper",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "night-of-the-mannequins",
+      "toWorkId": "brainscan",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "pin",
+      "toWorkId": "brainscan",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "beetlejuice",
+      "toWorkId": "brainscan",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "drop-dead-fred",
+      "toWorkId": "brainscan",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "a-nightmare-on-elm-street",
+      "toWorkId": "brainscan",
       "relation": "similar"
     }
   ],
