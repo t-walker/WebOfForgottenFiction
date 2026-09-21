@@ -447,6 +447,58 @@
     {
       "id": "p-david-fincher",
       "name": "David Fincher"
+    },
+    {
+      "id": "p-dennis-feltham-jones",
+      "name": "Dennis Feltham Jones"
+    },
+    {
+      "id": "p-james-hong",
+      "name": "James Hong"
+    },
+    {
+      "id": "p-william-sleator",
+      "name": "William Sleator"
+    },
+    {
+      "id": "p-michael-cart",
+      "name": "Michael Cart"
+    },
+    {
+      "id": "p-scott-glosserman",
+      "name": "Scott Glosserman"
+    },
+    {
+      "id": "p-nathan-baesel",
+      "name": "Nathan Baesel"
+    },
+    {
+      "id": "p-robert-englund",
+      "name": "Robert Englund"
+    },
+    {
+      "id": "p-zelda-rubinstein",
+      "name": "Zelda Rubinstein"
+    },
+    {
+      "id": "p-scott-wilson",
+      "name": "Scott Wilson"
+    },
+    {
+      "id": "p-betty-ren-wright",
+      "name": "Betty Ren Wright"
+    },
+    {
+      "id": "p-jay-baruchel",
+      "name": "Jay Baruchel"
+    },
+    {
+      "id": "p-tatyana-ali",
+      "name": "Tatyana Ali"
+    },
+    {
+      "id": "p-r-l-stine",
+      "name": "R.L. Stine"
     }
   ],
   "works": [
@@ -1433,6 +1485,422 @@
       "year": null,
       "notes": "",
       "featured": false
+    },
+    {
+      "id": "colossus-the-forbin-project",
+      "title": "Colossus: The Forbin Project",
+      "medium": "Film",
+      "year": 1970,
+      "notes": "Paris's entry in his \"underrated sci-fi horror with existential dread\" run: a 1970 Cold War film in which the US hands the nuclear arsenal to a supercomputer, which Paris frames as a chillingly accurate depiction of an AI uprising.",
+      "featured": true
+    },
+    {
+      "id": "among-the-dolls",
+      "title": "Among the Dolls",
+      "medium": "Book",
+      "year": 1975,
+      "notes": "A 70-page children's chapter book about a girl who is pulled into her own dollhouse. Tommy uses it as a way into Sleator's life and his career as a closeted young adult author.",
+      "featured": true
+    },
+    {
+      "id": "poltergeist",
+      "title": "Poltergeist",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-matrix",
+      "title": "The Matrix",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-terminator",
+      "title": "The Terminator",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "big-trouble-in-little-china",
+      "title": "Big Trouble in Little China",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "dr-strangelove",
+      "title": "Dr. Strangelove",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "house-of-stairs",
+      "title": "House of Stairs",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-angry-moon",
+      "title": "The Angry Moon",
+      "medium": "Book",
+      "year": 1970,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "blackbriar",
+      "title": "Blackbriar",
+      "medium": "Book",
+      "year": 1972,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "oddballs",
+      "title": "Oddballs",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "am-i-blue-coming-out-of-the-silence",
+      "title": "Am I Blue? Coming Out of the Silence",
+      "medium": "Book",
+      "year": 1994,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "in-the-tunnels",
+      "title": "In the Tunnels",
+      "medium": "Book",
+      "year": 1994,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "how-beautiful-the-ordinary-12-stories-of-identity",
+      "title": "How Beautiful the Ordinary: 12 Stories of Identity",
+      "medium": "Book",
+      "year": 2009,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "fingernail",
+      "title": "Fingernail",
+      "medium": "Book",
+      "year": 2009,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-year-of-impossible-goodbyes",
+      "title": "The Year of Impossible Goodbyes",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "behind-the-mask-the-rise-of-leslie-vernon",
+      "title": "Behind the Mask: The Rise of Leslie Vernon",
+      "medium": "Film",
+      "year": 2006,
+      "notes": "A mockumentary slasher satire that lampshades every horror trope, which Paris places between American Psycho and What We Do in the Shadows in the horror-comedy lineage.",
+      "featured": true
+    },
+    {
+      "id": "the-dollhouse-murders",
+      "title": "The Dollhouse Murders",
+      "medium": "Book",
+      "year": 1983,
+      "notes": "Part two of Tommy's dollhouse run. A 1983 Scholastic Apple chapter book about a haunted dollhouse, framed around his own fourth-grade memories of library reading.",
+      "featured": true
+    },
+    {
+      "id": "shaun-of-the-dead",
+      "title": "Shaun of the Dead",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "tucker-and-dale-vs-evil",
+      "title": "Tucker and Dale vs. Evil",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-cabin-in-the-woods",
+      "title": "The Cabin in the Woods",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "american-psycho",
+      "title": "American Psycho",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "what-we-do-in-the-shadows",
+      "title": "What We Do in the Shadows",
+      "medium": "Film",
+      "year": 2014,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-office",
+      "title": "The Office",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-last-showing",
+      "title": "The Last Showing",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-walking-dead",
+      "title": "The Walking Dead",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "in-cold-blood",
+      "title": "In Cold Blood",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "halloween",
+      "title": "Halloween",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "friday-the-13th",
+      "title": "Friday the 13th",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "creep",
+      "title": "Creep",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-castle-in-the-attic",
+      "title": "The Castle in the Attic",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-indian-in-the-cupboard",
+      "title": "The Indian in the Cupboard",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-baby-sitters-club",
+      "title": "The Baby-Sitters Club",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "secrets-in-the-attic",
+      "title": "Secrets in the Attic",
+      "medium": "Film",
+      "year": 1992,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "wonderworks",
+      "title": "Wonderworks",
+      "medium": "TV",
+      "year": 1984,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "night-of-the-living-dummy",
+      "title": "Night of the Living Dummy",
+      "medium": "Book",
+      "year": 1993,
+      "notes": "Goosebumps book seven, the entry that saved the series from cancellation - and whose real villain is Mr. Wood, not the Slappy everyone remembers from the cover.",
+      "featured": true
+    },
+    {
+      "id": "jaws",
+      "title": "Jaws",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "star-wars",
+      "title": "Star Wars",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "shes-out-of-my-league",
+      "title": "She's Out of My League",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "tropic-thunder",
+      "title": "Tropic Thunder",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "this-is-the-end",
+      "title": "This Is the End",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "last-one-laughing-canada",
+      "title": "Last One Laughing Canada",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-fresh-prince-of-bel-air",
+      "title": "The Fresh Prince of Bel-Air",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "halloween-iii-season-of-the-witch",
+      "title": "Halloween III: Season of the Witch",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "slappys-world",
+      "title": "Slappy's World",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "how-to-be-funny",
+      "title": "How to Be Funny",
+      "medium": "Book",
+      "year": 1978,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "eureekas-castle",
+      "title": "Eureeka's Castle",
+      "medium": "TV",
+      "year": 1989,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "sesame-street",
+      "title": "Sesame Street",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "welcome-to-dead-house",
+      "title": "Welcome to Dead House",
+      "medium": "Book",
+      "year": 1992,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "stay-out-of-the-basement",
+      "title": "Stay Out of the Basement",
+      "medium": "Book",
+      "year": 1992,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "monster-blood",
+      "title": "Monster Blood",
+      "medium": "Book",
+      "year": 1992,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "night-of-the-living-dummy-2",
+      "title": "Night of the Living Dummy 2",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
     }
   ],
   "episodes": [
@@ -1561,6 +2029,24 @@
       "number": 21,
       "title": "Big Bad Beetleborgs & Brainscan",
       "date": "2026-08-25"
+    },
+    {
+      "id": "ep22",
+      "number": 22,
+      "title": "Colossus: The Forbin Project & Among the Dolls",
+      "date": "2026-09-01"
+    },
+    {
+      "id": "ep23",
+      "number": 23,
+      "title": "Behind the Mask: The Rise of Leslie Vernon & The Dollhouse Murders",
+      "date": "2026-09-08"
+    },
+    {
+      "id": "ep24",
+      "number": 24,
+      "title": "Are You Afraid of the Dark? & Night of the Living Dummy",
+      "date": "2026-09-15"
     }
   ],
   "episodeWorks": [
@@ -2461,6 +2947,482 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "00:35:26"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "colossus-the-forbin-project",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:05:22"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "among-the-dolls",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:42:03"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "sphere",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:03:43"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "poltergeist",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:28"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "the-matrix",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:56"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "the-terminator",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:09"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "big-trouble-in-little-china",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:10:49"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "dr-strangelove",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:13:44"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "2001-a-space-odyssey",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:45"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "pin",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:41:52"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "house-of-stairs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:38"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "the-angry-moon",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:44"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "blackbriar",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:52"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "oddballs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:34"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "am-i-blue-coming-out-of-the-silence",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:04:42"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "in-the-tunnels",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:04:35"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "how-beautiful-the-ordinary-12-stories-of-identity",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:07:04"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "fingernail",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:07:00"
+    },
+    {
+      "episodeId": "ep22",
+      "workId": "the-year-of-impossible-goodbyes",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:05:48"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:10:52"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-dollhouse-murders",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:48:23"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "shaun-of-the-dead",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:03"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "tucker-and-dale-vs-evil",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:03"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-cabin-in-the-woods",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:09"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "scream",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:25"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "american-psycho",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:38"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "what-we-do-in-the-shadows",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:46"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-office",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:10:40"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "murder-party",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:09"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-last-showing",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:37"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "poltergeist",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:12"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-walking-dead",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:28"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "in-cold-blood",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:31"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "halloween",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:13:23"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "friday-the-13th",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:13:23"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "a-nightmare-on-elm-street",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:13:23"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "creep",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:55"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-castle-in-the-attic",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:48:32"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-indian-in-the-cupboard",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:49:11"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "the-baby-sitters-club",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:51:07"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "secrets-in-the-attic",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:10:07"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "wonderworks",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:10:13"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "flowers-in-the-attic",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:12:49"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "mama",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:12:49"
+    },
+    {
+      "episodeId": "ep23",
+      "workId": "pin",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:12:53"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "are-you-afraid-of-the-dark",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:02:59"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "night-of-the-living-dummy",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:42:10"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "jaws",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:06:33"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "poltergeist",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:06:33"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "friday-the-13th",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:06:33"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "star-wars",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:46"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "shes-out-of-my-league",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:17"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "tropic-thunder",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:20"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "this-is-the-end",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:20"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "last-one-laughing-canada",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:25"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "the-fresh-prince-of-bel-air",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:39"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "american-gladiators",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:41:08"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "tales-from-the-crypt",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:41:15"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "halloween-iii-season-of-the-witch",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:10"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "goosebumps",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:10"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "slappys-world",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:41"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "how-to-be-funny",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:47:56"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "eureekas-castle",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:49:33"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "sesame-street",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:50:09"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "welcome-to-dead-house",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:51:13"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "stay-out-of-the-basement",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:51:13"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "monster-blood",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:51:13"
+    },
+    {
+      "episodeId": "ep24",
+      "workId": "night-of-the-living-dummy-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:01:22"
     }
   ],
   "credits": [
@@ -3469,6 +4431,272 @@
       "role": "Composer",
       "kind": "created",
       "evidence": "00:54:01"
+    },
+    {
+      "personId": "p-dennis-feltham-jones",
+      "workId": "colossus-the-forbin-project",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:08:12"
+    },
+    {
+      "personId": "p-james-hong",
+      "workId": "colossus-the-forbin-project",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:10:54"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "among-the-dolls",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:42:09"
+    },
+    {
+      "personId": "p-james-cameron",
+      "workId": "the-terminator",
+      "role": "Creator",
+      "kind": "created",
+      "evidence": "00:05:02"
+    },
+    {
+      "personId": "p-james-hong",
+      "workId": "big-trouble-in-little-china",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:10:54"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "house-of-stairs",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:42:38"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "the-angry-moon",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:44"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "blackbriar",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:52"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "oddballs",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:45:34"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "in-the-tunnels",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "01:04:35"
+    },
+    {
+      "personId": "p-michael-cart",
+      "workId": "how-beautiful-the-ordinary-12-stories-of-identity",
+      "role": "Editor",
+      "kind": "created",
+      "evidence": "01:07:08"
+    },
+    {
+      "personId": "p-william-sleator",
+      "workId": "fingernail",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "01:07:00"
+    },
+    {
+      "personId": "p-scott-glosserman",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:39:14"
+    },
+    {
+      "personId": "p-nathan-baesel",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:18:51"
+    },
+    {
+      "personId": "p-robert-englund",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:11:19"
+    },
+    {
+      "personId": "p-zelda-rubinstein",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:06"
+    },
+    {
+      "personId": "p-scott-wilson",
+      "workId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:23"
+    },
+    {
+      "personId": "p-betty-ren-wright",
+      "workId": "the-dollhouse-murders",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:49:40"
+    },
+    {
+      "personId": "p-zelda-rubinstein",
+      "workId": "poltergeist",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:18"
+    },
+    {
+      "personId": "p-scott-wilson",
+      "workId": "the-walking-dead",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:28"
+    },
+    {
+      "personId": "p-scott-wilson",
+      "workId": "in-cold-blood",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:31"
+    },
+    {
+      "personId": "p-robert-englund",
+      "workId": "a-nightmare-on-elm-street",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:11:19"
+    },
+    {
+      "personId": "p-jay-baruchel",
+      "workId": "are-you-afraid-of-the-dark",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:12:39"
+    },
+    {
+      "personId": "p-tatyana-ali",
+      "workId": "are-you-afraid-of-the-dark",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:17:39"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "night-of-the-living-dummy",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:24"
+    },
+    {
+      "personId": "p-jay-baruchel",
+      "workId": "shes-out-of-my-league",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:14:17"
+    },
+    {
+      "personId": "p-jay-baruchel",
+      "workId": "tropic-thunder",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:14:20"
+    },
+    {
+      "personId": "p-jay-baruchel",
+      "workId": "this-is-the-end",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:14:20"
+    },
+    {
+      "personId": "p-jay-baruchel",
+      "workId": "last-one-laughing-canada",
+      "role": "Host",
+      "kind": "appeared",
+      "evidence": "00:14:25"
+    },
+    {
+      "personId": "p-tatyana-ali",
+      "workId": "the-fresh-prince-of-bel-air",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:17:39"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "goosebumps",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:24"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "slappys-world",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:41"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "how-to-be-funny",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:48:03"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "eureekas-castle",
+      "role": "Head Writer",
+      "kind": "created",
+      "evidence": "00:49:29"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "welcome-to-dead-house",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:51:13"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "stay-out-of-the-basement",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:51:13"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "monster-blood",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:51:13"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "night-of-the-living-dummy-2",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "01:01:22"
     }
   ],
   "workRelations": [
@@ -3696,6 +4924,51 @@
       "fromWorkId": "a-nightmare-on-elm-street",
       "toWorkId": "brainscan",
       "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-terminator",
+      "toWorkId": "colossus-the-forbin-project",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "dr-strangelove",
+      "toWorkId": "colossus-the-forbin-project",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "creep",
+      "toWorkId": "behind-the-mask-the-rise-of-leslie-vernon",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "secrets-in-the-attic",
+      "toWorkId": "the-dollhouse-murders",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "jaws",
+      "toWorkId": "are-you-afraid-of-the-dark",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "poltergeist",
+      "toWorkId": "are-you-afraid-of-the-dark",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "friday-the-13th",
+      "toWorkId": "are-you-afraid-of-the-dark",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "slappys-world",
+      "toWorkId": "night-of-the-living-dummy",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "night-of-the-living-dummy-2",
+      "toWorkId": "night-of-the-living-dummy",
+      "relation": "successor"
     }
   ],
   "hostRelations": [
