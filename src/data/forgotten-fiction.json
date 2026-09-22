@@ -499,6 +499,42 @@
     {
       "id": "p-r-l-stine",
       "name": "R.L. Stine"
+    },
+    {
+      "id": "p-chris-lamartina",
+      "name": "Chris LaMartina"
+    },
+    {
+      "id": "p-jimmy-george",
+      "name": "Jimmy George"
+    },
+    {
+      "id": "p-paul-fahrenkopf",
+      "name": "Paul Fahrenkopf"
+    },
+    {
+      "id": "p-charles-band",
+      "name": "Charles Band"
+    },
+    {
+      "id": "p-john-huston",
+      "name": "John Huston"
+    },
+    {
+      "id": "p-albert-band",
+      "name": "Albert Band"
+    },
+    {
+      "id": "p-demi-moore",
+      "name": "Demi Moore"
+    },
+    {
+      "id": "p-lucille-ball",
+      "name": "Lucille Ball"
+    },
+    {
+      "id": "p-desi-arnaz",
+      "name": "Desi Arnaz"
     }
   ],
   "works": [
@@ -1901,6 +1937,198 @@
       "year": null,
       "notes": "",
       "featured": false
+    },
+    {
+      "id": "wnuf-halloween-special",
+      "title": "WNUF Halloween Special",
+      "medium": "Film",
+      "year": 2013,
+      "notes": "Found-footage feature shot as a 1987 local TV Halloween broadcast, complete with fake commercials, recovered from a VHS tape.",
+      "featured": true
+    },
+    {
+      "id": "puppet-master",
+      "title": "Puppet Master",
+      "medium": "Film",
+      "year": 1989,
+      "notes": "Named as the subject Tommy is building toward; this episode is part one, the history of Charles Band and the studios behind it.",
+      "featured": true
+    },
+    {
+      "id": "late-night-with-the-devil",
+      "title": "Late Night with the Devil",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-blair-witch-project",
+      "title": "The Blair Witch Project",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-exorcist",
+      "title": "The Exorcist",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-asphalt-jungle",
+      "title": "The Asphalt Jungle",
+      "medium": "Film",
+      "year": 1950,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-red-badge-of-courage",
+      "title": "The Red Badge of Courage",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-young-guns",
+      "title": "The Young Guns",
+      "medium": "Film",
+      "year": 1956,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "auditions",
+      "title": "Auditions",
+      "medium": "Film",
+      "year": 1978,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "mansion-of-the-doomed",
+      "title": "Mansion of the Doomed",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "laserblast",
+      "title": "Laserblast",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "parasite",
+      "title": "Parasite",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "film-gore",
+      "title": "Film Gore",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-texas-chainsaw-massacre",
+      "title": "The Texas Chainsaw Massacre",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "i-spit-on-your-grave",
+      "title": "I Spit on Your Grave",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "re-animator",
+      "title": "Re-Animator",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "troll",
+      "title": "Troll",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "ghoulies",
+      "title": "Ghoulies",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "trancers",
+      "title": "Trancers",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "from-beyond",
+      "title": "From Beyond",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "i-love-lucy",
+      "title": "I Love Lucy",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-beverly-hillbillies",
+      "title": "The Beverly Hillbillies",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "petticoat-junction",
+      "title": "Petticoat Junction",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "green-acres",
+      "title": "Green Acres",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
     }
   ],
   "episodes": [
@@ -2047,6 +2275,12 @@
       "number": 24,
       "title": "Are You Afraid of the Dark? & Night of the Living Dummy",
       "date": "2026-09-15"
+    },
+    {
+      "id": "ep25",
+      "number": 25,
+      "title": "WNUF Halloween Special & Charles Band: The Wizard of Flaws",
+      "date": "2026-09-22"
     }
   ],
   "episodeWorks": [
@@ -3423,6 +3657,188 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "01:01:22"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "wnuf-halloween-special",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:10:00"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "puppet-master",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:34:04"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "late-night-with-the-devil",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:18"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-blair-witch-project",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:30"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-exorcist",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:25:13"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-amityville-horror",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:25:18"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-asphalt-jungle",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:04"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-red-badge-of-courage",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:10"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-young-guns",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:18"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "auditions",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:07"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "mansion-of-the-doomed",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:46:17"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "laserblast",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:46:17"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "parasite",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:46:17"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "film-gore",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:46:17"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "halloween",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:50:22"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-texas-chainsaw-massacre",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:50:29"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "i-spit-on-your-grave",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:50:29"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "re-animator",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:43"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "troll",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:43"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "ghoulies",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:43"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "trancers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:43"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "from-beyond",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:53:43"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "i-love-lucy",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:03:45"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "the-beverly-hillbillies",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:03:56"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "petticoat-junction",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:04"
+    },
+    {
+      "episodeId": "ep25",
+      "workId": "green-acres",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:47"
     }
   ],
   "credits": [
@@ -4697,6 +5113,118 @@
       "role": "Author",
       "kind": "created",
       "evidence": "01:01:22"
+    },
+    {
+      "personId": "p-chris-lamartina",
+      "workId": "wnuf-halloween-special",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:17:17"
+    },
+    {
+      "personId": "p-jimmy-george",
+      "workId": "wnuf-halloween-special",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:17:19"
+    },
+    {
+      "personId": "p-paul-fahrenkopf",
+      "workId": "wnuf-halloween-special",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:23:47"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "puppet-master",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "01:01:39"
+    },
+    {
+      "personId": "p-john-huston",
+      "workId": "the-asphalt-jungle",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:37:10"
+    },
+    {
+      "personId": "p-albert-band",
+      "workId": "the-asphalt-jungle",
+      "role": "Assistant Director",
+      "kind": "created",
+      "evidence": "00:37:04"
+    },
+    {
+      "personId": "p-albert-band",
+      "workId": "the-young-guns",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:37:18"
+    },
+    {
+      "personId": "p-albert-band",
+      "workId": "the-young-guns",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:37:18"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "auditions",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:43:43"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "mansion-of-the-doomed",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:46:17"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "laserblast",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:46:17"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "parasite",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:46:17"
+    },
+    {
+      "personId": "p-demi-moore",
+      "workId": "parasite",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:46:52"
+    },
+    {
+      "personId": "p-charles-band",
+      "workId": "film-gore",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:46:17"
+    },
+    {
+      "personId": "p-lucille-ball",
+      "workId": "i-love-lucy",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:00:28"
+    },
+    {
+      "personId": "p-desi-arnaz",
+      "workId": "i-love-lucy",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:02:22"
     }
   ],
   "workRelations": [
@@ -4968,6 +5496,36 @@
     {
       "fromWorkId": "night-of-the-living-dummy-2",
       "toWorkId": "night-of-the-living-dummy",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "late-night-with-the-devil",
+      "toWorkId": "wnuf-halloween-special",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-blair-witch-project",
+      "toWorkId": "wnuf-halloween-special",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "the-exorcist",
+      "toWorkId": "wnuf-halloween-special",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "the-amityville-horror",
+      "toWorkId": "wnuf-halloween-special",
+      "relation": "precursor"
+    },
+    {
+      "fromWorkId": "petticoat-junction",
+      "toWorkId": "the-beverly-hillbillies",
+      "relation": "successor"
+    },
+    {
+      "fromWorkId": "green-acres",
+      "toWorkId": "petticoat-junction",
       "relation": "successor"
     }
   ],
