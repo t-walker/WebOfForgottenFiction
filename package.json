@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "audio:fetch": "node scripts/fetch-audio.mjs",
     "transcribe": "python scripts/transcribe.py",
+    "transcribe:mlx": "python scripts/transcribe.py --backend mlx",
     "scan:mentions": "node scripts/scan-mentions.mjs",
     "episodes:check": "node scripts/check-episodes.mjs",
     "episode:add": "node scripts/add-episode.mjs"

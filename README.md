@@ -143,7 +143,8 @@ The agent drives these scripts, all of which you can run yourself:
 npm run episodes:check        # what's in the feed but not in the graph
 npm run episodes:check -- --json
 npm run audio:fetch           # download episode MP3s (skips existing)
-npm run transcribe            # faster-whisper -> transcripts/epNN.md
+npm run transcribe            # faster-whisper (CPU) -> transcripts/epNN.md
+npm run transcribe:mlx        # Apple-silicon GPU, ~6x faster
 npm run transcribe -- --only 19
 npm run episode:add proposal.json --dry-run   # merge a drafted episode
 npm run scan:mentions         # audit: is each existing entry actually spoken?
@@ -153,13 +154,28 @@ npm run scan:mentions         # audit: is each existing entry actually spoken?
 works, and appending association rows, so nobody has to hand-edit the big JSON
 file. It's idempotent — re-running a proposal changes nothing.
 
-Transcription runs on CPU at roughly 6x realtime and needs Python with
-[`faster-whisper`](https://github.com/SYSTRAN/faster-whisper) plus `ffmpeg`:
+Transcription has two backends.
+
+`faster-whisper` (the default) runs on CPU at roughly 6x realtime and works
+anywhere:
 
 ```bash
 pip install faster-whisper
-winget install Gyan.FFmpeg     # or: brew install ffmpeg
+npm run transcribe
 ```
+
+`mlx` runs on the GPU of an Apple-silicon Mac at roughly 35x realtime — a
+40-minute episode takes about a minute instead of seven — and its default
+`large-v3-turbo` model is more accurate than the CPU default of `small.en`:
+
+```bash
+pip install mlx-whisper
+npm run transcribe:mlx
+```
+
+Neither backend needs an `ffmpeg` binary; audio is decoded in-process with
+PyAV, which ships with `faster-whisper`. Both backends skip episodes that
+already have a transcript, so they're safe to interrupt and re-run.
 
 Audio and transcripts are git-ignored — they're the hosts' content and stay
 local. See [`transcripts/README.md`](transcripts/README.md).

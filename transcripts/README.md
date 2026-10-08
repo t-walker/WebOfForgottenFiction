@@ -12,12 +12,13 @@ tracked.
 
 ```bash
 npm run audio:fetch    # download episode MP3s from the podcast RSS feed
-npm run transcribe     # faster-whisper (small.en) -> transcripts/epNN.md
+npm run transcribe:mlx # mlx-whisper on the GPU (Apple silicon) -> transcripts/epNN.md
+npm run transcribe     # portable CPU fallback (faster-whisper, small.en)
 ```
 
 Both steps skip work that's already done, so they're safe to re-run or interrupt.
-Transcription runs on CPU at roughly 6x realtime, so the full catalogue takes a
-few hours.
+The MLX backend runs at roughly 35x realtime, so the full catalogue takes a few
+minutes; the CPU backend runs at roughly 6x realtime and takes a few hours.
 
 ## Format
 
@@ -30,7 +31,7 @@ number: 1
 title: "Tales From The Crypt & Beavis and Butthead"
 date: 2026-04-28
 works: [Tales from the Crypt, Beavis and Butt-Head]
-source: whisper small.en
+source: whisper mlx-community/whisper-large-v3-turbo (mlx)
 ---
 
 # Ep. 1 - Tales From The Crypt & Beavis and Butthead

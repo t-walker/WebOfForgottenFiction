@@ -61,12 +61,15 @@ it's cheap to run.
 ### 3. Transcribe
 
 ```bash
-npm run transcribe -- --only 19
+npm run transcribe:mlx -- --only 19    # Apple silicon: ~35x realtime
+npm run transcribe -- --only 19        # portable CPU fallback: ~6x realtime
 ```
 
-Runs faster-whisper on CPU at roughly 6x realtime — a 40-minute episode takes
-about 7 minutes. **Run this in the background and keep working or wait; do not
-poll it in a tight loop.** Existing transcripts are skipped.
+On an Apple-silicon Mac prefer `transcribe:mlx`: a 40-minute episode takes about
+a minute, versus about seven minutes on the CPU backend, and the model it uses
+(`large-v3-turbo`) is more accurate. **Run this in the background and keep
+working or wait; do not poll it in a tight loop.** Existing transcripts are
+skipped.
 
 The result lands in `transcripts/ep19.md` as timestamped lines:
 

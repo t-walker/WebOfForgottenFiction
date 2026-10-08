@@ -1,9 +1,17 @@
 """
 Transcribes downloaded episode audio into timestamped Markdown transcripts.
 
-    python scripts/transcribe.py            # all episodes, small.en
+    python scripts/transcribe.py            # all episodes, faster-whisper small.en
+    python scripts/transcribe.py --backend mlx      # Apple-silicon GPU, much faster
     python scripts/transcribe.py --model medium.en
     python scripts/transcribe.py --only 3 7
+
+Two backends are available:
+
+  faster-whisper  CPU / int8 via CTranslate2. Portable, ~6x realtime.
+  mlx             Apple MLX on the Mac's GPU. Roughly an order of magnitude
+                  faster on Apple silicon, and the default large-v3-turbo model
+                  is more accurate than small.en. Needs `pip install mlx-whisper`.
 
 Existing transcripts are skipped, so this is safe to interrupt and re-run.
 Output lands in transcripts/ep##.md, which is git-ignored -- the audio and
@@ -17,7 +25,10 @@ import sys
 import time
 from pathlib import Path
 
-from faster_whisper import WhisperModel
+DEFAULT_MODEL = {
+    "faster-whisper": "small.en",
+    "mlx": "mlx-community/whisper-large-v3-turbo",
+}
 
 ROOT = Path(__file__).resolve().parent.parent
 AUDIO_DIR = ROOT / "audio"
@@ -44,12 +55,82 @@ def episode_meta():
     }
 
 
+def load_transcriber(backend: str, model_name: str, threads: int):
+    """Return transcribe(path) -> (iterable of (start_seconds, text), duration).
+
+    Normalising both backends to this shape keeps the caller's writing and
+    progress-reporting loop identical regardless of which one is in use.
+    """
+    if backend == "faster-whisper":
+        from faster_whisper import WhisperModel
+
+        print(
+            f"loading {model_name} (cpu, int8, {threads} threads) ...", flush=True
+        )
+        model = WhisperModel(
+            model_name, device="cpu", compute_type="int8", cpu_threads=threads
+        )
+
+        def transcribe(path: Path):
+            segments, info = model.transcribe(
+                str(path),
+                beam_size=5,
+                vad_filter=True,
+                condition_on_previous_text=False,
+            )
+            return ((seg.start, seg.text) for seg in segments), info.duration
+
+        return transcribe
+
+    if backend == "mlx":
+        try:
+            import mlx_whisper
+        except ImportError:
+            print(
+                "mlx backend needs mlx-whisper: pip install mlx-whisper",
+                file=sys.stderr,
+            )
+            raise
+
+        # mlx-whisper shells out to an ffmpeg binary to decode audio, which we
+        # don't depend on. faster-whisper's decoder uses PyAV in-process and
+        # hands back exactly the float32 16 kHz mono array whisper expects.
+        from faster_whisper.audio import decode_audio
+
+        print(f"using {model_name} (mlx, gpu) ...", flush=True)
+
+        def transcribe(path: Path):
+            audio = decode_audio(str(path), sampling_rate=16000)
+            duration = len(audio) / 16000
+            # MLX transcribes the whole file in one call rather than streaming,
+            # so its own progress bar is the only feedback available -- but it
+            # redraws constantly, which floods a captured log. Show it only when
+            # someone is actually watching a terminal.
+            result = mlx_whisper.transcribe(
+                audio,
+                path_or_hf_repo=model_name,
+                condition_on_previous_text=False,
+                verbose=False if sys.stdout.isatty() else None,
+            )
+            segments = result.get("segments", [])
+            return ((s["start"], s["text"]) for s in segments), duration
+
+        return transcribe
+
+    raise ValueError(f"unknown backend: {backend}")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", default="small.en")
+    parser.add_argument(
+        "--backend", default="faster-whisper", choices=sorted(DEFAULT_MODEL)
+    )
+    parser.add_argument("--model", default=None)
     parser.add_argument("--only", nargs="*", type=int, default=None)
     parser.add_argument("--threads", type=int, default=16)
     args = parser.parse_args()
+
+    model_name = args.model or DEFAULT_MODEL[args.backend]
 
     files = sorted(AUDIO_DIR.glob("ep*.mp3"))
     if not files:
@@ -68,10 +149,7 @@ def main() -> int:
     OUT_DIR.mkdir(exist_ok=True)
     meta = episode_meta()
 
-    print(f"loading {args.model} (cpu, int8, {args.threads} threads) ...", flush=True)
-    model = WhisperModel(
-        args.model, device="cpu", compute_type="int8", cpu_threads=args.threads
-    )
+    transcribe = load_transcriber(args.backend, model_name, args.threads)
 
     overall = time.time()
 
@@ -83,9 +161,7 @@ def main() -> int:
         print(f"\n>> ep{number:02d}  {title}", flush=True)
         started = time.time()
 
-        segments, info = model.transcribe(
-            str(path), beam_size=5, vad_filter=True, condition_on_previous_text=False
-        )
+        segments, duration = transcribe(path)
 
         lines = [
             "---",
@@ -94,7 +170,7 @@ def main() -> int:
             f"title: {json.dumps(title)}",
             f"date: {date}",
             f"works: [{', '.join(picks)}]",
-            f"source: whisper {args.model}",
+            f"source: whisper {model_name} ({args.backend})",
             "---",
             "",
             f"# Ep. {number} - {title}",
@@ -103,20 +179,28 @@ def main() -> int:
 
         last_report = time.time()
         count = 0
+        furthest = 0.0
 
-        for seg in segments:
-            lines.append(f"[{hms(seg.start)}] {seg.text.strip()}")
+        for start, text in segments:
+            lines.append(f"[{hms(start)}] {text.strip()}")
             count += 1
+            furthest = max(furthest, start)
             if time.time() - last_report > 30:
-                pct = seg.end / info.duration * 100
-                print(f"   {pct:5.1f}%  ({hms(seg.end)} / {hms(info.duration)})", flush=True)
+                if duration:
+                    pct = start / duration * 100
+                    print(
+                        f"   {pct:5.1f}%  ({hms(start)} / {hms(duration)})", flush=True
+                    )
+                else:
+                    print(f"   {hms(start)}", flush=True)
                 last_report = time.time()
 
         out.write_text("\n".join(lines) + "\n", encoding="utf8", newline="\n")
         elapsed = time.time() - started
+        speed = f"{(duration or furthest) / elapsed:.1f}x realtime" if elapsed else "n/a"
         print(
             f"   done: {count} segments, {elapsed / 60:.1f} min "
-            f"({info.duration / elapsed:.1f}x realtime) -> {out.name}",
+            f"({speed}) -> {out.name}",
             flush=True,
         )
 
