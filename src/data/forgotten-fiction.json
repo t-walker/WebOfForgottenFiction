@@ -631,6 +631,58 @@
     {
       "id": "p-sean-cunningham",
       "name": "Sean Cunningham"
+    },
+    {
+      "id": "p-xander-berkeley",
+      "name": "Xander Berkeley"
+    },
+    {
+      "id": "p-norman-partridge",
+      "name": "Norman Partridge"
+    },
+    {
+      "id": "p-m-night-shyamalan",
+      "name": "M. Night Shyamalan"
+    },
+    {
+      "id": "p-john-wilson",
+      "name": "John Wilson"
+    },
+    {
+      "id": "p-shirley-jackson",
+      "name": "Shirley Jackson"
+    },
+    {
+      "id": "p-david-slade",
+      "name": "David Slade"
+    },
+    {
+      "id": "p-jeremy-irons",
+      "name": "Jeremy Irons"
+    },
+    {
+      "id": "p-glen-morgan",
+      "name": "Glen Morgan"
+    },
+    {
+      "id": "p-james-wong",
+      "name": "James Wong"
+    },
+    {
+      "id": "p-w-j-m-wippersberg",
+      "name": "W. J. M. Wippersberg"
+    },
+    {
+      "id": "p-kathi-bhend",
+      "name": "Kathi Bhend"
+    },
+    {
+      "id": "p-chris-carter",
+      "name": "Chris Carter"
+    },
+    {
+      "id": "p-vince-gilligan",
+      "name": "Vince Gilligan"
     }
   ],
   "works": [
@@ -2865,6 +2917,270 @@
       "year": null,
       "notes": "What Simon has been watching; he now falls asleep to its score on repeat.",
       "featured": false
+    },
+    {
+      "id": "the-booth-at-the-end",
+      "title": "The Booth at the End",
+      "medium": "TV",
+      "year": 2011,
+      "notes": "Paris recommends the single-diner drama for its minimal staging, interlocking moral bargains, free will, and Xander Berkeley's restrained performance.",
+      "featured": true
+    },
+    {
+      "id": "dark-harvest",
+      "title": "Dark Harvest",
+      "medium": "Book",
+      "year": 2006,
+      "notes": "Tommy traces the independent horror-publishing community behind Partridge's Halloween fable, its second-person narration, and the compromised film adaptation.",
+      "featured": true
+    },
+    {
+      "id": "room-104",
+      "title": "Room 104",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-sixth-sense",
+      "title": "The Sixth Sense",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "signs",
+      "title": "Signs",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "unbreakable",
+      "title": "Unbreakable",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "button-button",
+      "title": "Button, Button",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "high-maintenance",
+      "title": "High Maintenance",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "rosemarys-baby",
+      "title": "Rosemary's Baby",
+      "medium": "Book",
+      "year": 1967,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-other",
+      "title": "The Other",
+      "medium": "Book",
+      "year": 1971,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-exorcist-book",
+      "title": "The Exorcist",
+      "medium": "Book",
+      "year": 1971,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "night-gallery",
+      "title": "Night Gallery",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "bad-intentions",
+      "title": "Bad Intentions",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-history-of-concrete",
+      "title": "The History of Concrete",
+      "medium": "Film",
+      "year": 2026,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "how-to-with-john-wilson",
+      "title": "How To with John Wilson",
+      "medium": "TV",
+      "year": 2020,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-purge",
+      "title": "The Purge",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-lottery",
+      "title": "The Lottery",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-long-walk",
+      "title": "The Long Walk",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "dark-harvest-film",
+      "title": "Dark Harvest",
+      "medium": "Film",
+      "year": 2023,
+      "notes": "Tommy contrasts the adaptation's striking imagery with its weak script and traces its delays, studio handoffs, and limited theatrical release.",
+      "featured": false
+    },
+    {
+      "id": "hard-candy",
+      "title": "Hard Candy",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "30-days-of-night",
+      "title": "30 Days of Night",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "dungeons-and-dragons",
+      "title": "Dungeons & Dragons",
+      "medium": "Film",
+      "year": 2000,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-wizard-of-oz",
+      "title": "The Wizard of Oz",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-x-files-home",
+      "title": "The X-Files: Home",
+      "medium": "TV",
+      "year": 1996,
+      "notes": "Paris revisits the requested episode on its thirtieth anniversary, questioning its tonal shifts, procedural shortcuts, taboo imagery, and reputation for terror.",
+      "featured": true
+    },
+    {
+      "id": "bad-times-for-ghosts",
+      "title": "Bad Times for Ghosts",
+      "medium": "Book",
+      "year": 1986,
+      "notes": "Tommy's 74-cent used-book discovery is a witty illustrated ghost-family story about changing times, inherited fears, migration, and finding translated fiction.",
+      "featured": true
+    },
+    {
+      "id": "carrie-tv",
+      "title": "Carrie",
+      "medium": "TV",
+      "year": null,
+      "notes": "The hosts discuss the Amazon series and Mike Flanagan's account of making it.",
+      "featured": false
+    },
+    {
+      "id": "carrie",
+      "title": "Carrie",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-x-files",
+      "title": "The X-Files",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "law-and-order",
+      "title": "Law & Order",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "babe",
+      "title": "Babe",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "true-detective",
+      "title": "True Detective",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "hotel-transylvania",
+      "title": "Hotel Transylvania",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "monsters-inc",
+      "title": "Monsters, Inc.",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
     }
   ],
   "episodes": [
@@ -3029,6 +3345,18 @@
       "number": 27,
       "title": "My Boyfriend's Back & Trick or Treat (Point Horror, 1989)",
       "date": "2026-10-06"
+    },
+    {
+      "id": "ep28",
+      "number": 28,
+      "title": "The Booth at the End & Dark Harvest",
+      "date": "2026-10-13"
+    },
+    {
+      "id": "ep29",
+      "number": 29,
+      "title": "The X-Files episode \"Home\" & Bad Times for Ghosts",
+      "date": "2026-10-20"
     }
   ],
   "episodeWorks": [
@@ -5238,6 +5566,321 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "01:18:25"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-booth-at-the-end",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:08:29"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "dark-harvest",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:40:55"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "are-you-afraid-of-the-dark",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:00:27"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-room",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:52"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "my-boyfriends-back",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:06:36"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-twilight-zone",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:11"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "room-104",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:23"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-sixth-sense",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:57"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "signs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:57"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "unbreakable",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:57"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "button-button",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:21:47"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "high-maintenance",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:32:59"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "rosemarys-baby",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:34:08"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-other",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:34:25"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-exorcist-book",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:34:25"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "night-gallery",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:27"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "bad-intentions",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:40:26"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "different-seasons",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:06"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-history-of-concrete",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:17"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "how-to-with-john-wilson",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:31"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-purge",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:01"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-lottery",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:09"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-long-walk",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:52:59"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "dark-harvest-film",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:58:28"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "hard-candy",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:56:43"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "30-days-of-night",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:56:43"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "dungeons-and-dragons",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:57:17"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "a-nightmare-on-elm-street",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:58:00"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "seven",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:58:00"
+    },
+    {
+      "episodeId": "ep28",
+      "workId": "the-wizard-of-oz",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:59:13"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "the-x-files-home",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:05:04"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "bad-times-for-ghosts",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:39:44"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "carrie-tv",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:00:57"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "carrie",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:02:49"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "friday-the-13th",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:02:37"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "the-x-files",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:17"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "law-and-order",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:48"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "the-twilight-zone",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:48"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "the-texas-chainsaw-massacre",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:04"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "three-men-and-a-baby",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:39"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "babe",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:22:00"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "true-detective",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:25:15"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "beetlejuice",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:11"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "hotel-transylvania",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:02"
+    },
+    {
+      "episodeId": "ep29",
+      "workId": "monsters-inc",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:41"
     }
   ],
   "credits": [
@@ -6932,6 +7575,153 @@
       "role": "Author",
       "kind": "created",
       "evidence": "00:46:28"
+    },
+    {
+      "personId": "p-xander-berkeley",
+      "workId": "the-booth-at-the-end",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:10:39"
+    },
+    {
+      "personId": "p-norman-partridge",
+      "workId": "dark-harvest",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:40:55"
+    },
+    {
+      "personId": "p-m-night-shyamalan",
+      "workId": "the-sixth-sense",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:20:57"
+    },
+    {
+      "personId": "p-m-night-shyamalan",
+      "workId": "signs",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:20:57"
+    },
+    {
+      "personId": "p-m-night-shyamalan",
+      "workId": "unbreakable",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:20:57"
+    },
+    {
+      "personId": "p-richard-matheson",
+      "workId": "button-button",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:21:47"
+    },
+    {
+      "personId": "p-norman-partridge",
+      "workId": "bad-intentions",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:40:26"
+    },
+    {
+      "personId": "p-john-wilson",
+      "workId": "the-history-of-concrete",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:43:17"
+    },
+    {
+      "personId": "p-john-wilson",
+      "workId": "how-to-with-john-wilson",
+      "role": "Creator",
+      "kind": "created",
+      "evidence": "00:43:31"
+    },
+    {
+      "personId": "p-shirley-jackson",
+      "workId": "the-lottery",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:52:51"
+    },
+    {
+      "personId": "p-david-slade",
+      "workId": "dark-harvest-film",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:56:38"
+    },
+    {
+      "personId": "p-david-slade",
+      "workId": "hard-candy",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:56:38"
+    },
+    {
+      "personId": "p-david-slade",
+      "workId": "30-days-of-night",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:56:38"
+    },
+    {
+      "personId": "p-jeremy-irons",
+      "workId": "dungeons-and-dragons",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:57:25"
+    },
+    {
+      "personId": "p-glen-morgan",
+      "workId": "the-x-files-home",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:25:48"
+    },
+    {
+      "personId": "p-james-wong",
+      "workId": "the-x-files-home",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:25:48"
+    },
+    {
+      "personId": "p-w-j-m-wippersberg",
+      "workId": "bad-times-for-ghosts",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:39:44"
+    },
+    {
+      "personId": "p-kathi-bhend",
+      "workId": "bad-times-for-ghosts",
+      "role": "Illustrator",
+      "kind": "created",
+      "evidence": "00:41:49"
+    },
+    {
+      "personId": "p-mike-flanagan",
+      "workId": "carrie-tv",
+      "role": "Creator",
+      "kind": "created",
+      "evidence": "00:01:14"
+    },
+    {
+      "personId": "p-chris-carter",
+      "workId": "the-x-files",
+      "role": "Creator",
+      "kind": "created",
+      "evidence": "00:27:34"
+    },
+    {
+      "personId": "p-vince-gilligan",
+      "workId": "the-x-files",
+      "role": "Creative contributor",
+      "kind": "created",
+      "evidence": "00:07:48"
     }
   ],
   "workRelations": [
@@ -7389,6 +8179,96 @@
       "fromWorkId": "evil-on-the-bayou",
       "toWorkId": "trick-or-treat",
       "relation": "precursor"
+    },
+    {
+      "fromWorkId": "the-twilight-zone",
+      "toWorkId": "the-booth-at-the-end",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "room-104",
+      "toWorkId": "the-booth-at-the-end",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "high-maintenance",
+      "toWorkId": "the-booth-at-the-end",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-purge",
+      "toWorkId": "dark-harvest",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-long-walk",
+      "toWorkId": "dark-harvest",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "dark-harvest-film",
+      "toWorkId": "dark-harvest",
+      "relation": "adapted-from"
+    },
+    {
+      "fromWorkId": "the-booth-at-the-end",
+      "toWorkId": "button-button",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "the-booth-at-the-end",
+      "toWorkId": "the-sixth-sense",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "the-booth-at-the-end",
+      "toWorkId": "signs",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "the-booth-at-the-end",
+      "toWorkId": "unbreakable",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "dark-harvest",
+      "toWorkId": "the-lottery",
+      "relation": "inspired-by"
+    },
+    {
+      "fromWorkId": "law-and-order",
+      "toWorkId": "the-x-files",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-twilight-zone",
+      "toWorkId": "the-x-files",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "the-texas-chainsaw-massacre",
+      "toWorkId": "the-x-files-home",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "true-detective",
+      "toWorkId": "the-x-files-home",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "beetlejuice",
+      "toWorkId": "bad-times-for-ghosts",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "hotel-transylvania",
+      "toWorkId": "bad-times-for-ghosts",
+      "relation": "similar"
+    },
+    {
+      "fromWorkId": "monsters-inc",
+      "toWorkId": "bad-times-for-ghosts",
+      "relation": "similar"
     }
   ],
   "hostRelations": [
