@@ -46,7 +46,7 @@ export function encodeState(state: AppState): string {
   if (!state.focusSelection) params.set('focus', '0');
   if (!state.showLinkLabels) params.set('labels', '0');
   if (state.query.trim()) params.set('q', state.query.trim());
-  if (f.showEpisodes) params.set('eps', '1');
+  if (!f.showEpisodes) params.set('eps', '0');
 
   // Media and hosts are written as exclusions: there are only a handful of
   // each, and turning one off is far more common than picking one.
@@ -84,7 +84,7 @@ export function decodeState(search: string, data: Dataset): AppState {
   if (params.get('focus') === '0') state.focusSelection = false;
   if (params.get('labels') === '0') state.showLinkLabels = false;
   state.query = params.get('q') ?? '';
-  state.filters.showEpisodes = has('eps');
+  state.filters.showEpisodes = params.get('eps') !== '0';
 
   // Unknown ids are ignored rather than trusted, so a stale or hand-edited link
   // degrades to the default view instead of hiding the entire graph.

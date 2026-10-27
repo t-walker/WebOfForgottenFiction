@@ -102,16 +102,6 @@ export default function App() {
   const [showLinkLabels, setShowLinkLabels] = useState(initial.showLinkLabels);
   const [focusSelection, setFocusSelection] = useState(initial.focusSelection);
 
-  /**
-   * Landing on 152 nodes at once shows a hairball and tells you nothing. A
-   * fresh visit opens on just the two hosts and the link between them, which
-   * says what the site is about and gives you somewhere obvious to click.
-   *
-   * Only a bare URL gets this. Following a link means somebody chose a view,
-   * so that view is what loads.
-   */
-  const [intro, setIntro] = useState(() => !window.location.search);
-
   const full = FULL;
 
   /** The trail is a drill-down path; its last entry is what's on screen now. */
@@ -123,7 +113,6 @@ export default function App() {
    * back out through a parent leaves the path you actually took.
    */
   const focus = (node: GraphNode) => {
-    setIntro(false);
     setTrail((prev) => {
       const at = prev.findIndex((n) => n.id === node.id);
       return at === -1 ? [...prev, node] : prev.slice(0, at + 1);
@@ -131,12 +120,6 @@ export default function App() {
   };
 
   const clearTrail = () => setTrail([]);
-
-  /** Leaves the landing view for the whole graph without selecting anything. */
-  const showEverything = () => {
-    setIntro(false);
-    setTrail([]);
-  };
 
   /**
    * Mirror the view into the query string.
@@ -168,7 +151,6 @@ export default function App() {
     const onPop = () => {
       const next = decodeState(window.location.search, data);
       lastTrailKey.current = next.trail.join(',');
-      setIntro(!window.location.search);
       setTrail(next.trail.map((id) => NODES_BY_ID.get(id)).filter((n): n is GraphNode => !!n));
       setFilters(next.filters);
       setFocusSelection(next.focusSelection);
@@ -216,22 +198,12 @@ export default function App() {
    * spread far enough apart to be unreadable.
    */
   const graph = useMemo(() => {
-    if (intro && !selected) {
-      const hosts = filtered.nodes.filter((n) => n.type === 'host');
-      const ids = new Set(hosts.map((n) => n.id));
-      return {
-        nodes: hosts,
-        links: filtered.links.filter(
-          (l) => l.kind === 'kin' && ids.has(endId(l.source)) && ids.has(endId(l.target)),
-        ),
-      };
-    }
     if (!selected || !focusSelection || !neighbors) return { ...filtered };
     return {
       nodes: filtered.nodes.filter((n) => neighbors.ids.has(n.id)),
       links: filtered.links.filter((l) => neighbors.linkIds.has(linkId(l))),
     };
-  }, [filtered, selected, focusSelection, neighbors, intro]);
+  }, [filtered, selected, focusSelection, neighbors]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -293,7 +265,7 @@ export default function App() {
       fg.zoom(cam.k, FRAME_MS);
     }, 140);
     return () => clearTimeout(t);
-  }, [selected, focusSelection, neighbors, intro]);
+  }, [selected, focusSelection, neighbors]);
 
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -458,15 +430,6 @@ export default function App() {
               </div>
             ))}
           </section>
-        ) : intro ? (
-          <section className="intro">
-            <p>
-              Two hosts, {counts.work ?? 0} works of forgotten fiction. Click{' '}
-              <strong>{data.hosts.map((h) => h.name.split(' ')[0]).join(' or ')}</strong> to see
-              what they've picked, then keep clicking to follow the thread.
-            </p>
-            <button onClick={showEverything}>Show the whole graph →</button>
-          </section>
         ) : (
           <section className="stats">
             {(Object.keys(TYPE_LABELS) as NodeType[]).map((t) => (
@@ -513,9 +476,8 @@ export default function App() {
             if (!showLinkLabels) return;
             const highlighted = !!neighbors && neighbors.linkIds.has(linkId(l));
             // Every label at once is unreadable, so show them on demand:
-            // always for the selected node, otherwise only when zoomed in. The
-            // landing view is the exception -- its one link is the whole point.
-            if (!intro && !highlighted && (scale < 2.2 || !!neighbors)) return;
+            // always for the selected node, otherwise only when zoomed in.
+            if (!highlighted && (scale < 2.2 || !!neighbors)) return;
 
             const s = l.source as GraphNode;
             const t = l.target as GraphNode;
@@ -598,4 +560,3 @@ export default function App() {
     </div>
   );
 }
-

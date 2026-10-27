@@ -35,9 +35,7 @@ export function defaultFilters(data: Dataset): Filters {
     hosts: all(data.hosts.map((h) => h.id)),
     personKinds: { created: true, appeared: true },
     episodes: all(data.episodes.map((e) => e.id)),
-    // Hosts link straight to what they picked, so the episode tier is an extra
-    // hop between the two things people actually come here to look at.
-    showEpisodes: false,
+    showEpisodes: true,
   };
 }
 
@@ -53,7 +51,7 @@ export function isDefaultFilters(f: Filters): boolean {
     f.personKinds.created &&
     f.personKinds.appeared &&
     every(f.episodes) &&
-    !f.showEpisodes
+    f.showEpisodes
   );
 }
 
