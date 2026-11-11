@@ -8,11 +8,26 @@
   "hosts": [
     {
       "id": "h-paris-brown",
-      "name": "Paris Brown"
+      "name": "Paris Brown",
+      "notes": "Announced his departure in ep30, with one more episode together; ep31 is his final regular episode. Possible future guest appearances were discussed in ep31.",
+      "lastRegularEpisodeId": "ep31",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "01:17:35"
     },
     {
       "id": "h-tommy-brown",
       "name": "Tommy Brown"
+    },
+    {
+      "id": "h-jude-sutton",
+      "name": "Jude Sutton",
+      "aliases": [
+        "Uncle Razorblade"
+      ],
+      "notes": "Introduces himself in ep32. Tommy welcomes him for this and future episodes at 00:50:42; this episode is a shared Scholastic discussion, not individual featured picks.",
+      "firstRegularEpisodeId": "ep32",
+      "evidenceEpisodeId": "ep32",
+      "evidence": "00:00:00"
     }
   ],
   "people": [
@@ -683,6 +698,106 @@
     {
       "id": "p-vince-gilligan",
       "name": "Vince Gilligan"
+    },
+    {
+      "id": "p-john-carpenter",
+      "name": "John Carpenter"
+    },
+    {
+      "id": "p-deborah-hill",
+      "name": "Deborah Hill"
+    },
+    {
+      "id": "p-tommy-lee-wallace",
+      "name": "Tommy Lee Wallace"
+    },
+    {
+      "id": "p-tom-atkins",
+      "name": "Tom Atkins"
+    },
+    {
+      "id": "p-douglas-clegg",
+      "name": "Douglas Clegg"
+    },
+    {
+      "id": "p-busta-rhymes",
+      "name": "Busta Rhymes"
+    },
+    {
+      "id": "p-paul-rudd",
+      "name": "Paul Rudd"
+    },
+    {
+      "id": "p-david-wong",
+      "name": "David Wong"
+    },
+    {
+      "id": "p-george-r-r-martin",
+      "name": "George R. R. Martin"
+    },
+    {
+      "id": "p-bruce-willis",
+      "name": "Bruce Willis"
+    },
+    {
+      "id": "p-jeff-nichols",
+      "name": "Jeff Nichols"
+    },
+    {
+      "id": "p-robert-fuest",
+      "name": "Robert Fuest"
+    },
+    {
+      "id": "p-joseph-cotten",
+      "name": "Joseph Cotten"
+    },
+    {
+      "id": "p-linda-blair",
+      "name": "Linda Blair"
+    },
+    {
+      "id": "p-randy-feldman",
+      "name": "Randy Feldman"
+    },
+    {
+      "id": "p-bruce-cohn-curtis",
+      "name": "Bruce Cohn Curtis"
+    },
+    {
+      "id": "p-chuck-russell",
+      "name": "Chuck Russell"
+    },
+    {
+      "id": "p-frank-darabont",
+      "name": "Frank Darabont"
+    },
+    {
+      "id": "p-tom-desimone",
+      "name": "Tom DeSimone"
+    },
+    {
+      "id": "p-uma-thurman",
+      "name": "Uma Thurman"
+    },
+    {
+      "id": "p-sean-connery",
+      "name": "Sean Connery"
+    },
+    {
+      "id": "p-bruce-hallenbeck",
+      "name": "Bruce Hallenbeck"
+    },
+    {
+      "id": "p-the-rock",
+      "name": "The Rock"
+    },
+    {
+      "id": "p-rip-taylor",
+      "name": "Rip Taylor"
+    },
+    {
+      "id": "p-caroline-b-cooney",
+      "name": "Caroline B. Cooney"
     }
   ],
   "works": [
@@ -2018,9 +2133,9 @@
       "id": "halloween-iii-season-of-the-witch",
       "title": "Halloween III: Season of the Witch",
       "medium": "Film",
-      "year": null,
-      "notes": "",
-      "featured": false
+      "year": 1982,
+      "notes": "Paris revisits its corporate conspiracy, killer masks and departure from Michael Myers in ep30.",
+      "featured": true
     },
     {
       "id": "slappys-world",
@@ -3181,6 +3296,686 @@
       "year": null,
       "notes": "",
       "featured": false
+    },
+    {
+      "id": "the-halloween-man",
+      "title": "The Halloween Man",
+      "medium": "Book",
+      "year": 1998,
+      "notes": "Tommy explores its layered supernatural mythology, shifting timelines and misleading Halloween title.",
+      "featured": true
+    },
+    {
+      "id": "halloween-ii",
+      "title": "Halloween II",
+      "medium": "Film",
+      "year": 1981,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-fog",
+      "title": "The Fog",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "fright-night-part-2",
+      "title": "Fright Night Part 2",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "it",
+      "title": "It",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "halloween-h20",
+      "title": "Halloween H20",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "halloween-resurrection",
+      "title": "Halloween: Resurrection",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "halloween-the-curse-of-michael-myers",
+      "title": "Halloween: The Curse of Michael Myers",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "invasion-of-the-body-snatchers",
+      "title": "Invasion of the Body Snatchers",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-lawnmower-man",
+      "title": "The Lawnmower Man",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "goat-dance",
+      "title": "Goat Dance",
+      "medium": "Book",
+      "year": 1989,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "naomi",
+      "title": "Naomi",
+      "medium": "Book",
+      "year": 1999,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "john-dies-at-the-end",
+      "title": "John Dies at the End",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "this-book-is-full-of-spiders",
+      "title": "This Book Is Full of Spiders",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "a-song-of-ice-and-fire",
+      "title": "A Song of Ice and Fire",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "pet-sematary",
+      "title": "Pet Sematary",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "midnight-special",
+      "title": "Midnight Special",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-abominable-dr-phibes",
+      "title": "The Abominable Dr. Phibes",
+      "medium": "Film",
+      "year": 1971,
+      "notes": "Paris's final regular pick celebrates Vincent Price, deliberate camp and elaborate biblical-plague murders.",
+      "featured": true
+    },
+    {
+      "id": "hell-night",
+      "title": "Hell Night",
+      "medium": "Film",
+      "year": 1981,
+      "notes": "Tommy remembers a childhood VHS watch party and praises the gothic setting and resourceful, likeable pledges.",
+      "featured": true
+    },
+    {
+      "id": "dr-phibes-rises-again",
+      "title": "Dr. Phibes Rises Again",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-avengers-tv",
+      "title": "The Avengers",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-avengers-1998",
+      "title": "The Avengers (1998)",
+      "medium": "Film",
+      "year": 1998,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "comedy-horror-films-a-chronological-history-1914-2008",
+      "title": "Comedy-Horror Films: A Chronological History, 1914-2008",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "shadow-of-a-doubt",
+      "title": "Shadow of a Doubt",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "citizen-kane",
+      "title": "Citizen Kane",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "saw",
+      "title": "Saw",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "greys-anatomy",
+      "title": "Grey's Anatomy",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "eyes-wide-shut",
+      "title": "Eyes Wide Shut",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "creepshow-2",
+      "title": "Creepshow 2",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "black-christmas",
+      "title": "Black Christmas",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "tango-and-cash",
+      "title": "Tango & Cash",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "nowhere-to-run",
+      "title": "Nowhere to Run",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "metro",
+      "title": "Metro",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "roller-boogie",
+      "title": "Roller Boogie",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-blob",
+      "title": "The Blob",
+      "medium": "Film",
+      "year": 1988,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-scorpion-king",
+      "title": "The Scorpion King",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-green-mile",
+      "title": "The Green Mile",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-shawshank-redemption",
+      "title": "The Shawshank Redemption",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-collection",
+      "title": "The Collection",
+      "medium": "Film",
+      "year": 1970,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "chatterbox",
+      "title": "Chatterbox",
+      "medium": "Film",
+      "year": 1977,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-concrete-jungle",
+      "title": "The Concrete Jungle",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "savage-streets",
+      "title": "Savage Streets",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "reform-school-girls",
+      "title": "Reform School Girls",
+      "medium": "Film",
+      "year": 1986,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "swamp-thing",
+      "title": "Swamp Thing",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "freddys-nightmares",
+      "title": "Freddy's Nightmares",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-hills-have-eyes",
+      "title": "The Hills Have Eyes",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "i-spy",
+      "title": "I Spy",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "goosebumps-books",
+      "title": "Goosebumps (books)",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "sweet-valley-high",
+      "title": "Sweet Valley High",
+      "medium": "Book",
+      "year": 1983,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-sisterhood-of-the-traveling-pants",
+      "title": "The Sisterhood of the Traveling Pants",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "calvin-and-hobbes",
+      "title": "Calvin and Hobbes",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-far-side",
+      "title": "The Far Side",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "garfield",
+      "title": "Garfield",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "captain-underpants",
+      "title": "Captain Underpants",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-face-on-the-milk-carton",
+      "title": "The Face on the Milk Carton",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "janie-series",
+      "title": "Janie series",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "ramona-quimby-books",
+      "title": "Ramona Quimby books",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-call-of-the-wild",
+      "title": "The Call of the Wild",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "island-of-the-blue-dolphins",
+      "title": "Island of the Blue Dolphins",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "magic-eye",
+      "title": "Magic Eye",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "wheres-waldo",
+      "title": "Where's Waldo?",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "american-psycho-book",
+      "title": "American Psycho (book)",
+      "medium": "Book",
+      "year": null,
+      "notes": "Jude jokingly guesses it during Tommy's book-title game.",
+      "featured": false
+    },
+    {
+      "id": "holes",
+      "title": "Holes",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "holes-film",
+      "title": "Holes (film)",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-giver",
+      "title": "The Giver",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "animorphs",
+      "title": "Animorphs",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "arthur-books",
+      "title": "Arthur (books)",
+      "medium": "Book",
+      "year": null,
+      "notes": "A guess during the picture-book-series round.",
+      "featured": false
+    },
+    {
+      "id": "the-magic-school-bus",
+      "title": "The Magic School Bus",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-bible",
+      "title": "The Bible",
+      "medium": "Book",
+      "year": null,
+      "notes": "Jokingly ruled out during the guessing game.",
+      "featured": false
+    },
+    {
+      "id": "chicken-soup-for-the-soul",
+      "title": "Chicken Soup for the Soul",
+      "medium": "Book",
+      "year": null,
+      "notes": "Ruled out during the guessing game.",
+      "featured": false
+    },
+    {
+      "id": "choose-your-own-adventure",
+      "title": "Choose Your Own Adventure",
+      "medium": "Book",
+      "year": 1979,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "harry-potter",
+      "title": "Harry Potter",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-chronicles-of-narnia",
+      "title": "The Chronicles of Narnia",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "sideways-stories-from-wayside-school",
+      "title": "Sideways Stories from Wayside School",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "mad-libs",
+      "title": "Mad Libs",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "saplings",
+      "title": "Saplings",
+      "medium": "Book",
+      "year": 1926,
+      "notes": "Scholastic's first book, described as a collection of student writing.",
+      "featured": false
+    },
+    {
+      "id": "the-boxcar-children",
+      "title": "The Boxcar Children",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "clifford-the-big-red-dog",
+      "title": "Clifford the Big Red Dog",
+      "medium": "Book",
+      "year": 1963,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "fear-street",
+      "title": "Fear Street",
+      "medium": "Book",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "voyagers",
+      "title": "Voyagers!",
+      "medium": "TV",
+      "year": 1982,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "charles-in-charge",
+      "title": "Charles in Charge",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-magic-school-bus-tv",
+      "title": "The Magic School Bus (TV)",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-baby-sitters-club-tv",
+      "title": "The Baby-Sitters Club (TV)",
+      "medium": "TV",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-baby-sitters-club-film",
+      "title": "The Baby-Sitters Club (film)",
+      "medium": "Film",
+      "year": null,
+      "notes": "",
+      "featured": false
+    },
+    {
+      "id": "the-indian-in-the-cupboard-film",
+      "title": "The Indian in the Cupboard (film)",
+      "medium": "Film",
+      "year": 1995,
+      "notes": "",
+      "featured": false
     }
   ],
   "episodes": [
@@ -3357,6 +4152,24 @@
       "number": 29,
       "title": "The X-Files episode \"Home\" & Bad Times for Ghosts",
       "date": "2026-10-20"
+    },
+    {
+      "id": "ep30",
+      "number": 30,
+      "title": "Ep.30 - Halloween III: Season of the Witch & The Halloween Man",
+      "date": "2026-10-27"
+    },
+    {
+      "id": "ep31",
+      "number": 31,
+      "title": "Ep.31 - The Abominable Dr. Phibes & Hell Night",
+      "date": "2026-11-03"
+    },
+    {
+      "id": "ep32",
+      "number": 32,
+      "title": "Ep.32 - Scholastic",
+      "date": "2026-11-10"
     }
   ],
   "episodeWorks": [
@@ -5881,6 +6694,734 @@
       "pickedByHostId": null,
       "role": "mentioned",
       "evidence": "00:44:41"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween-iii-season-of-the-witch",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:05:30"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "the-halloween-man",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:39:25"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:37"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween-ii",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:45"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "the-fog",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:45"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "fright-night-part-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:42"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "it",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:47"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween-h20",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:33"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween-resurrection",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:14:40"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "halloween-the-curse-of-michael-myers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:06"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "invasion-of-the-body-snatchers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:15:38"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "toy-cemetery",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:33:05"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "the-lawnmower-man",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:31"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "dark-harvest",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:39:17"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "goat-dance",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:41:03"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "naomi",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:30"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "john-dies-at-the-end",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:28"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "this-book-is-full-of-spiders",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:28"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "a-song-of-ice-and-fire",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:50"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "pet-sematary",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:52:04"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "unbreakable",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:13:24"
+    },
+    {
+      "episodeId": "ep30",
+      "workId": "midnight-special",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:13:32"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-abominable-dr-phibes",
+      "pickedByHostId": "h-paris-brown",
+      "role": "featured",
+      "evidence": "00:02:53"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "hell-night",
+      "pickedByHostId": "h-tommy-brown",
+      "role": "featured",
+      "evidence": "00:34:27"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "dr-phibes-rises-again",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:45"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-avengers-tv",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:10"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-avengers-1998",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:20"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "comedy-horror-films-a-chronological-history-1914-2008",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:13:37"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "shadow-of-a-doubt",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:19:01"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "citizen-kane",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:19:01"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "saw",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:20:11"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "greys-anatomy",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:24:16"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "eyes-wide-shut",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:02"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "creepshow-2",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:35:48"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "halloween",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:36:50"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "black-christmas",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:36:58"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "tango-and-cash",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:12"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "nowhere-to-run",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:12"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "metro",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:12"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "tourist-trap",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:40"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "puppet-master",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:40"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "roller-boogie",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:37:56"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-blob",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:03"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-scorpion-king",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:09"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-green-mile",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:35"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-shawshank-redemption",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:35"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-walking-dead",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:38:38"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-collection",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:42:41"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "chatterbox",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:43:37"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-concrete-jungle",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:54"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "savage-streets",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:54"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "reform-school-girls",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:44:54"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "swamp-thing",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:05"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "freddys-nightmares",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:05"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "animal-house",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:45:34"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-hills-have-eyes",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:01:20"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-texas-chainsaw-massacre",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:02:15"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "friday-the-13th",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:05:06"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "the-exorcist",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:10:02"
+    },
+    {
+      "episodeId": "ep31",
+      "workId": "jason-goes-to-hell-the-final-friday",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "01:10:15"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "i-spy",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:01:58"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "goosebumps-books",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:02:11"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-baby-sitters-club",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:02:35"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "sweet-valley-high",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:03:04"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-sisterhood-of-the-traveling-pants",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:23"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "calvin-and-hobbes",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:35"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-far-side",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:40"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "garfield",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:04:40"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "captain-underpants",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:10"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-face-on-the-milk-carton",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:32"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "janie-series",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:38"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "ramona-quimby-books",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:42"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "scary-stories-to-tell-in-the-dark",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:05:57"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-call-of-the-wild",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:25"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "island-of-the-blue-dolphins",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:33"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "magic-eye",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:07:51"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "wheres-waldo",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:10"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "american-psycho-book",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:08:49"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "holes",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:06"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "holes-film",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:06"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "charlottes-web",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:06"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-giver",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:20"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "animorphs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:09:52"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "arthur-books",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:10:49"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-magic-school-bus",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:00"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-bible",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:18"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "chicken-soup-for-the-soul",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:22"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "choose-your-own-adventure",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:11:29"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "harry-potter",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:12:02"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-indian-in-the-cupboard",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:40"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-chronicles-of-narnia",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:40"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "sideways-stories-from-wayside-school",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:17:49"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "mad-libs",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:18:51"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "saplings",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:24:45"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-boxcar-children",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:27:45"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "clifford-the-big-red-dog",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:27:54"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "fear-street",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:29:49"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "voyagers",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:30:21"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "charles-in-charge",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:30:21"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-magic-school-bus-tv",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:30:57"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "goosebumps",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:00"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-baby-sitters-club-tv",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:03"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-baby-sitters-club-film",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:03"
+    },
+    {
+      "episodeId": "ep32",
+      "workId": "the-indian-in-the-cupboard-film",
+      "pickedByHostId": null,
+      "role": "mentioned",
+      "evidence": "00:31:06"
     }
   ],
   "credits": [
@@ -7722,6 +9263,433 @@
       "role": "Creative contributor",
       "kind": "created",
       "evidence": "00:07:48"
+    },
+    {
+      "personId": "p-john-carpenter",
+      "workId": "halloween-iii-season-of-the-witch",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:12:11"
+    },
+    {
+      "personId": "p-john-carpenter",
+      "workId": "halloween-iii-season-of-the-witch",
+      "role": "Composer",
+      "kind": "created",
+      "evidence": "00:16:38"
+    },
+    {
+      "personId": "p-deborah-hill",
+      "workId": "halloween-iii-season-of-the-witch",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:12:11"
+    },
+    {
+      "personId": "p-tommy-lee-wallace",
+      "workId": "halloween-iii-season-of-the-witch",
+      "role": "Writer / Director",
+      "kind": "created",
+      "evidence": "00:12:17"
+    },
+    {
+      "personId": "p-tom-atkins",
+      "workId": "halloween-iii-season-of-the-witch",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:26:49"
+    },
+    {
+      "personId": "p-douglas-clegg",
+      "workId": "the-halloween-man",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:40:20"
+    },
+    {
+      "personId": "p-john-carpenter",
+      "workId": "halloween",
+      "role": "Co-writer",
+      "kind": "created",
+      "evidence": "00:07:42"
+    },
+    {
+      "personId": "p-deborah-hill",
+      "workId": "halloween",
+      "role": "Co-writer",
+      "kind": "created",
+      "evidence": "00:07:59"
+    },
+    {
+      "personId": "p-tommy-lee-wallace",
+      "workId": "halloween",
+      "role": "Art director / Production designer",
+      "kind": "created",
+      "evidence": "00:14:04"
+    },
+    {
+      "personId": "p-tommy-lee-wallace",
+      "workId": "fright-night-part-2",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:12:42"
+    },
+    {
+      "personId": "p-tommy-lee-wallace",
+      "workId": "it",
+      "role": "Director / Screenwriter",
+      "kind": "created",
+      "evidence": "00:12:47"
+    },
+    {
+      "personId": "p-busta-rhymes",
+      "workId": "halloween-resurrection",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:14:33"
+    },
+    {
+      "personId": "p-paul-rudd",
+      "workId": "halloween-the-curse-of-michael-myers",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:35:06"
+    },
+    {
+      "personId": "p-douglas-clegg",
+      "workId": "goat-dance",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:41:03"
+    },
+    {
+      "personId": "p-douglas-clegg",
+      "workId": "naomi",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:42:30"
+    },
+    {
+      "personId": "p-david-wong",
+      "workId": "john-dies-at-the-end",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:28"
+    },
+    {
+      "personId": "p-david-wong",
+      "workId": "this-book-is-full-of-spiders",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:43:28"
+    },
+    {
+      "personId": "p-george-r-r-martin",
+      "workId": "a-song-of-ice-and-fire",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:45:54"
+    },
+    {
+      "personId": "p-bruce-willis",
+      "workId": "unbreakable",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "01:13:28"
+    },
+    {
+      "personId": "p-jeff-nichols",
+      "workId": "midnight-special",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "01:13:46"
+    },
+    {
+      "personId": "p-vincent-price",
+      "workId": "the-abominable-dr-phibes",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:02:22"
+    },
+    {
+      "personId": "p-robert-fuest",
+      "workId": "the-abominable-dr-phibes",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:07:54"
+    },
+    {
+      "personId": "p-robert-fuest",
+      "workId": "the-abominable-dr-phibes",
+      "role": "Script rewriter",
+      "kind": "created",
+      "evidence": "00:13:50"
+    },
+    {
+      "personId": "p-joseph-cotten",
+      "workId": "the-abominable-dr-phibes",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:18:54"
+    },
+    {
+      "personId": "p-linda-blair",
+      "workId": "hell-night",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:34:49"
+    },
+    {
+      "personId": "p-randy-feldman",
+      "workId": "hell-night",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:36:36"
+    },
+    {
+      "personId": "p-bruce-cohn-curtis",
+      "workId": "hell-night",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:37:56"
+    },
+    {
+      "personId": "p-chuck-russell",
+      "workId": "hell-night",
+      "role": "Executive producer",
+      "kind": "created",
+      "evidence": "00:38:03"
+    },
+    {
+      "personId": "p-frank-darabont",
+      "workId": "hell-night",
+      "role": "Production assistant",
+      "kind": "created",
+      "evidence": "00:38:22"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "hell-night",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:41:23"
+    },
+    {
+      "personId": "p-robert-fuest",
+      "workId": "dr-phibes-rises-again",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:07:54"
+    },
+    {
+      "personId": "p-vincent-price",
+      "workId": "dr-phibes-rises-again",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:29:29"
+    },
+    {
+      "personId": "p-robert-fuest",
+      "workId": "the-avengers-tv",
+      "role": "Episode director",
+      "kind": "created",
+      "evidence": "00:08:02"
+    },
+    {
+      "personId": "p-uma-thurman",
+      "workId": "the-avengers-1998",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:08:29"
+    },
+    {
+      "personId": "p-sean-connery",
+      "workId": "the-avengers-1998",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:08:29"
+    },
+    {
+      "personId": "p-bruce-hallenbeck",
+      "workId": "comedy-horror-films-a-chronological-history-1914-2008",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:13:30"
+    },
+    {
+      "personId": "p-joseph-cotten",
+      "workId": "shadow-of-a-doubt",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:18:58"
+    },
+    {
+      "personId": "p-joseph-cotten",
+      "workId": "citizen-kane",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:18:58"
+    },
+    {
+      "personId": "p-randy-feldman",
+      "workId": "tango-and-cash",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:12"
+    },
+    {
+      "personId": "p-randy-feldman",
+      "workId": "nowhere-to-run",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:12"
+    },
+    {
+      "personId": "p-randy-feldman",
+      "workId": "metro",
+      "role": "Writer",
+      "kind": "created",
+      "evidence": "00:37:12"
+    },
+    {
+      "personId": "p-chuck-russell",
+      "workId": "the-blob",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:38:03"
+    },
+    {
+      "personId": "p-chuck-russell",
+      "workId": "the-scorpion-king",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:38:03"
+    },
+    {
+      "personId": "p-the-rock",
+      "workId": "the-scorpion-king",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:38:16"
+    },
+    {
+      "personId": "p-frank-darabont",
+      "workId": "the-green-mile",
+      "role": "Adapter",
+      "kind": "created",
+      "evidence": "00:38:28"
+    },
+    {
+      "personId": "p-frank-darabont",
+      "workId": "the-shawshank-redemption",
+      "role": "Adapter",
+      "kind": "created",
+      "evidence": "00:38:28"
+    },
+    {
+      "personId": "p-frank-darabont",
+      "workId": "the-walking-dead",
+      "role": "First-season filmmaker",
+      "kind": "created",
+      "evidence": "00:38:39"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "the-collection",
+      "role": "Director",
+      "kind": "created",
+      "evidence": "00:42:41"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "chatterbox",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:43:37"
+    },
+    {
+      "personId": "p-bruce-cohn-curtis",
+      "workId": "chatterbox",
+      "role": "Producer",
+      "kind": "created",
+      "evidence": "00:44:09"
+    },
+    {
+      "personId": "p-rip-taylor",
+      "workId": "chatterbox",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "00:44:39"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "the-concrete-jungle",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:44:54"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "savage-streets",
+      "role": "Filmmaker",
+      "kind": "created",
+      "evidence": "00:44:54"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "reform-school-girls",
+      "role": "Writer / Director",
+      "kind": "created",
+      "evidence": "00:44:54"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "swamp-thing",
+      "role": "Episode filmmaker",
+      "kind": "created",
+      "evidence": "00:45:05"
+    },
+    {
+      "personId": "p-tom-desimone",
+      "workId": "freddys-nightmares",
+      "role": "Episode filmmaker",
+      "kind": "created",
+      "evidence": "00:45:05"
+    },
+    {
+      "personId": "p-linda-blair",
+      "workId": "the-exorcist",
+      "role": "Actor",
+      "kind": "appeared",
+      "evidence": "01:10:08"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "goosebumps-books",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:29:12"
+    },
+    {
+      "personId": "p-caroline-b-cooney",
+      "workId": "the-face-on-the-milk-carton",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:05:38"
+    },
+    {
+      "personId": "p-caroline-b-cooney",
+      "workId": "janie-series",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:05:38"
+    },
+    {
+      "personId": "p-r-l-stine",
+      "workId": "fear-street",
+      "role": "Author",
+      "kind": "created",
+      "evidence": "00:29:49"
     }
   ],
   "workRelations": [
@@ -8269,6 +10237,125 @@
       "fromWorkId": "monsters-inc",
       "toWorkId": "bad-times-for-ghosts",
       "relation": "similar"
+    },
+    {
+      "fromWorkId": "halloween",
+      "toWorkId": "halloween-iii-season-of-the-witch",
+      "relation": "successor",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:05:13"
+    },
+    {
+      "fromWorkId": "halloween-ii",
+      "toWorkId": "halloween-iii-season-of-the-witch",
+      "relation": "successor",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:08:54"
+    },
+    {
+      "fromWorkId": "invasion-of-the-body-snatchers",
+      "toWorkId": "halloween-iii-season-of-the-witch",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:15:38"
+    },
+    {
+      "fromWorkId": "toy-cemetery",
+      "toWorkId": "halloween-iii-season-of-the-witch",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:33:05"
+    },
+    {
+      "fromWorkId": "dark-harvest",
+      "toWorkId": "the-halloween-man",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:53:10"
+    },
+    {
+      "fromWorkId": "a-song-of-ice-and-fire",
+      "toWorkId": "the-halloween-man",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:45:50"
+    },
+    {
+      "fromWorkId": "pet-sematary",
+      "toWorkId": "the-halloween-man",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "00:52:04"
+    },
+    {
+      "fromWorkId": "unbreakable",
+      "toWorkId": "the-halloween-man",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "01:13:24"
+    },
+    {
+      "fromWorkId": "midnight-special",
+      "toWorkId": "the-halloween-man",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep30",
+      "evidence": "01:13:32"
+    },
+    {
+      "fromWorkId": "dr-phibes-rises-again",
+      "toWorkId": "the-abominable-dr-phibes",
+      "relation": "precursor",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "00:07:45"
+    },
+    {
+      "fromWorkId": "the-avengers-1998",
+      "toWorkId": "the-avengers-tv",
+      "relation": "adapted-from",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "00:08:20"
+    },
+    {
+      "fromWorkId": "saw",
+      "toWorkId": "the-abominable-dr-phibes",
+      "relation": "precursor",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "00:20:11"
+    },
+    {
+      "fromWorkId": "hell-night",
+      "toWorkId": "black-christmas",
+      "relation": "inspired-by",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "00:36:58"
+    },
+    {
+      "fromWorkId": "animal-house",
+      "toWorkId": "hell-night",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "00:45:34"
+    },
+    {
+      "fromWorkId": "the-hills-have-eyes",
+      "toWorkId": "hell-night",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "01:01:20"
+    },
+    {
+      "fromWorkId": "the-texas-chainsaw-massacre",
+      "toWorkId": "hell-night",
+      "relation": "similar",
+      "evidenceEpisodeId": "ep31",
+      "evidence": "01:02:15"
+    },
+    {
+      "fromWorkId": "holes-film",
+      "toWorkId": "holes",
+      "relation": "adapted-from",
+      "evidenceEpisodeId": "ep32",
+      "evidence": "00:08:40"
     }
   ],
   "hostRelations": [
@@ -8276,6 +10363,13 @@
       "fromHostId": "h-paris-brown",
       "toHostId": "h-tommy-brown",
       "label": "some"
+    },
+    {
+      "fromHostId": "h-tommy-brown",
+      "toHostId": "h-jude-sutton",
+      "label": "friends for 25 years",
+      "evidenceEpisodeId": "ep32",
+      "evidence": "00:01:02"
     }
   ]
 }
